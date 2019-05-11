@@ -21,7 +21,7 @@ const TableBody = () => {
         <td>Janitor</td>
       </tr>
       <tr>
-        <td>Mac</td>
+        <td>MacMillian</td>
         <td>Bouncer</td>
       </tr>
       <tr>
