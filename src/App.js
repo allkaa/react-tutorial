@@ -1,3 +1,4 @@
+// Traditional very first component App.
 import React, { Component } from 'react'
 
 class App extends Component {
