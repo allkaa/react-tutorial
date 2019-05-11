@@ -29,7 +29,7 @@ class App extends Component {
     const { characters } = this.state
   
     this.setState({
-      characters: characters.filter((character, i) => {
+      characters: characters.filter((row_object, i) => {
         return i !== index
       }),
     })
