@@ -25,7 +25,7 @@ class App extends Component {
     },
   ]}
 
-  removeCharacter = index => {
+  removeRow = index => {
     const { characters } = this.state
   
     this.setState({
@@ -36,9 +36,12 @@ class App extends Component {
   }  
 
   render() {
+    const { characters } = this.state
+
     return (
       <div className="container">
-        <Table characterData={this.state.characters} />
+        {/*<Table characterData={this.state.characters} />*/}
+        <Table characterData={characters} removeRow={this.removeRow} />
       </div>
     )
   }

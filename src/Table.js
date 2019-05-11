@@ -38,7 +38,10 @@ const TableBody = props => {
       <tr key={index}>
         <td>{row.name}</td>
         <td>{row.job}</td>
-      </tr>
+        <td>
+          <button onClick={() => props.removeRow(index)}>Delete row</button>
+        </td>
+      </tr>    
     )
   })
 
@@ -47,6 +50,21 @@ const TableBody = props => {
 
 // Class component that uses simple (sub-)components.
 // A class component must include render(), and the return can only return ONE parent element:
+
+class Table extends Component {
+  render() {
+    const { characterData, removeRow } = this.props
+
+    return (
+      <table>
+        <TableHeader />
+        <TableBody characterData={characterData} removeRow={removeRow} />
+      </table>
+    )
+  }
+}
+
+/*
 class Table extends Component {
   render() {
     const { characterData } = this.props
@@ -60,6 +78,8 @@ class Table extends Component {
     )
   }
 }
+*/
+
 /* Initial:
 
 const TableBody = () => {
