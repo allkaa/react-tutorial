@@ -61,10 +61,12 @@ const TableBody = () => {
 // A class component must include render(), and the return can only return ONE parent element:
 class Table extends Component {
   render() {
+    const { characterData } = this.props
+
     return (
       <table>
         <TableHeader />
-        <TableBody />
+        <TableBody characterData={characterData} />
       </table>
     )
   }
