@@ -31,7 +31,8 @@ const TableHeader = () => {
 
 const TableBody = props => {
   const rows = props.characterData.map((row, index) => {
-    console.log(row.name)
+    console.log(index, row.name, row.job)
+    // key={index} must be used for unique identification.
     return (
       <tr key={index}>
         <td>{row.name}</td>
