@@ -36,12 +36,13 @@ class App extends Component {
   }  
 
   render() {
-    const { characters } = this.state
+    //const { characters } = this.state
 
     return (
       <div className="container">
         {/*<Table characterData={this.state.characters} />*/}
-        <Table characterData={characters} removeRow={this.removeRow} />
+        {/*<Table characterData={this.state.characters} removeRow={this.removeRow} />*/}
+        <Table characterData={this.state.characters} removeRow={this.removeRow} />
       </div>
     )
   }
