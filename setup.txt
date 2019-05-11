@@ -1,0 +1,170 @@
+akaarna@unl:~$ npx create-react-app react-tutorial
+npx: installed 91 in 22.25s
+
+Creating a new React app in /home/akaarna/react-tutorial.
+
+You are using Node v8.9.4 so the project will be bootstrapped with an old unsupported version of tools.
+
+Please update to Node 8.10 or higher for a better, fully supported experience.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts...
+
++ react-dom@16.8.6
++ react@16.8.6
++ react-scripts@0.9.5
+added 963 packages from 653 contributors and audited 9032 packages in 90.699s
+found 69 vulnerabilities (19 low, 33 moderate, 16 high, 1 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+Success! Created react-tutorial at /home/akaarna/react-tutorial
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd react-tutorial
+  npm start
+
+Happy hacking!
+
+Note: the project was bootstrapped with an old unsupported version of tools.
+Please update to Node >=8.10 and npm >=5 to get supported tools in new projects.
+
+akaarna@unl:~$ 
+====================== switchng node version ===============================================
+akaarna@unl:~$ nvm alias
+default -> 8.9.4 (-> v8.9.4)
+node -> stable (-> v10.15.1) (default)
+stable -> 10.15 (-> v10.15.1) (default)
+iojs -> N/A (default)
+lts/* -> lts/dubnium (-> v10.15.1)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.16.0 (-> N/A)
+lts/carbon -> v8.15.0 (-> N/A)
+lts/dubnium -> v10.15.1
+akaarna@unl:~$ nvm alias default node
+default -> node (-> v10.15.1)
+akaarna@unl:~$ nvm alias
+default -> node (-> v10.15.1)
+node -> stable (-> v10.15.1) (default)
+stable -> 10.15 (-> v10.15.1) (default)
+iojs -> N/A (default)
+lts/* -> lts/dubnium (-> v10.15.1)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.16.0 (-> N/A)
+lts/carbon -> v8.15.0 (-> N/A)
+lts/dubnium -> v10.15.1
+akaarna@unl:~$ node -v
+v8.9.4
+akaarna@unl:~$ node -version
+node: bad option: -version
+akaarna@unl:~$ node --version
+v8.9.4
+akaarna@unl:~$ nvm ls
+->       v8.9.4
+       v10.15.1
+default -> node (-> v10.15.1)
+node -> stable (-> v10.15.1) (default)
+stable -> 10.15 (-> v10.15.1) (default)
+iojs -> N/A (default)
+lts/* -> lts/dubnium (-> v10.15.1)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.16.0 (-> N/A)
+lts/carbon -> v8.15.0 (-> N/A)
+lts/dubnium -> v10.15.1
+akaarna@unl:~$ nvm current
+v8.9.4
+akaarna@unl:~$ nvm alias default 10.15.1
+default -> 10.15.1 (-> v10.15.1)
+akaarna@unl:~$ node -v
+v8.9.4
+akaarna@unl:~$ nvm use 10.15.1
+Now using node v10.15.1 (npm v6.4.1)
+akaarna@unl:~$ node -v
+v10.15.1
+akaarna@unl:~$ npm -v
+6.4.1
+akaarna@unl:~$ nvm alias
+default -> 10.15.1 (-> v10.15.1)
+node -> stable (-> v10.15.1) (default)
+stable -> 10.15 (-> v10.15.1) (default)
+iojs -> N/A (default)
+lts/* -> lts/dubnium (-> v10.15.1)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.16.0 (-> N/A)
+lts/carbon -> v8.15.0 (-> N/A)
+lts/dubnium -> v10.15.1
+akaarna@unl:~$ nvm ls
+         v8.9.4
+->     v10.15.1
+default -> 10.15.1 (-> v10.15.1)
+node -> stable (-> v10.15.1) (default)
+stable -> 10.15 (-> v10.15.1) (default)
+iojs -> N/A (default)
+lts/* -> lts/dubnium (-> v10.15.1)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.16.0 (-> N/A)
+lts/carbon -> v8.15.0 (-> N/A)
+lts/dubnium -> v10.15.1
+akaarna@unl:~$ 
+==============================================================================
+> ./node
+> console.log(process.versions.v8);
+6.1.534.46 == 8.9.0, last 8.8.1(6.1.534.42) info in http://node.green/
+undefined
+> .exit
+================================================================================
+akaarna@unl:~$ npx create-react-app react-tutorial
+npx: installed 91 in 42.989s
+
+Creating a new React app in /home/akaarna/react-tutorial.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts...
+
++ react-scripts@3.0.1
++ react-dom@16.8.6
++ react@16.8.6
+added 1399 packages from 726 contributors and audited 888968 packages in 157.088s
+found 0 vulnerabilities
+
+
+Initialized a git repository.
+
+Success! Created react-tutorial at /home/akaarna/react-tutorial
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd react-tutorial
+  npm start
+
+Happy hacking!
+akaarna@unl:~$ 
+===========================================================================================
