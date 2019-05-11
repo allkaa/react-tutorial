@@ -24,6 +24,17 @@ class App extends Component {
       job: 'Bartender',
     },
   ]}
+
+  removeCharacter = index => {
+    const { characters } = this.state
+  
+    this.setState({
+      characters: characters.filter((character, i) => {
+        return i !== index
+      }),
+    })
+  }  
+
   render() {
     return (
       <div className="container">
