@@ -30,6 +30,10 @@ const TableHeader = () => {
 }
 
 const TableBody = () => {
+  return <tbody />
+}
+/*
+const TableBody = () => {
   return (
     <tbody>
       <tr>
@@ -51,6 +55,7 @@ const TableBody = () => {
     </tbody>
   )
 }
+*/
 
 // Class component that uses simple (sub-)components.
 // A class component must include render(), and the return can only return ONE parent element:
