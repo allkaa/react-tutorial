@@ -31,6 +31,7 @@ const TableHeader = () => {
 
 const TableBody = props => {
   const rows = props.characterData.map((row, index) => {
+    console.log('TableBody index, row.name, row.job')
     console.log(index, row.name, row.job)
 
     // key={index} must be used for unique row identification.
@@ -52,6 +53,16 @@ const TableBody = props => {
 // A class component must include render(), and the return can only return ONE parent element:
 
 class Table extends Component {
+  // We'll need the constructor() to use `this`, and to receive the props of the parent.
+  constructor(props) {
+    super(props)
+    console.log('Table constructor props')
+    console.log(props)
+
+    console.log('Table constructor this.state')
+    console.log(this.state)
+  }
+
   render() {
     const { characterData, removeRow } = this.props
 

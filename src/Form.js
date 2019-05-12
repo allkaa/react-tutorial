@@ -5,14 +5,18 @@ class Form extends Component {
   // We'll need the constructor() to use `this`, and to receive the props of the parent.
   constructor(props) {
     super(props)
+    console.log('Form constructor props')
+    console.log(props)
 
-    this.l = {
+    this.initialState = {
       name: '',
       job: '',
     }
 
+    console.log('Form constructor this.state before')
+    console.log(this.state)
     this.state = this.initialState // set parent props state.
-    console.log('Form constructor(props)')
+    console.log('Form constructor this.state after')
     console.log(this.state)
   }
 
