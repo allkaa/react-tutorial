@@ -15,7 +15,7 @@ class Form extends Component {
 
     console.log('Form constructor this.state before')
     console.log(this.state)
-    this.state = this.initialState // set parent props state.
+    this.state = this.initialState // set parent props state?????
     console.log('Form constructor this.state after')
     console.log(this.state)
   }

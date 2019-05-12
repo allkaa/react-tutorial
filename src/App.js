@@ -26,13 +26,27 @@ import Form from './Form'
   */
  class App extends Component {
   // No constructor(props) initially used
-  state = {characters: []}
+  /*
+  state = {characters: [
+    {
+      name: 'Dee',
+      job: 'Aspring actress',
+    },
+  ]}
+  */
 
   // We'll need the constructor() to use `this`, and to receive the props of the parent.
   constructor(props) {
     super(props)
     console.log('App constructor props')
     console.log(props)
+
+    this.state = {characters: [
+      {
+        name: 'Dee',
+        job: 'Aspring actress',
+      },
+    ]}
 
     console.log('App constructor this.state')
     console.log(this.state)
@@ -41,18 +55,22 @@ import Form from './Form'
   removeRow = index => {
     const { characters } = this.state
   
+    console.log('App removeRow this.state before')
+    console.log(this.state)
     this.setState({
       characters: characters.filter((row_object, i) => {
         return i !== index
       }),
     })
-    console.log('App removeRow event')
+    console.log('App removeRow this.state after')
     console.log(this.state)
   }  
 
   handleFormSubmit = character => {
+    console.log('App handleFormSubmit event this.state before')
+    console.log(this.state)
     this.setState({ characters: [...this.state.characters, character] })
-    console.log('App handleFormSubmit event')
+    console.log('App handleFormSubmit event this.state after')
     console.log(this.state)
   }
 
