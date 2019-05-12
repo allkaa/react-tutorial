@@ -2,11 +2,8 @@
 // (capitalize custom components to differentiate them from regular HTML elements).
 import React, { Component } from 'react'
 import Table from './Table'
+import Form from './Form'
 
-
-
-class App extends Component {
-  state = {characters: []}
   /*
   state = { characters: [
     {
@@ -27,6 +24,11 @@ class App extends Component {
     },
   ]}
   */
+ class App extends Component {
+  // No constructor(props) used
+  state = {characters: []}
+  //console.log('handleFormSubmit')
+  //console.log(this.state)
 
   removeRow = index => {
     const { characters } = this.state
@@ -36,7 +38,15 @@ class App extends Component {
         return i !== index
       }),
     })
+    console.log('removeRow')
+    console.log(this.state)
   }  
+
+  handleFormSubmit = character => {
+    this.setState({ characters: [...this.state.characters, character] })
+    console.log('handleFormSubmit')
+    console.log(this.state)
+  }
 
   render() {
     //const { characters } = this.state
@@ -46,6 +56,7 @@ class App extends Component {
         {/*<Table characterData={this.state.characters} />*/}
         {/*<Table characterData={this.state.characters} removeRow={this.removeRow} />*/}
         <Table characterData={this.state.characters} removeRow={this.removeRow} />
+        <Form handleSubmit={this.handleFormSubmit} />
       </div>
     )
   }
