@@ -11,12 +11,17 @@ class App extends Component {
       'https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*'
 
     fetch(url)
-      .then(result => result.json())
       .then(result => {
+        // result is fetch(url) Response object
+        console.log(result)
+        return result.json()
+      })
+      .then(result => {
+        // result is JSON array.
+        console.log(result)
         this.setState({
           data: result,
         })
-        console.log(result)
       })
   }
 
