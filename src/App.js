@@ -63,16 +63,19 @@ import Form from './Form'
         return i !== index
       }),
     })
-    console.log('App removeRow this.state after')
+    console.log('App removeRow this.state after asyn row delete')
     console.log(this.state)
   }  
 
+  // Below character actuallly is objet {name: value}
   handleFormSubmit = character => {
-    console.log('App handleFormSubmit event this.state before')
+    console.log('App handleFormSubmit event object character before asyn setState')
+    console.log(character)
+    console.log('App handleFormSubmit event this.state before asyn setState')
     console.log(this.state)
-     // set App this.state and trigger re-rendering with childs.
+     // asyn set App this.state and trigger re-rendering with childs.
     this.setState({ characters: [...this.state.characters, character] })
-    console.log('App handleFormSubmit event this.state after')
+    console.log('App handleFormSubmit event this.state after asyn setState')
     console.log(this.state)
   }
   // A class component must include render(), and the return statement can only return ONE parent element:

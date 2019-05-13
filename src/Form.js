@@ -54,6 +54,7 @@ class Form extends Component {
   render() {
     const { name, job } = this.state;
     // Render or re-render Form form.
+    // Using an onClick instead of onSubmit since we're not using the standard submit functionality.
     return (
       <form>
         <label>Name</label>
