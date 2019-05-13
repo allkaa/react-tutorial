@@ -13,37 +13,43 @@ class Form extends Component {
       job: '',
     }
 
-    console.log('Form constructor this.state before')
+    console.log('Form constructor this.state before setting from this.initialState')
     console.log(this.state)
-    this.state = this.initialState // set parent props state?????
-    console.log('Form constructor this.state after')
+    this.state = this.initialState // set Form this.state.
+    console.log('Form constructor this.state after setting from this.initialState')
     console.log(this.state)
   }
 
   handleChange = event => {
     const { name, value } = event.target
   
-    this.setState({
+    console.log('Form handeChange event this.state before setting event {name: value}')
+    console.log(this.state)
+    this.setState({ // set Form this.state and trigger re-rendering with childs.
       [name]: value,
     })
-    console.log('Form handeChange event this.state')
+    console.log('Form handeChange event this.state after setting event {name: value}')
     console.log(this.state)
     console.log('Form handeChange event this.initialState')
     console.log(this.initialState)
   }
 
   submitForm = () => {
-    this.props.handleSubmit(this.state)
-    this.setState(this.initialState)
-    console.log('Form submitForm event this.state')
+    console.log('Form submitForm event this.state before hanleSubmit')
+    console.log(this.state)
+    this.props.handleSubmit(this.state) // call App handleFormSubmit() with Form this.state.
+    console.log('Form submitForm event this.state after hanleSubmit')
+    console.log(this.state)
+    this.setState(this.initialState) // set Form this.state to initial and trigger re-rendering with childs.
+    console.log('Form submitForm event this.state after reset to this.initalState')
     console.log(this.state)
     console.log('Form submitForm event this.initialState')
     console.log(this.initialState)
   }
-
+  // A class component must include render(), and the return statement can only return ONE parent element:
   render() {
     const { name, job } = this.state;
-  
+    // Render or re-render Form form.
     return (
       <form>
         <label>Name</label>

@@ -25,7 +25,7 @@ import Form from './Form'
   ]}
   */
  class App extends Component {
-  // No constructor(props) initially used
+  // No constructor(props) initially class declaration used
   /*
   state = {characters: [
     {
@@ -41,14 +41,15 @@ import Form from './Form'
     console.log('App constructor props')
     console.log(props)
 
+    console.log('App constructor this.state before')
+    console.log(this.state)
     this.state = {characters: [
       {
         name: 'Dee',
         job: 'Aspring actress',
       },
     ]}
-
-    console.log('App constructor this.state')
+    console.log('App constructor this.state after')
     console.log(this.state)
   }
 
@@ -57,7 +58,7 @@ import Form from './Form'
   
     console.log('App removeRow this.state before')
     console.log(this.state)
-    this.setState({
+    this.setState({ // set App this.state and trigger re-rendering with childs.
       characters: characters.filter((row_object, i) => {
         return i !== index
       }),
@@ -69,14 +70,15 @@ import Form from './Form'
   handleFormSubmit = character => {
     console.log('App handleFormSubmit event this.state before')
     console.log(this.state)
+     // set App this.state and trigger re-rendering with childs.
     this.setState({ characters: [...this.state.characters, character] })
     console.log('App handleFormSubmit event this.state after')
     console.log(this.state)
   }
-
+  // A class component must include render(), and the return statement can only return ONE parent element:
   render() {
     //const { characters } = this.state
-
+    // Render of re-render with Table and Form childs.
     return (
       <div className="container">
         {/*<Table characterData={this.state.characters} />*/}

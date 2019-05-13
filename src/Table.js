@@ -62,7 +62,7 @@ class Table extends Component {
     console.log('Table constructor this.state')
     console.log(this.state)
   }
-
+  // A class component must include render(), and the return statement can only return ONE parent element:
   render() {
     const { characterData, removeRow } = this.props
 
