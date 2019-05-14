@@ -189,3 +189,21 @@ To https://github.com/allkaa/react-tutorial.git
 Branch master set up to track remote branch master from origin.
 akaarna@unl:~/react-tutorial$ 
 ===========================================================================================
+akaarna@unl:~/react-tutorial$ npm install --save-dev gh-pages
+npm WARN @typescript-eslint/eslint-plugin@1.6.0 requires a peer of typescript@* but none is installed. You must install peer dependencies yourself.
+npm WARN @typescript-eslint/parser@1.6.0 requires a peer of typescript@* but none is installed. You must install peer dependencies yourself.
+npm WARN @typescript-eslint/typescript-estree@1.6.0 requires a peer of typescript@* but none is installed. You must install peer dependencies yourself.
+npm WARN ts-pnp@1.1.2 requires a peer of typescript@* but none is installed. You must install peer dependencies yourself.
+npm WARN tsutils@3.10.0 requires a peer of typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev but none is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules/jest-haste-map/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.0.6 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.0.6: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ gh-pages@2.0.1
+added 17 packages from 5 contributors and audited 889032 packages in 47.276s
+found 0 vulnerabilities
+
+akaarna@unl:~/react-tutorial$ 
