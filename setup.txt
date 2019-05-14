@@ -168,7 +168,7 @@ We suggest that you begin by typing:
 Happy hacking!
 akaarna@unl:~$ 
 ===========================================================================================
-Create new remote empty repository https://github.com/allkaa/react-tutorial:
+Create new remote empty repository https://github.com/allkaa/react-tutorial
 
 and then
 git remote add origin https://github.com/allkaa/react-tutorial.git
