@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/allkaa/react-tutorial/static/css/main.682ca21c.chunk.css",
+    "main.js": "/allkaa/react-tutorial/static/js/main.bdc5c292.chunk.js",
+    "main.js.map": "/allkaa/react-tutorial/static/js/main.bdc5c292.chunk.js.map",
+    "runtime~main.js": "/allkaa/react-tutorial/static/js/runtime~main.eb893299.js",
+    "runtime~main.js.map": "/allkaa/react-tutorial/static/js/runtime~main.eb893299.js.map",
+    "static/js/2.86a2265c.chunk.js": "/allkaa/react-tutorial/static/js/2.86a2265c.chunk.js",
+    "static/js/2.86a2265c.chunk.js.map": "/allkaa/react-tutorial/static/js/2.86a2265c.chunk.js.map",
+    "index.html": "/allkaa/react-tutorial/index.html",
+    "precache-manifest.42cd94a1c6a7e9314d268a8c2d76d9e8.js": "/allkaa/react-tutorial/precache-manifest.42cd94a1c6a7e9314d268a8c2d76d9e8.js",
+    "service-worker.js": "/allkaa/react-tutorial/service-worker.js",
+    "static/css/main.682ca21c.chunk.css.map": "/allkaa/react-tutorial/static/css/main.682ca21c.chunk.css.map"
+  }
+}
