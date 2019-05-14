@@ -207,3 +207,81 @@ added 17 packages from 5 contributors and audited 889032 packages in 47.276s
 found 0 vulnerabilities
 
 akaarna@unl:~/react-tutorial$ 
+=============================================================================================================
+Deployment:
+
+akaarna@unl:~/react-tutorial$ npm run build
+
+> react-tutorial@0.1.0 build /home/akaarna/react-tutorial
+> react-scripts build
+
+Creating an optimized production build...
+Compiled with warnings.
+
+./src/Form.js
+  Line 1:  'use strict' is unnecessary inside of modules  strict
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+File sizes after gzip:
+
+  36.96 KB       build/static/js/2.86a2265c.chunk.js
+  3 KB           build/static/css/main.682ca21c.chunk.css
+  1.15 KB        build/static/js/main.bdc5c292.chunk.js
+  776 B (+14 B)  build/static/js/runtime~main.eb893299.js
+
+The project was built assuming it is hosted at /allkaa/react-tutorial/.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://bit.ly/CRA-deploy
+
+akaarna@unl:~/react-tutorial$ npm run deploy
+
+> react-tutorial@0.1.0 predeploy /home/akaarna/react-tutorial
+> npm run build
+
+
+> react-tutorial@0.1.0 build /home/akaarna/react-tutorial
+> react-scripts build
+
+Creating an optimized production build...
+Compiled with warnings.
+
+./src/Form.js
+  Line 1:  'use strict' is unnecessary inside of modules  strict
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+File sizes after gzip:
+
+  36.96 KB  build/static/js/2.86a2265c.chunk.js
+  3 KB      build/static/css/main.682ca21c.chunk.css
+  1.15 KB   build/static/js/main.bdc5c292.chunk.js
+  776 B     build/static/js/runtime~main.eb893299.js
+
+The project was built assuming it is hosted at /allkaa/react-tutorial/.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://bit.ly/CRA-deploy
+
+
+> react-tutorial@0.1.0 deploy /home/akaarna/react-tutorial
+> gh-pages -d build
+
+Username for 'https://github.com': allkaa
+Password for 'https://allkaa@github.com': 
+Published
+akaarna@unl:~/react-tutorial$ 
+====================================================================================================================
+"homepage": "https://allkaa.github.io/react-tutorial",
+
