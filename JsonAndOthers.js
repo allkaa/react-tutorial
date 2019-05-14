@@ -60,19 +60,19 @@ let strVar, strVar2, strVar3;
 // data is Buffer class object.Now when TypedArray has been added in ES6, the Buffer class implements the Uint8Array API
 // in a manner that is more optimized and suitable for Node.js' use cases.
 strVar = '' + data; // data is Uint8Array (Buffer class) and are converted to string expicitly.
-//dtVar = new Date();
-//console.log('====> strVar = \'\' + data;' + " " + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
-//console.log(strVar);
-//console.log('====================================');
+dtVar = new Date();
+console.log('====> strVar = \'\' + data;' + " " + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+console.log(strVar);
+console.log('====================================');
 strVar2 = data.toString(); // data is Uint8Array (Buffer class) and are converted to string using toString() method.
-//dtVar = new Date();
-//console.log('====> data.toString();' + " " + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
-//console.log(strVar2);
-//console.log('====================================');
+dtVar = new Date();
+console.log('====> data.toString();' + " " + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+console.log(strVar2);
+console.log('====================================');
 strVar3 = String(data); // Global JavaScript String() function converts the value of an object to a string.
-//dtVar = new Date();
-//console.log('====> String(data);' + " " + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
-//console.log(strVar3);
+dtVar = new Date();
+console.log('====> String(data);' + " " + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+console.log(strVar3);
 console.log('====================================');
 
 for (let i=0; i < strVar.length; i = i + 1) {
