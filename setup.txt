@@ -285,6 +285,9 @@ Password for 'https://allkaa@github.com':
 Published
 akaarna@unl:~/react-tutorial$ 
 ====================================================================================================================
+# gh-pages
+Publish files to a `gh-pages` branch on GitHub (or any other branch anywhere else).
+
 "homepage": "https://allkaa.github.io/react-tutorial":
 
 akaarna@unl:~/react-tutorial$ npm run deploy
