@@ -333,3 +333,30 @@ Password for 'https://allkaa@github.com':
 Published
 akaarna@unl:~/react-tutorial$
 ==================================================================================================
+akaarna@unl:~/react-tutorial$ npm run deployTest
+
+> react-tutorial@0.1.0 deployTest /home/akaarna/react-tutorial
+> gh-pages --help
+
+Usage: gh-pages [options]
+
+Options:
+  -V, --version            output the version number
+  -d, --dist <dist>        Base directory for all source files
+  -s, --src <src>          Pattern used to select which files to publish (default: "**/*")
+  -b, --branch <branch>    Name of the branch you are pushing to (default: "gh-pages")
+  -e, --dest <dest>        Target directory within the destination branch (relative to the root) (default: ".")
+  -a, --add                Only add, and never remove existing files
+  -x, --silent             Do not output the repository url
+  -m, --message <message>  commit message (default: "Updates")
+  -g, --tag <tag>          add tag to commit
+  -t, --dotfiles           Include dotfiles
+  -r, --repo <repo>        URL of the repository you are pushing to
+  -p, --depth <depth>      depth for clone (default: 1)
+  -o, --remote <name>      The name of the remote (default: "origin")
+  -u, --user <address>     The name and email of the user (defaults to the git config).  Format is "Your Name <email@example.com>".
+  -v, --remove <pattern>   Remove files that match the given pattern (ignored if used together with --add). (default: ".")
+  -n, --no-push            Commit only (with no push)
+  -h, --help               output usage information
+akaarna@unl:~/react-tutorial$ 
+==============================================================================================================
