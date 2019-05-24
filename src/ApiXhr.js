@@ -7,24 +7,48 @@ class App extends Component {
 
   // Code is invoked after the component is mounted/inserted into the DOM tree.
   componentDidMount() {
-    const url =
-      'https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*'
-
-    fetch(url)
-      .then(result => {
-        // result is fetch(url) Response object
-        console.log(result)
-        return result.json()
-      })
-      .then(result => {
-        // result is JSON array.
-        console.log(result)
-        this.setState({
-          data: result,
-        })
-      })
+    let txtErr 
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://10.8.194.3:42000/?testDebian', true);
+    // If specified, responseType must be empty string or "document"
+    xhr.responseType = 'document';
+    // Force the response to be parsed as XML
+    xhr.overrideMimeType('text/xml');
+    
+    xhr.onload = function () {
+      let docXml
+      if (xhr.readyState === xhr.DONE && xhr.status === 200) {
+        //console.log(xhr.response);
+        docXml = xhr.responseXML
+        //console.log(docXml);
+        let xmlS = new XMLSerializer();
+        let xmlString = xmlS.serializeToString(docXml);
+        console.log(xmlString)
+        this.setState({ data: xmlString,})
+      }
+      else {
+        txtErr = `Request onload error - status ${xhr.status}`
+        console.log(txtErr)
+        this.setState({ data: txtErr,})
+        }
+    }
+    
+    xhr.onerror = () => {
+      txtErr = `Request failed -> onerror event occured.`
+      console.log(txtErr)
+      this.setState({ data: txtErr,})
   }
-
+    
+    xhr.ontimeout = () => {
+      txtErr = `Request failed -> ontimeout event occured`
+      console.log(txtErr)
+      this.setState({ data: txtErr,})
+    }
+    
+    xhr.send();
+    
+  } // end of componentDidMount.
+  
   render() {
     const { data } = this.state
 

@@ -12,7 +12,7 @@ app.appendChild(container)
 //return; // NB! return can not be used in browser DOM.
 
 //*
-var xhr = new XMLHttpRequest;
+var xhr = new XMLHttpRequest();
 xhr.open('GET', 'http://10.8.194.3:42001/?testDebian', true);
 
 // If specified, responseType must be empty string or "document"
