@@ -10,7 +10,7 @@ class App extends Component {
     let txtErr 
     //let objThis = this
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://10.8.194.3:42000/?testDebian', true);
+    xhr.open('GET', 'http://10.8.194.3:4200/?testDebian', true);
     // If specified, responseType must be empty string or "document"
     xhr.responseType = 'document';
     // Force the response to be parsed as XML
