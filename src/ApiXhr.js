@@ -24,19 +24,19 @@ class App extends Component {
         let xmlS = new XMLSerializer();
         let xmlString = xmlS.serializeToString(docXml);
         console.log(xmlString)
-        this.setState({ data: xmlString,})
+        this.setState({ data: xmlString})
       }
       else {
         txtErr = `Request onload error - status ${xhr.status}`
         console.log(txtErr)
-        this.setState({ data: txtErr,})
+        this.setState({ data: txtErr})
         }
     }
     
     xhr.onerror = () => {
       txtErr = `Request failed -> onerror event occured.`
       console.log(txtErr)
-      this.setState({ data: txtErr,})
+      this.setState({ data: txtErr})
   }
     
     xhr.ontimeout = () => {
