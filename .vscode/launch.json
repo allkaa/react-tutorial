@@ -37,8 +37,15 @@
       {
         "type": "chrome",
         "request": "launch",
-        "name": "Launch Chrome index.html",
-        "file": "${workspaceFolder}/index.html"
+        "name": "Chrome localhost:5000",
+        "url": "http://localhost:5000",
+        "webRoot": "${workspaceFolder}",
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch Chrome ./build/index.html",
+        "file": "${workspaceFolder}/build/index.html"
       }
   ]
 }
