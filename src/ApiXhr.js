@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 
 class App extends Component {
   state = {
-    data: [],
+    data: '',
   }
 
   // Code is invoked after the component is mounted/inserted into the DOM tree.
   componentDidMount() {
     let txtErr 
+    //let objThis = this
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://10.8.194.3:42000/?testDebian', true);
     // If specified, responseType must be empty string or "document"
@@ -15,7 +16,7 @@ class App extends Component {
     // Force the response to be parsed as XML
     xhr.overrideMimeType('text/xml');
     
-    xhr.onload = function () {
+    xhr.onload = () => {
       let docXml
       if (xhr.readyState === xhr.DONE && xhr.status === 200) {
         //console.log(xhr.response);
@@ -24,19 +25,21 @@ class App extends Component {
         let xmlS = new XMLSerializer();
         let xmlString = xmlS.serializeToString(docXml);
         console.log(xmlString)
-        this.setState({ data: xmlString})
+        this.setState({
+          data: xmlString,
+        })
       }
       else {
         txtErr = `Request onload error - status ${xhr.status}`
         console.log(txtErr)
-        this.setState({ data: txtErr})
+        this.setState({ data: txtErr,})
         }
     }
     
     xhr.onerror = () => {
       txtErr = `Request failed -> onerror event occured.`
       console.log(txtErr)
-      this.setState({ data: txtErr})
+      this.setState({ data: txtErr,})
   }
     
     xhr.ontimeout = () => {
@@ -51,12 +54,12 @@ class App extends Component {
   
   render() {
     const { data } = this.state
+    return <p>{data}</p>
 
-    const result = data.map((entry, index) => {
-      return <li key={index}>{entry}</li>
-    })
-
-    return <ul>{result}</ul>
+    //const result = data.map((entry, index) => {
+    //  return <li key={index}>{entry}</li>
+    //})
+    //return <ul>{result}</ul>
   }
 }
 
