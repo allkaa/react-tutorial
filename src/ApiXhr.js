@@ -25,8 +25,10 @@ class App extends Component {
         let xmlS = new XMLSerializer();
         let xmlString = xmlS.serializeToString(docXml);
         console.log(xmlString)
+        let nodeValue = docXml.getElementsByTagName("result")[0].childNodes[0].nodeValue; // get <result> tag.
         this.setState({
-          data: xmlString,
+          //data: xmlString,
+          data: nodeValue,
         })
       }
       else {
