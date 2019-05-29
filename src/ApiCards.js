@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import logo from './logo.svg';
 
 class App extends Component {
   state = {
@@ -13,7 +14,6 @@ class App extends Component {
     .then(response => {
       crucialNetErr = false
       console.log('===============> fetch response got response.ok as ' + response.ok)
-      //return response.json()
       if(response.ok) {
         //console.log(response.text())
         return response.json()
@@ -44,16 +44,10 @@ class App extends Component {
       const errorMessage = document.createElement('p')
       if (crucialNetErr) {
         console.log('=======================> fetch Crucial error: ' + err.message)
-        //const errorMessage = document.createElement('marquee') // obsolate.
-        //let errMsg = "Gah, it's not working!"
-        //errorMessage.textContent = "Gah, it's not working!"
         errorMessage.textContent = 'Network response NOT got: ' + err.message
       }
       else {
         console.log('=======================> fetch Non-crucial error: ' + err.message)
-        //const errorMessage = document.createElement('marquee') // obsolate.
-        //let errMsg = "Gah, it's not working!"
-        //errorMessage.textContent = "Gah, it's not working!"
         errorMessage.textContent = 'Network response: ' + err.message
       }
       //app.appendChild(errorMessage)
@@ -67,18 +61,25 @@ class App extends Component {
   render() {
     console.log('===============> render fetched JSON array from data object')
     const { data } = this.state
-    console.log(data)
+    //console.log(data)
+    // key must be used on every level of siblings childs.
     const result = data.map((movie, index) => {
-      console.log(index*2,index*2 + 1)
       return (
-        <div className = 'card'>
-          <h1 key={index*10 + 0}>{movie[0]}</h1>
-          <p key={index*10 + 1}>{movie[1]}</p>
+        <div className = 'card' key = {index}>
+          <h1 key = "0">{movie[0]}</h1>
+          <p key = "1">{movie[1]}</p>
         </div>
       )
     }) // end of data map.
-    return <div className = 'container'>{result}</div>
-  }
+
+    //console.log(result)
+    return (
+      <div>
+        <img src={logo} alt="React Logo" className = 'logo' ></img>
+        <div className = 'container'>{result}</div>
+      </div>
+    ) // end of final render return.
+  } // end of final render.
 } // end of class component.
 
 export default App

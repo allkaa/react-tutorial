@@ -85,25 +85,3 @@ request.onload = function() {
   }
   console.log('===============> request.onload event finished')
 }
-
-/*
-// NB! request.onload works only with asyn requsest open mode.
-request.onload = function() {
-  console.log('===============> request.onload event activated')
-  console.log('===============> Begin of this.responseText <=================')
-  //console.log(this.responseText)
-  console.log('===============> End of this.responseText <=================')
-  // Begin accessing JSON data here
-  var data = JSON.parse(this.response)
-
-  console.log('=======================> request.onload event this.status: ' + this.status)
-  if (this.status >= 200 && this.status < 400) {
-    data.forEach(movie => {
-      console.log(movie.title)
-    })
-  } else {
-    console.log('=======================> request.onload event error in this.status: ' + this.status)
-  }
-  console.log('===============> request.onload event finished')
-}
-*/
