@@ -7,7 +7,8 @@ import './styleCards.css'
 //import App from './App'
 //import App from './Api'
 //import App from './ApiXhr'
-import App from './ApiCards'
+//import App from './ApiCardsFetch'
+import App from './ApiCardsXhr'
 /*
 class App extends Component {
   render() {
