@@ -21,7 +21,7 @@ class App extends Component {
       /*
       response.status 404 response.statusText: "Not Found"
       */
-      throw new Error(`${response.status} - ${response.statusText}`) // will be catche by final .catch().
+      throw new Error(`${response.status} - ${response.statusText}`) // will be catched by final .catch().
       //throw new Error('Network response was not ok.') // will be catche by final .catch().
     })
     .then(dataJson => {
