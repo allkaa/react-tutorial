@@ -9,7 +9,7 @@ class App extends Component {
   // Code is invoked after the component is mounted/inserted into the DOM tree.
   componentDidMount() {
     //console.log(this)
-    //let thisApp = this // save original App this to use later on setState() - not needed.
+    let thisApp = this // save original App this to use later on setState().
     let txtErr 
     //let objThis = this
     console.log('===============> Xhr request begin')
@@ -21,24 +21,24 @@ class App extends Component {
     }
 
     console.log('===============> xhr.open begin')
-    xhr.open('GET', 'https://ghibliapi.herokuapp.co/films', true) // true is for asyn open mode, false for syn but depricated.
+    xhr.open('GET', 'https://ghibliapi.herokuapp.com/films', true) // true is for asyn open mode, false for syn but depricated.
     console.log('===============> xhr.open done')
     // If specified, responseType must be empty string or "document"
     xhr.responseType = 'text';
     // Force the response to be parsed as json
     xhr.overrideMimeType('text/json');
 
-    // onload use arrow function to have access to App this object.
-    xhr.onload = () => {
+    // onload must be function (not arrow function =>) to get this.response object correctly (with => get Window object).
+    xhr.onload = function () {
       console.log('===============> xhr.onload event activated')
-      console.log('=======================> xhr.onload event this.status: ' + xhr.status)
-      if (xhr.status >= 200 && xhr.status < 400) {
-        console.log('===============> Begin of xhr.responseText <=================')
-        //console.log(xhr.responseText)
-        console.log('===============> End of xhr.responseText <=================')
+      console.log('=======================> xhr.onload event this.status: ' + this.status)
+      if (this.status >= 200 && this.status < 400) {
+        console.log('===============> Begin of this.responseText <=================')
+        //console.log(this.responseText)
+        console.log('===============> End of this.responseText <=================')
         // Begin accessing JSON data here
-        let dataJson = JSON.parse(xhr.responseText)
-        console.log('===============> JSON parsed xhr.responseText into dataJson <=================')
+        let dataJson = JSON.parse(this.responseText)
+        console.log('===============> JSON parsed this.responseText into dataJson <=================')
         console.log('===============> Create JSON array from fetched JSON in dataJson object')
         //console.log(dataJson)
         let arrJson = []
@@ -50,33 +50,32 @@ class App extends Component {
           arrJson.push(arrMovie)
         })
         //console.log(arrJson)
-        console.log('===============> Issue this.setState with JSON array created')
-        this.setState({
+        console.log('===============> Issue setState on saved thisApp with JSON array created')
+        thisApp.setState({
           data: arrJson,
         })
       } // end of this.status.
       else {
-        txtErr = `Request failed -> xhr.onload event error occured status:  ` + xhr.status
+        txtErr = `Request failed -> xhr.onload event error occured status:  ` + this.status
         console.log('==============> ' + txtErr )
         let arrJson = [[`NB! onload event Error`,txtErr]]
-        this.setState({ data: arrJson,})
+        thisApp.setState({ data: arrJson,})
       }
       console.log('===============> xhr.onload event finished')
     } // end of xhr.onload.
     
     xhr.onerror = () => {
-      console.log(xhr)
       txtErr = `Request failed -> xhr.onerror event occured - no connection established.`
       console.log('==============> ' + txtErr )
       let arrJson = [[`NB! onerror event occured`,txtErr]]
-      this.setState({ data: arrJson,})
+      thisApp.setState({ data: arrJson,})
     }
     
     xhr.ontimeout = () => {
       txtErr = `Request failed -> xhr.ontimeout event occured - no connection established`
       console.log('==============> ' + txtErr )
       let arrJson = [[`NB! ontimeout event occured`,txtErr]]
-      this.setState({ data: arrJson,})
+      thisApp.setState({ data: arrJson,})
     }
 
     console.log('===============> xhr.send() begin')
