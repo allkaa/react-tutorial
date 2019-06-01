@@ -82,6 +82,7 @@ import Form from './Form'
   render() {
     //const { characters } = this.state
     // Render of re-render with Table and Form childs.
+    console.log('========> App render <==========')
     return (
       <div className="container">
         {/*<Table characterData={this.state.characters} />*/}
