@@ -3,6 +3,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 //import './styleCards.css'
+import './styleCollege.css'
+
 //import App from './AppInitial'
 //import App from './App'
 //import App from './Api'
