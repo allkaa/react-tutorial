@@ -68,25 +68,19 @@ class App extends Component {
           </ul>
           <p><a href="#999">See more</a></p>
         </aside>
-
-  <nav>
-
-    <ul>
-      <li><a href="#100">Home</a></li>
-      <li><a href="#101">Finding us</a></li>
-      <li><a href="#102">Courses</a></li>
-      <li><a href="#103">Staff</a></li>
-      <li><a href="#104">Media</a></li>
-      <li><a href="#105">Prospectus</a></li>
-    </ul>
-
-  </nav>
-
-  <footer>
-
-    <p>&copy; 2016 St Huxley's Community College</p>
-
-  </footer>
+        <nav>
+          <ul>
+            <li><a href="#100">Home</a></li>
+            <li><a href="#101">Finding us</a></li>
+            <li><a href="#102">Courses</a></li>
+            <li><a href="#103">Staff</a></li>
+            <li><a href="#104">Media</a></li>
+            <li><a href="#105">Prospectus</a></li>
+          </ul>
+        </nav>
+        <footer>
+          <p>&copy; 2016 St Huxley's Community College</p>
+        </footer>
       </div>
     )
   }
