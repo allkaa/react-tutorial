@@ -79,6 +79,13 @@ class App extends Component {
           </ul>
         </nav>
         <footer>
+          <address>
+            {`Written by `}<a href="mailto:webmaster@example.com">Jon Doe</a>.<br/>  
+            {`Visit us at:`}<br/>
+            {`Example.com`}<br/>
+            {`Box 564, Disneyland`}<br/>
+            {`USA`}
+            </address>
           <p>&copy; 2016 St Huxley's Community College</p>
         </footer>
       </div>

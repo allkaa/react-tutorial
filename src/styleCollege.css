@@ -151,3 +151,11 @@ ul {
 nav ul {
   list-style-type: none;
 }
+
+footer address {
+  font-size: 1.6rem;
+}
+
+footer address a {
+  font-size: 1.6rem;
+}
