@@ -4,12 +4,12 @@ import ReactDOM from 'react-dom'
 import './index.css'
 //import './styleCards.css'
 //import App from './AppInitial'
-import App from './App'
+//import App from './App'
 //import App from './Api'
 //import App from './ApiXhr'
 //import App from './ApiCardsFetch'
 //import App from './ApiCardsXhr'
-
+import App from './AppCollege'
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:
 class App extends Component {
