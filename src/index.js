@@ -1,6 +1,8 @@
 //import React, { Component } from 'react'
 import React from 'react'
 import ReactDOM from 'react-dom'
+
+// styles css files will be loaded as <style> inside <head>
 //import './index.css'
 //import './styleCards.css'
 import './styleCollege.css'
