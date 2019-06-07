@@ -35,8 +35,9 @@ class App extends Component {
     txt = 'Boxes default box-sizing Width: ' + width + 'px, Height: ' + height + 'px. ';
     width = p1.offsetWidth;
     height = p1.offsetHeight;
-    txt = txt + 'p1 Width: ' + width + 'px, Height: ' + height + 'px. ';
-    one.textContent = txt
+    txt = txt + '<p1> Width: ' + width + 'px, Height: ' + height + 'px. ';
+    let p1i = document.querySelector('#p1info');
+    p1i.textContent = txt
 
     width = two.offsetWidth;
     height = two.offsetHeight;
@@ -44,8 +45,9 @@ class App extends Component {
     txt = 'Boxes box-sizing: border-box Width: ' + width + 'px, Height: ' + height + 'px. ';
     width = p2.offsetWidth;
     height = p2.offsetHeight;
-    txt = txt + 'p2 Width: ' + width + 'px, Height: ' + height + 'px. ';
-    two.textContent = txt
+    txt = txt + '<p2> Width: ' + width + 'px, Height: ' + height + 'px. ';
+    let p2i = document.querySelector('#p2info');
+    p2i.textContent = txt
   }
 
   // A class component must include render(), and the return statement can only return ONE parent element:
@@ -57,11 +59,13 @@ class App extends Component {
       <div className="container">
         {/*<Table characterData={this.state.characters} />*/}
         <div class="one">
-          <p id='p1'>Boxes sample - default box-sizing:</p>
+          <p id='p1'>Boxes sample - default box-sizing:content-box</p>
         </div>
+        <p id='p1info'>piInfo</p>
         <div class="two">
           <p id='p2'>Boxes sample -  box-sizing: border-box;</p>
         </div>        
+        <p id='p2info'>piInfo</p>
       </div>
     )}
 }
