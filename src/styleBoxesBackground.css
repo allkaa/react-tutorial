@@ -43,4 +43,5 @@
   */
   background: yellow url(https://mdn.mozillademos.org/files/13026/fire-ball-icon.png) no-repeat 99% center;
   background-size: 1.5% 50%; /* horizontal vertical */
+  border: 2px solid red;
 }
