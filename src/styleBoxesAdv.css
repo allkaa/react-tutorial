@@ -29,27 +29,29 @@
     font-size: 2rem;
   }
   /*box-sizing: border-box; /* padding and border included in width/height - better than default content-box */
-  .one, .two {
-    /* background: whitesmoke; */
-    /*background-color: rgb(47, 165, 106); */
-    /*background: linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),url('external-link-52.png')  no-repeat 100% 0; */
-    background-image: linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),url('external-link-52.png');
-    background-repeat: no-repeat, no-repeat;
-    background-position: right top; /* Right+Top position the image */
-    background-size: auto;
-    background-clip: padding-box;
-    width: 300px;
+  .one {
+    background: whitesmoke;
+    width: 100%;
+    max-width: 100%; /* 1280px; */
+    min-width: 480px;
+    margin: 0 auto;
+    /* width: 300px; */
     /* Box heights don't observe percentage lengths; box height always adopts the height of the box content,
      unless a specific absolute height is set (e.g. pixel-s or (r)em-s.) */
     /* height: 150px; */
-    padding: 20px;
-    border: 10px solid black;
-    margin: 20px auto;
-    outline: 5px dotted green; /* NB! often used as <a> link active style feature*/
+    padding: 2rem 0; /* pads box top and bot internal area*/
+    border: 0.5rem solid black;
+    outline: 0.5rem dotted green; /* NB! often used as <a> link active style feature*/
   }
   .one {
-    box-sizing: content-box;
-  }
-  .two {
     box-sizing: border-box;
+  }
+
+  .one p {
+    padding: 0;
+    /* margin: 0; */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
   }
