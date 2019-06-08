@@ -6,7 +6,8 @@ import ReactDOM from 'react-dom'
 //import './index.css'
 //import './styleCards.css'
 //import './styleCollege.css'
-import './styleBoxes.css'
+//import './styleBoxes.css'
+import './styleBoxesAdv.css'
 
 //import App from './AppInitial'
 //import App from './App'
@@ -15,7 +16,8 @@ import './styleBoxes.css'
 //import App from './ApiCardsFetch'
 //import App from './ApiCardsXhr'
 //import App from './AppCollege'
-import App from './AppBoxes'
+//import App from './AppBoxes'
+import App from './AppBoxesAdv'
 
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:
