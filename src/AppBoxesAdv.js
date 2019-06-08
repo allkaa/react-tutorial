@@ -48,8 +48,9 @@ class App extends Component {
       <div className="container">
         {/*<Table characterData={this.state.characters} />*/}
         <h1>Box heights don't observe percentage lengths; box height always adopts the height of the box content, unless a specific absolute height is set (e.g. pixel-s or (r)em-s.)  </h1>
-        <div class="one">
+        <div className="one">
           <p id='p1'>Boxes sample - box-sizing:border-box</p>
+          <img id='img1' src="teddy-bear.jpg" alt="teddy-bear"></img>
         </div>
         <p id='p1info'>piInfo</p>
       </div>
