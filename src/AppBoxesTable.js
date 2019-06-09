@@ -113,8 +113,8 @@ class App extends Component {
       </tbody>
       <tfoot>
         <tr>
-          <th scope="row" colspan="2">Total albums</th>
-          <td colspan="2">77</td>
+          <th scope="row" colSpan="2">Total albums</th>
+          <td colSpan="2">77</td>
         </tr>
       </tfoot>
       </table>
