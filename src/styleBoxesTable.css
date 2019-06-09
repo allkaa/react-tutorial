@@ -56,7 +56,7 @@ table {
   background: white;
 }
 
-/*
+
 thead th:nth-child(1) {
   width: 30%;
 }
@@ -72,12 +72,13 @@ thead th:nth-child(3) {
 thead th:nth-child(4) {
   width: 35%;
 }
-*/
+
 
 th, td {
   padding: 20px;
 }
 
+/*
 thead {
   border-bottom: 3px solid purple;
 }
@@ -96,3 +97,4 @@ tfoot {
 tfoot th {
   text-align: center;
 }
+*/
