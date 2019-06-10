@@ -10,7 +10,8 @@ import ReactDOM from 'react-dom'
 //import './styleBoxesAdv.css'
 //import './styleBoxesBackground.css'
 //import './styleBoxesTable.css'
-import './styleBoxesAdv2.css'
+//import './styleBoxesAdv2.css'
+import './styleBoxesFilters.css'
 
 //import App from './AppInitial'
 //import App from './App'
@@ -23,7 +24,7 @@ import './styleBoxesAdv2.css'
 //import App from './AppBoxesAdv'
 //import App from './AppBoxesBackground'
 //import App from './AppBoxesTable'
-import App from './AppBoxesAdv2'
+import App from './AppBoxesFilters'
 
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:
