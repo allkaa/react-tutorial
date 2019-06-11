@@ -1,7 +1,7 @@
 // Traditional very first custom class component - App
 // (capitalize custom components to differentiate them from regular HTML elements).
 import React, { Component } from 'react'
-import {useState} from 'react';
+import {useState} from 'react'; // import Hooks.
 
 function Dog(props){
 
@@ -13,7 +13,7 @@ function Dog(props){
   //console.log(props.dogInfoArr[0].mode)
   let newName;
   //const [dog, setDog] = useState(props.dogInfoArr[0].name);
-  const [dog, setDog] = useState(props.dogInfoArr[0]);
+  const [dog, setDog] = useState(props.dogInfoArr[0]); // use imported Hooks useState() fuction.
   console.log(dog);
   //console.log(setDog.toString()); // // show function setDog source text or native code e.g. function () { [native code] }
   //console.log(setDog.toString); // show function toString native code e.g. f toString() { [native code] }
@@ -27,6 +27,7 @@ function Dog(props){
     newName = props.dogInfoArr[0];
   }
 
+  // use imported Hooks setDog function.
   return ( 
     <div> 
       <p>{dog.name} goes {dog.mode}!</p>
