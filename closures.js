@@ -2,14 +2,14 @@
 
 // CLOSURES.
 
-/*
+//*
 // This does not create closure (only empty temporary one to hold possible outer variables references).
 function TestFunc(x,y){
   return x + y;
 }
 var tf = TestFunc(3,4);
 console.log(tf);
-*/
+//*/
 
 // This construction create globally seen closure keeping outer reference to outer variable testvar=3.
 ///*
