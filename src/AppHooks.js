@@ -15,6 +15,8 @@ function Dog(props){
   //const [dog, setDog] = useState(props.dogInfoArr[0].name);
   const [dog, setDog] = useState(props.dogInfoArr[0]);
   console.log(dog);
+  //console.log(setDog.toString()); // // show function setDog source text or native code e.g. function () { [native code] }
+  //console.log(setDog.toString); // show function toString native code e.g. f toString() { [native code] }
   if (dog.name  === props.dogInfoArr[0].name) {
     newName = {name: 'Bonny', mode: 'good'};
   }
@@ -66,6 +68,7 @@ class App extends Component {
   render() {
     //const { characters } = this.state
     // Render of re-render with Table and Form childs.
+    //console.log(Dog.toString()); // show function Dog source text (or native code)
     console.log('========> App render <==========')
     return (
       <div className="container">
