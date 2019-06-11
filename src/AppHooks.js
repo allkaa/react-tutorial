@@ -7,26 +7,28 @@ function Dog(props){
 
   // declaring a new state variable. Has 2 constants. 
   // One to name and the other to make changes to the state.
-  console.log('========> Dog starts <==========')
+  console.log('========> Dog object dog <==========')
   //console.log(props)
   //console.log(props.dogInfoArr[0].name)
   //console.log(props.dogInfoArr[0].mode)
   let newName;
-  const [dog, setDog] = useState(props.dogInfoArr[0].name);
-  if (dog  === props.dogInfoArr[0].name) {
-    newName = 'Bonny';
+  //const [dog, setDog] = useState(props.dogInfoArr[0].name);
+  const [dog, setDog] = useState(props.dogInfoArr[0]);
+  console.log(dog);
+  if (dog.name  === props.dogInfoArr[0].name) {
+    newName = {name: 'Bonny', mode: 'good'};
   }
-  else if (dog === 'Bonny') {
-    newName = 'Claid';
+  else if (dog.name === 'Bonny') {
+    newName = {name: 'Claid', mode: 'bark'};
   }
-  else if (dog === 'Claid') {
-    newName = props.dogInfoArr[0].name;
+  else if (dog.name === 'Claid') {
+    newName = props.dogInfoArr[0];
   }
 
   return ( 
     <div> 
-      <p>{dog} goes woof!</p>
-      <button onClick={() => setDog(newName)}>Press me to change name</button>
+      <p>{dog.name} goes {dog.mode}!</p>
+      <button onClick={() => setDog(newName)}>Press me to change dog info</button>
     </div>
   )
 } // End of Dog.
@@ -37,7 +39,7 @@ class App extends Component {
   state = {infoArr: [
     {
       name: 'Max',
-      mode: 'Wicked',
+      mode: 'woof',
     },
   ]}
   */
@@ -53,7 +55,7 @@ class App extends Component {
     this.state = {infoArr: [
       {
         name: 'Max',
-        mode: 'Wicked',
+        mode: 'woof',
       },
     ]}
     console.log('App constructor this.state after')
