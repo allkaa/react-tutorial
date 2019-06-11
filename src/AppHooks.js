@@ -13,7 +13,7 @@ function Dog(props){
   //console.log(props.dogInfoArr[0].mode)
   let newName;
   //const [dog, setDog] = useState(props.dogInfoArr[0].name);
-  const [dog, setDog] = useState(props.dogInfoArr[0]); // use imported Hooks useState() fuction.
+  const [dog, setDog] = useState(props.dogInfoArr[0]); // use Hooks useState() function and set const dog and setDog.
   console.log(dog);
   //console.log(setDog.toString()); // // show function setDog source text or native code e.g. function () { [native code] }
   //console.log(setDog.toString); // show function toString native code e.g. f toString() { [native code] }
