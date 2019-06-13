@@ -57,10 +57,11 @@ class App extends Component {
     return (
       <div className="container">
         {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
-        <p onClick={this.handleOnClick} >This is a cool box</p>
+        <div id="box3D" onClick={this.handleOnClick} >This is a cool box</div>
         <br/>
-        <h5>{this.state.name}</h5>
-        <h5>{this.state.job}</h5>
+        <div id="dName">{this.state.name}</div>
+        <br/>
+        <div id="dJob">{this.state.job}</div>
       </div>
     )}
 }
