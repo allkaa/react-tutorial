@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 
 // styles css files will be loaded as <style> inside <head>
 //import './index.css'
-import './styleCards.css'
+//import './styleCards.css'
 //import './styleCollege.css'
 //import './styleBoxes.css'
 //import './styleBoxesAdv.css'
@@ -13,12 +13,13 @@ import './styleCards.css'
 //import './styleBoxesAdv2.css'
 //import './styleBoxesFilters.css'
 //import './styleFancyLetter.css'
+import './styleCoolLoockingBox3D.css'
 
 //import App from './AppInitial'
 //import App from './App'
 //import App from './Api'
 //import App from './ApiXhr'
-import App from './ApiCardsFetch'
+//import App from './ApiCardsFetch'
 //import App from './ApiCardsXhr'
 //import App from './AppCollege'
 //import App from './AppBoxes'
@@ -28,6 +29,7 @@ import App from './ApiCardsFetch'
 //import App from './AppBoxesFilters'
 //import App from './AppHooks'
 //import App from './AppFancyLetter'
+import App from './AppCoolLoockingBox3D'
 
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:
