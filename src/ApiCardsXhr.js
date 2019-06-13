@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from './logo.svg';
+//import logo from './logo.svg'; // logo.svg in srs dir
 
 class App extends Component {
   state = {
@@ -104,7 +104,8 @@ class App extends Component {
     //console.log(result)
     return (
       <div>
-        <img src={logo} alt="React Logo" className = 'logo' ></img>
+        {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
+        <img src="logo.png" alt="React Logo" className = 'logo' ></img> {/* logo.png in public dir */}
         <div className = 'container'>{result}</div>
       </div>
     ) // end of final render return.
