@@ -5,6 +5,17 @@ import React, { Component } from 'react'
 
 class App extends Component {
 
+  // Declare state as Public field and it will be seen in constructor immediately (always present).
+  // By declaring fields up-front with or without a default value,
+  // class definitions become more self-documenting, and the fields are always present.
+  // NB! Public and Private fields declaration is experemengal and works thru Babel compilation.
+  /*
+  state = {
+    name: 'Dee',
+    job: 'Aspring actress',
+  }
+  */
+
   // We'll need the constructor() to use `this`, and to receive the props of the parent.
   constructor(props) {
     super(props)
@@ -13,10 +24,12 @@ class App extends Component {
 
     console.log('App constructor this.state before settings test data')
     console.log(this.state)
+    // Declare state in constructor /*
     this.state = {
         name: 'Dee',
         job: 'Aspring actress',
       }
+    //*/
     console.log('App constructor this.state after settings test data')
     console.log(this.state)
   }
