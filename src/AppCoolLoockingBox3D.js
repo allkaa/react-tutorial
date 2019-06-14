@@ -8,7 +8,7 @@ class App extends Component {
   // Declare state as Public field and it will be seen in constructor immediately (always present).
   // By declaring fields up-front with or without a default value,
   // class definitions become more self-documenting, and the fields are always present.
-  // NB! Public and Private fields declaration is experemengal and works thru Babel compilation.
+  // NB! Public and Private fields declaration is experemengal and it works thru Babel compilation.
   /*
   state = {
     name: 'Dee',
