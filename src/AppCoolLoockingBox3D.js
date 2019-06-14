@@ -18,8 +18,10 @@ class App extends Component {
 
   // We'll need the constructor() to use `this`, and to receive the props of the parent.
   constructor(props) {
-    super(props)
-    console.log('App constructor initial props')
+    console.log('App constructor initial props before super(props)')
+    console.log(props)
+    super(props) // call the super class constructor and pass in the props parameter
+    console.log('App constructor initial props after super(props)')
     console.log(props)
 
     console.log('App constructor this.state before settings test data')
