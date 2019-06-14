@@ -47,4 +47,5 @@ class Rectangle {
 }
 
 let square = new Rectangle(10,10);
+console.log(square.height, square.width)
 console.log(square);
