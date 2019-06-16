@@ -34,5 +34,5 @@
   /* column-width: 30vw; */
   column-count: 3;
   column-gap: 20px;
-  column-rule: 2px double #ff00ff;
+  column-rule: 2px solid #ff00ff;
 }
