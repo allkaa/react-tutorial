@@ -51,7 +51,9 @@ article {
   padding: 10px;
   margin: 10px;
   background: aqua;
-  flex: 200px;
+  /* flex: 200px; */
+  /*flex: 1; */
+  flex: 1 200px;
 }
 
 /* Add your flexbox CSS below here */
@@ -63,4 +65,9 @@ section {
   /* flex-direction: column; */
   /* flex-wrap: wrap; */
   flex-flow: row wrap; /* shorthand */
+}
+
+article:nth-of-type(3) {
+  /* flex: 2; */
+  flex: 2 200px;
 }
