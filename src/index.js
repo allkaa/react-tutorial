@@ -17,7 +17,8 @@ import ReactDOM from 'react-dom'
 //import './styleLayoutGrid.css'
 //import './styleLayoutFloat.css'
 //import './styleLayoutPositioning.css'
-import './styleLayoutTable.css'
+//import './styleLayoutTable.css'
+import './styleLayoutMultiColumns.css'
 
 //import App from './AppInitial'
 //import App from './App'
@@ -37,7 +38,8 @@ import './styleLayoutTable.css'
 //import App from './AppLayoutGrid'
 //import App from './AppLayoutFloat'
 //import App from './AppLayoutPositioning'
-import App from './AppLayoutTable'
+//import App from './AppLayoutTable'
+import App from './AppLayoutMultiColumns'
 
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:
