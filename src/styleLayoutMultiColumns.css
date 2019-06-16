@@ -27,8 +27,12 @@
   }
 */
 
+/* NB! % can NOT be used for column-width*/
 .container {
-  -webkit-column-width: 30vw; /* % can NOT be used */
-  column-width: 30vw;
-  /* column-count: 3; */
+  /*-webkit-column-width: 30vw; */ /* Chrome, Safari, Opera */
+  /*-moz-column-width: 30vw; */ /* Firefox */
+  /* column-width: 30vw; */
+  column-count: 3;
+  column-gap: 20px;
+  column-rule: 2px double #ff00ff;
 }
