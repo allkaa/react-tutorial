@@ -51,46 +51,45 @@ console.log(square.height, square.width)
 console.log(square);
 
 /*
-
+Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Flexbox align 0 — starting code</title>
+    <title>CSS Grid starting point</title>
     <style>
-      html {
-        font-family: sans-serif;
-      }
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 Arial, Helvetica, sans-serif;
+        }
 
-      body {
-        width: 70%;
-        max-width: 960px;
-        margin: 20px auto;
-      }
+        .container > div {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207,232,220);
+            border: 2px solid rgb(79,185,227);
+        }
+    </style>
+</head>
 
-      button {
-        font-size: 18px;
-        line-height: 1.5;
-        width: 15%;
-      }
+<body>
+    <h1>Simple grid example</h1>
 
-      div {
-        height: 100px;
-        border: 1px solid black;
-      }
-  
-     </style>
-  </head>
+    <div class="container">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+    </div>
 
-  <body>
-        <div>
-          <button>Smile</button>
-          <button>Laugh</button>
-          <button>Wink</button>
-          <button>Shrug</button>
-          <button>Blush</button>
-        </div>
-  </body>
+</body>
+
 </html>
 
 */

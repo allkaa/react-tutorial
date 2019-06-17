@@ -22,7 +22,8 @@ import ReactDOM from 'react-dom'
 //import './styleLayoutNormal2.css'
 //import './styleLayoutFlex2.css'
 //import './styleLayoutFlex2Align.css'
-import './styleLayoutFlex2Complex-flex.css'
+//import './styleLayoutFlex2Complex-flex.css'
+import './styleLayoutGrid2.css'
 
 //import App from './AppInitial'
 //import App from './App'
@@ -47,7 +48,8 @@ import './styleLayoutFlex2Complex-flex.css'
 //import App from './AppLayoutNormal2'
 //import App from './AppLayoutFlex2'
 //import App from './AppLayoutFlex2Align'
-import App from './AppLayoutFlex2Complex-flex'
+//import App from './AppLayoutFlex2Complex-flex'
+import App from './AppLayoutGrid2'
 
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:
