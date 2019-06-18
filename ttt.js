@@ -50,7 +50,7 @@ let square = new Rectangle(10,10);
 console.log(square.height, square.width)
 console.log(square);
 
-/*
+/* BasedPlacement
 Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
 <!DOCTYPE html>
 <html>
