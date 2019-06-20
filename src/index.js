@@ -25,7 +25,8 @@ import ReactDOM from 'react-dom'
 //import './styleLayoutFlex2Complex-flex.css'
 //import './styleLayoutGrid2.css'
 //import './styleLayoutGrid2LineBasedPlacement.css'
-import './styleLayoutGrid2GridTemplateArea.css'
+//import './styleLayoutGrid2GridTemplateArea.css'
+import './styleLayoutGrid2CssGrid.css'
 
 //import App from './AppInitial'
 //import App from './App'
@@ -53,7 +54,8 @@ import './styleLayoutGrid2GridTemplateArea.css'
 //import App from './AppLayoutFlex2Complex-flex'
 //import App from './AppLayoutGrid2' // BasedPlacement
 //import App from './AppLayoutGrid2LineBasedPlacement'
-import App from './AppLayoutGrid2GridTemplateArea'
+//import App from './AppLayoutGrid2GridTemplateArea'
+import App from './AppLayoutGrid2CssGrid'
 
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:

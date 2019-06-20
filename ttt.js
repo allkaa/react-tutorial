@@ -69,7 +69,7 @@ Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny p
 
         .container {
             display: grid;
-            grid-template-columns: 1fr 3fr;
+            grid-template-columns: repeat(12, minmax(0,1fr));
             grid-gap: 20px;
         }
 
@@ -84,6 +84,7 @@ Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny p
         aside {
             border-right: 1px solid #999;
         }
+
     </style>
 </head>
 
@@ -105,5 +106,7 @@ Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny p
 </body>
 
 </html>
+
 GridTemplateArea
+CssGrid
 */
