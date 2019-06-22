@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 //import logo from './logo.svg'; // logo.svg in srs dir
 
+// App is HOC (High Order Component) by extending React Component.
 class App extends Component {
 
   // Declare state as Public field and it will be seen in constructor immediately (always present).
@@ -71,15 +72,15 @@ class App extends Component {
     // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
     // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
     // {/* <h1>Positioning</h1> */}
-    // Below used <img src="long.jpg"/> must be in public dir
+    // Below used <img src="long.jpg"/> element must be in public dir
     return (
     <div className="container">
 
     <h1>Basic document flow</h1>
     <p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
-    <p>By default we span 100% of the width of our parent element, and our are as tall as our child content. Our total width and height is our content + padding + border width/height.</p>
+    <p className="positioned">By default we span 100% of the width of our parent element, and our are as tall as our child content. Our total width and height is our content + padding + border width/height.</p>
     <p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of our margins, not both.</p>
-    <p>inline elements <span>like this one</span> and <span>this one</span> sit on the same line as one another, and adjacent text nodes, if there is space on the same line. Overflowing inline elements <span>wrap onto a new line if possible — like this one containing text</span>, or just go on to a new line if not, much like this image will do: <img src="long.jpg"/></p>
+    <p>inline elements <span>like this one</span> and <span>this one</span> sit on the same line as one another, and adjacent text nodes, if there is space on the same line. Overflowing inline elements <span>wrap onto a new line if possible — like this one containing text</span>, or just go on to a new line if not, much like this image will do: <img src="long.jpg" alt="Italian Trulli"/></p>
 
     </div>
     )

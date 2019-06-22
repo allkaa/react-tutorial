@@ -2,6 +2,31 @@
 
 console.log(process.version)
 
+// This is a first-order function (FOF) later used as component:
+// it takes one argument (a props object) and returns a template literal string.
+const details = ({ name, randomNum }) =>
+  `${name}, ${randomNum}`
+// return string e.g. "alex, 123"
+//console.log(details({name: 'alex', randomNum: 123}));
+
+// This is a higher-order function (HOF):
+// it takes in a function (the component, which it then calls, passing in additional props).
+// This is an extremely basic example of what every stateless React component is doing.
+const hoc = (component, props) => {
+  const randomNum = Math.floor(Math.random() * 100) // e.g. 18
+  // spread syntax to be expanded in places where zero or more arguments (for function calls)
+  // name: "Julia" in final object will be extracted from props object {name: "Julia"}
+  // randomNum = 18 will be transformed to randomNum: 18 in final object.
+  let ttt = {...props, randomNum}
+  console.log(ttt)
+  return component({ ...props, randomNum })
+}
+let ttt = hoc(details, {name: 'Julia'})
+console.log(ttt) // e.g. "Julia, 18"
+
+
+return 0;
+
 /*
 //var txt = '';
 let data = [['title0','descrip0'], ['title1','descrip1'], ['title2','descrip2']];
