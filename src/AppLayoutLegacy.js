@@ -3,6 +3,14 @@
 import React, { Component } from 'react'
 //import logo from './logo.svg'; // logo.svg in srs dir
 
+// npm install --save styled-components
+import styled from 'styled-components'
+
+// Define typography styles using styled components:
+const Title = styled.h1`
+  font-size: 54px;
+  font-weight: bold;`
+
 // App is HOC (High Order Component) by extending React Component.
 class App extends Component {
 
@@ -75,6 +83,8 @@ class App extends Component {
     // Below used <img src="long.jpg"/> element must be in public dir
     return (
     <div className="container">
+
+      <Title>Hello World!</Title>
 
 <div className="wrapper">
   <div className="row">
