@@ -93,9 +93,9 @@ class App extends Component {
   </div>
   <div className="row">
     <div className="col span1">13</div>
-    <div className="col span6">14</div>
+    <div className="col span5 offset-by-two">14</div>
     <div className="col span3">15</div>
-    <div className="col span2">16</div>    
+    <div className="col span1">16</div>    
   </div>
   <div className="row">
   <div className="col span8">3-13</div>

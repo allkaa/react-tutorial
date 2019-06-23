@@ -122,3 +122,8 @@ body {
 .col.span10 { width: calc((6.25%*10) + (2.08333333%*9)); }
 .col.span11 { width: calc((6.25%*11) + (2.08333333%*10)); }
 .col.span12 { width: calc((6.25%*12) + (2.08333333%*11)); }
+
+
+.offset-by-two {
+  margin-left: calc((6.25%*2) + (2.08333333%*3));
+}
