@@ -92,14 +92,14 @@ class App extends Component {
     <div className="col">12</div>
   </div>
   <div className="row">
-    <div className="col spanl">13</div>
-    <div className="col spanc">14</div>
-    <div className="col spanc">15</div>
-    <div className="col spanr">16</div>    
+    <div className="col span1">13</div>
+    <div className="col span5 offset-by-two">14</div>
+    <div className="col span3">15</div>
+    <div className="col span1">16</div>    
   </div>
   <div className="row">
-  <div className="col spanTC">3-13</div>
-  <div className="col spanTC">3-14</div>
+  <div className="col span8">3-13</div>
+  <div className="col span4">3-14</div>
   </div>
 </div>
 
