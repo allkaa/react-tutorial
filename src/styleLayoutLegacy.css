@@ -60,7 +60,7 @@ body {
 
 .wrapper {
   /* padding-right: 20px; */
-  padding-right: 2.08333333%; /* target_px / context_px = result_%  e.g. 20/960 */
+  padding-right: 2.08333333%; /* target_px / context_px = result_%  e.g. 20/960 = 0.0208333333 */
 }
 
 .row {
