@@ -4,17 +4,16 @@ import React, { Component } from 'react'
 //import logo from './logo.svg'; // logo.svg in srs dir
 
 // npm install --save styled-components
-//import styled from 'styled-components'
+import styled from 'styled-components'
 
 // Define typography styles using styled components called with props:
+// Works as style attribute for specific HTML element, not global CSS attribute.
+const Title = styled.h1`
   /* Adapt the colors based on primary prop */
-  /*
-  const Title = styled.h1`
-  background: ${props => props.primary ? "palevioletred" : "white"};
-  color: ${props => props.primary ? "white" : "palevioletred"};
+  background: ${props => props.primary === 'Y' ? "palevioletred" : "white"};
+  color: ${props => props.primary === 'Y' ? "white" : "palevioletred"};
   font-size: 54px;
   font-weight: bold;`
-  */
 
 // App is HOC (High Order Component) by extending React Component.
 class App extends Component {
@@ -91,8 +90,10 @@ class App extends Component {
   return (
     <div className="container">
 
-      <p>Initial h1</p>
-      <p>Last h1</p>
+      <h1>Initial h1</h1>
+      <Title primary='N'>Hello default World!</Title>
+      <Title primary='Y'>Hello pimary World!</Title>
+      <h1>Last h1</h1>
 
 <div className="wrapper">
   <div className="row">
