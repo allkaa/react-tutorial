@@ -58,6 +58,13 @@ body {
   margin: 0 auto;
 }
 
+p {
+  background: blue;
+  color: red;
+  font-size: 25px;
+  font-weight: normal;
+}
+
 .wrapper {
   padding-right: 2.08333333%;
 }

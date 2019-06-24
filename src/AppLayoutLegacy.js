@@ -4,12 +4,17 @@ import React, { Component } from 'react'
 //import logo from './logo.svg'; // logo.svg in srs dir
 
 // npm install --save styled-components
-import styled from 'styled-components'
+//import styled from 'styled-components'
 
-// Define typography styles using styled components:
-const Title = styled.h1`
+// Define typography styles using styled components called with props:
+  /* Adapt the colors based on primary prop */
+  /*
+  const Title = styled.h1`
+  background: ${props => props.primary ? "palevioletred" : "white"};
+  color: ${props => props.primary ? "white" : "palevioletred"};
   font-size: 54px;
   font-weight: bold;`
+  */
 
 // App is HOC (High Order Component) by extending React Component.
 class App extends Component {
@@ -81,10 +86,13 @@ class App extends Component {
     // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
     // {/* <h1>Positioning</h1> */}
     // Below used <img src="long.jpg"/> element must be in public dir
-    return (
+    //<Title>Hello default World!</Title>
+    //<Title primary>Hello pimary World!</Title>
+  return (
     <div className="container">
 
-      <Title>Hello World!</Title>
+      <p>Initial h1</p>
+      <p>Last h1</p>
 
 <div className="wrapper">
   <div className="row">
