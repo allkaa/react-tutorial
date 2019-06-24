@@ -73,12 +73,79 @@ class App extends Component {
     // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
     // {/* <h1>Positioning</h1> */}
     // Below used <img src="long.jpg"/> element must be in public dir
-    //<Title>Hello default World!</Title>
-    //<Title primary>Hello pimary World!</Title>
-  return (
+
+    // Declare inline styles used below:
+    // style={bYp5px}
+    const bYp5px = {
+      background: 'yellow', padding: '5px',
+    };
+    // style={taCenter}
+    const taCenter = {
+      textAlign: 'center',
+    };
+    // style={ht200px}
+    const ht200px = {
+      height: '200px',
+    };
+    // style={ht60px}
+    const ht60px = {
+      height: '60px',
+    };
+
+    return (
     <div className="container">
 
-      <h1>Initial h1</h1>
+{/*<!-- Note -->}*/}
+<div style={bYp5px}>
+  <h4 style={taCenter}>Resize the browser window to see the responsive effect.</h4>
+</div>
+
+{/*</div><!-- Header -->*/}
+<div className="header">
+  <h1>My Website</h1>
+  <p>With a <b>flexible</b> layout.</p>
+</div>
+
+{/*<!-- Navigation Bar -->*/}
+<div className="navbar">
+  <a href="#1">Link1</a>
+  <a href="#2">Link2</a>
+  <a href="#3">Link3</a>
+  <a href="#4">Link4</a>
+</div>
+
+{/*<!-- The flexible grid (content) -->*/}
+<div className="row">
+  <div className="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <div className="fakeimg" style={ht200px}>Image</div>
+    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    <h3>More Text</h3>
+    <p>Lorem ipsum dolor sit ame.</p>
+    <div className="fakeimg" style={ht60px}>Image</div><br/>
+    <div className="fakeimg" style={ht60px}>Image</div><br/>
+    <div className="fakeimg" style={ht60px}>Image</div>
+  </div>
+  <div className="main">
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Dec 7, 2017</h5>
+    <div className="fakeimg" style={ht200px}>Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <br/>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Sep 2, 2017</h5>
+    <div className="fakeimg" style={ht200px}>Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  </div>
+</div>
+
+{/*<!-- Footer -->*/}
+<div className="footer">
+  <h2>Footer</h2>
+</div>
       
     </div>
     )
