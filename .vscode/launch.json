@@ -46,6 +46,12 @@
         "request": "launch",
         "name": "Launch Chrome ./build/index.html",
         "file": "${workspaceFolder}/build/index.html"
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch Chrome ./StyleSheetsDemo.html",
+        "file": "${workspaceFolder}/StyleSheetsDemo.html"
       }
   ]
 }
