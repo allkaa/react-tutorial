@@ -12,8 +12,8 @@ function reStyle(n) {
   document.styleSheets[n].disabled = false;
 }
 
-function closeBlackdiv() {
-  var blackdiv, stylediv;
+function closeBlackdiv() { // called from showStyle(n) created background dimmed div onclick.
+  let blackdiv, stylediv;
   blackdiv = document.getElementById("blackdiv")
   blackdiv.parentNode.removeChild(blackdiv);
   stylediv = document.getElementById("stylediv")
@@ -21,19 +21,21 @@ function closeBlackdiv() {
 }
 
 function showStyle(n) {
-var div, text, blackdiv;
-blackdiv = document.createElement("DIV");
+let div, text, blackdiv;
+// create dimmed background.
+blackdiv = document.createElement("div"); // div may be also used.
 blackdiv.setAttribute("style","background-color:#000000;position:absolute;width:100%;height:100%;top:0;opacity:0.5;margin-left:-20px;");
 blackdiv.setAttribute("id","blackdiv");
 blackdiv.setAttribute("onclick","closeBlackdiv()");
 document.body.appendChild(blackdiv);
+// create stylesheet source text window.
 div = document.createElement("DIV");
 div.setAttribute("id","stylediv");
 div.setAttribute("style","background-color:#ffffff;padding-left:5px;position:absolute;width:auto;height:auto;top:100px;bottom:50px;left:200px;right:200px;overflow:auto;font-family: monospace; white-space: pre;line-height:16px;");
-text = document.createTextNode(document.getElementsByTagName("STYLE")[n].innerHTML);
+text = document.createTextNode(document.getElementsByTagName("STYLE")[n].innerHTML); // "style" may be also used.
 div.appendChild(text);
 document.body.appendChild(div);
-//alert(document.getElementsByTagName("STYLE")[n].innerHTML);
+alert('Click on dimmed background to close style source text window created next.');
 }
 
 reStyle(0);

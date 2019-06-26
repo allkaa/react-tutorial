@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style title="Stylesheet 1">/* Stylesheet 1:  title global attribute may be used */
+<style>/* Stylesheet 1:  title global attribute may be used */
 body {
   font: 100% Lucida Sans, Verdana;
   margin: 20px;
@@ -113,7 +113,7 @@ a:hover {
 }
 </style>
 
-<style title="Stylesheet 2">/* Stylesheet 2: */
+<style>/* Stylesheet 2: */
 body {
   font-family: Arial;
   background-color: #d14836;
@@ -208,7 +208,7 @@ a:hover {
 }
 </style>
 
-<style title="Stylesheet 3">/* Stylesheet 3: */
+<style>/* Stylesheet 3: */
 body {
   font: 100% Verdana;
   margin: 20px;
@@ -275,7 +275,7 @@ a:hover {
   color: #84c754;
 }
 </style>
-<style title="Stylesheet 4">/* Stylesheet 4: */
+<style>/* Stylesheet 4: */
 body {
   font: 100% Courier New;
   margin: 20px;
@@ -370,14 +370,18 @@ a:hover {
   <p>Use the menu to select different Stylesheets</p>
 </div>
 <div class="wrapper">
- <div id="menubar">
-   <ul id="menulist">
-     <li class="menuitem" onclick="reStyle(0)">Stylesheet 1
-     <li class="menuitem" onclick="reStyle(1)">Stylesheet 2
-     <li class="menuitem" onclick="reStyle(2)">Stylesheet 3
-     <li class="menuitem" onclick="reStyle(3)">Stylesheet 4
-     <li class="menuitem" onclick="noStyles()">No Stylesheet
-   </ul>
+  <div id="menubar">
+    <ul id="menulist">
+      <li class="menuitem" onclick="reStyle(0)">Stylesheet 1</li>
+      <li class="menuitem" onclick="reStyle(1)">Stylesheet 2</li>
+      <li class="menuitem" onclick="reStyle(2)">Stylesheet 3</li>
+      <li class="menuitem" onclick="reStyle(3)">Stylesheet 4</li>
+      <li class="menuitem" onclick="noStyles()">No Stylesheet</li>
+      <li class="menuitem" onclick="showStyle(0)">Show Style 1</li>
+      <li class="menuitem" onclick="showStyle(1)">Show Style 2</li>
+      <li class="menuitem" onclick="showStyle(2)">Show Style 3</li>
+      <li class="menuitem" onclick="showStyle(3)">Show Style 4</li>
+    </ul>
   </div>
   <div id="main">
     <h1>Same Page Different Stylesheets</h1>
@@ -387,7 +391,7 @@ a:hover {
     <a href="#" onclick="reStyle(2);return false">Stylesheet3</a>,
     <a href="#" onclick="reStyle(3);return false">Stylesheet4</a>.
     </p>
-     <h2>No Styles</h2>
+    <h2>No Styles</h2>
     <p>This page uses DIV elements to group different sections of the HTML page. Click here to see how the page looks like with no stylesheet:<br><a href="#" onclick="noStyles();return false">No Stylesheet</a>.</p>
  </div>
   <div id="sidebar">
