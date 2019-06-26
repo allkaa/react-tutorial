@@ -12,6 +12,7 @@ function reStyle(n) {
   document.styleSheets[n].disabled = false;
 }
 
+// NB! On separate linked css files does not work.
 function closeBlackdiv() { // called from showStyle(n) created background dimmed div onclick.
   let blackdiv, stylediv;
   blackdiv = document.getElementById("blackdiv")
@@ -20,6 +21,7 @@ function closeBlackdiv() { // called from showStyle(n) created background dimmed
   stylediv.parentNode.removeChild(stylediv);
 }
 
+// NB! On separate linked css files does not work.
 function showStyle(n) {
 let div, text, blackdiv;
 // create dimmed background.
@@ -32,6 +34,7 @@ document.body.appendChild(blackdiv);
 div = document.createElement("DIV");
 div.setAttribute("id","stylediv");
 div.setAttribute("style","background-color:#ffffff;padding-left:5px;position:absolute;width:auto;height:auto;top:100px;bottom:50px;left:200px;right:200px;overflow:auto;font-family: monospace; white-space: pre;line-height:16px;");
+// NB! On separate linked css files does not work.
 text = document.createTextNode(document.getElementsByTagName("STYLE")[n].innerHTML); // "style" may be also used.
 div.appendChild(text);
 document.body.appendChild(div);
