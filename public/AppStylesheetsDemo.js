@@ -4,57 +4,47 @@ import React, { Component } from 'react'
 //import logo from './logo.svg'; // logo.svg in srs dir
 
 function noStyles() {
-  //console.log(`noStyles started`)
   document.styleSheets[0].disabled = true;
   document.styleSheets[1].disabled = true;
   document.styleSheets[2].disabled = true;
   document.styleSheets[3].disabled = true;
-  console.log(`noStyles finished`)
 }
 
 function reStyle(n) {
-  //console.log(`reStyle ${n} started`)
   noStyles()
   document.styleSheets[n].disabled = false;
-  console.log(`reStyle ${n} finished`)
 }
 
-///*
+/*
 // NB! On separate linked css files does not work.
 function closeBlackdiv() { // called from showStyle(n) created background dimmed div onclick.
-  console.log(`closeBlackdiv started`)
   let blackdiv, stylediv;
   blackdiv = document.getElementById("blackdiv")
   blackdiv.parentNode.removeChild(blackdiv);
   stylediv = document.getElementById("stylediv")
   stylediv.parentNode.removeChild(stylediv);
-  console.log(`closeBlackdiv finished`)
 }
 
 // NB! On separate linked css files does not work.
 function showStyle(n) {
-  console.log(`showStyles ${n} started`)
-  let div, text, blackdiv;
-  // create dimmed background.
-  blackdiv = document.createElement("div"); // div may be also used.
-  blackdiv.setAttribute("style","background-color:#000000;position:absolute;width:100%;height:100%;top:0;opacity:0.5;margin-left:-20px;");
-  blackdiv.setAttribute("id","blackdiv");
-  //blackdiv.setAttribute("onclick","closeBlackdiv()"); // do NOT work in React.
-  //blackdiv.onclick = closeBlackdiv; // OK works - do NOT use closeBlackdiv() !!!
-  blackdiv.addEventListener("click", closeBlackdiv, false);  // OK works - do NOT use closeBlackdiv() , false is default btw.
-  document.body.appendChild(blackdiv);
-  // create stylesheet source text window.
-  div = document.createElement("DIV");
-  div.setAttribute("id","stylediv");
-  div.setAttribute("style","background-color:#ffffff;padding-left:5px;position:absolute;width:auto;height:auto;top:100px;bottom:50px;left:200px;right:200px;overflow:auto;font-family: monospace; white-space: pre;line-height:16px;");
-  // NB! On separate linked css files does not work.
-  text = document.createTextNode(document.getElementsByTagName("STYLE")[n].innerHTML); // "style" may be also used.
-  div.appendChild(text);
-  document.body.appendChild(div);
-  alert('Click on dimmed background to close style source text window created next.');
-  console.log(`showStyles ${n} finished`)
+let div, text, blackdiv;
+// create dimmed background.
+blackdiv = document.createElement("div"); // div may be also used.
+blackdiv.setAttribute("style","background-color:#000000;position:absolute;width:100%;height:100%;top:0;opacity:0.5;margin-left:-20px;");
+blackdiv.setAttribute("id","blackdiv");
+blackdiv.setAttribute("onclick","closeBlackdiv()");
+document.body.appendChild(blackdiv);
+// create stylesheet source text window.
+div = document.createElement("DIV");
+div.setAttribute("id","stylediv");
+div.setAttribute("style","background-color:#ffffff;padding-left:5px;position:absolute;width:auto;height:auto;top:100px;bottom:50px;left:200px;right:200px;overflow:auto;font-family: monospace; white-space: pre;line-height:16px;");
+// NB! On separate linked css files does not work.
+text = document.createTextNode(document.getElementsByTagName("STYLE")[n].innerHTML); // "style" may be also used.
+div.appendChild(text);
+document.body.appendChild(div);
+alert('Click on dimmed background to close style source text window created next.');
 }
-//*/
+*/
 
 // App is HOC (High Order Component) by extending React Component.
 class App extends Component {
@@ -159,33 +149,32 @@ class App extends Component {
 <div className="wrapper">
   <div id="menubar">
     <ul id="menulist">
-      <li className="menuitem" onClick={() => {reStyle(0)}}>Stylesheet 1</li>
-      <li className="menuitem" onClick={() => {reStyle(1)}}>Stylesheet 2</li>
-      <li className="menuitem" onClick={() => {reStyle(2)}}>Stylesheet 3</li>
-      <li className="menuitem" onClick={() => {reStyle(3)}}>Stylesheet 4</li>
-      <li className="menuitem" onClick={() => {noStyles()}}>No Stylesheet</li>
-      {/* <!-- NB! On separate linked css files in <head> does NOT work. */}
-      {/* <!-- NB! On separate css files imported from React src works!!!! */}
-      <li className="menuitem" onClick={() => showStyle(0)}>Show Style 1</li>
-      <li className="menuitem" onClick={() => showStyle(1)}>Show Style 2</li>
-      <li className="menuitem" onClick={() => showStyle(2)}>Show Style 3</li>
-      <li className="menuitem" onClick={() => showStyle(3)}>Show Style 4</li>
-      {/* --> */}
+      <li className="menuitem" onClick={reStyle(0)}>Stylesheet 1</li>
+      <li className="menuitem" onClick={reStyle(1)}>Stylesheet 2</li>
+      <li className="menuitem" onClick={reStyle(2)}>Stylesheet 3</li>
+      <li className="menuitem" onClick={reStyle(3)}>Stylesheet 4</li>
+      <li className="menuitem" onClick={noStyles()}>No Stylesheet</li>
+      {/* <!-- NB! On separate linked css files does not work.
+      <li className="menuitem" onClick={showStyle(0)}>Show Style 1</li>
+      <li className="menuitem" onClick={showStyle(1)}>Show Style 2</li>
+      <li className="menuitem" onClick={showStyle(2)}>Show Style 3</li>
+      <li className="menuitem" onClick={showStyle(3)}>Show Style 4</li>
+      --> */}
     </ul>
   </div>
   <div id="main">
     <h1>Same Page Different Stylesheets</h1>
     <p>This is a demonstration of how different stylesheets can change the layout of your HTML page. You can change the layout of this page by selecting different stylesheets in the menu, or by selecting one of the following links:
       <br/>
-      <a href="#1" onClick={() => {reStyle(0)}}>Stylesheet1</a>,
-      <a href="#2" onClick={() => {reStyle(1)}}>Stylesheet2</a>,
-      <a href="#3" onClick={() => {reStyle(2)}}>Stylesheet3</a>,
-      <a href="#4" onClick={() => {reStyle(3)}}>Stylesheet4</a>.
+      <a href="#1" onClick={() => {reStyle(0);return false}}>Stylesheet1</a>,
+      <a href="#2" onClick={() => {reStyle(1);return false}}>Stylesheet2</a>,
+      <a href="#3" onClick={() => {reStyle(2);return false}}>Stylesheet3</a>,
+      <a href="#4" onClick={() => {reStyle(3);return false}}>Stylesheet4</a>.
     </p>
     <h2>No Styles</h2>
     <p>This page uses DIV elements to group different sections of the HTML page. Click here to see how the page looks like with no stylesheet:
       <br/>
-      <a href="#0" onClick={() => {noStyles()}}>No Stylesheet</a>.
+      <a href="#0" onClick={() => {noStyles();return false}}>No Stylesheet</a>.
     </p>
  </div>
   <div id="sidebar">

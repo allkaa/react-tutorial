@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-// styles css files will be loaded as <style> inside <head>
+// styles css files will be loaded from src dir as <style> inside <head>
 //import './index.css'
 //import './styleCards.css'
 //import './styleCollege.css'
@@ -32,10 +32,13 @@ import ReactDOM from 'react-dom'
 //import './styleLayoutMultiCol.css'
 //import './styleLayoutLegacy.css'
 //import './styleMyWeb-flexbox_website2.css'
-import './styleStylesheetsDemo1.css'
-import './styleStylesheetsDemo2.css'
-import './styleStylesheetsDemo3.css'
-import './styleStylesheetsDemo4.css'
+
+///* document.getElementsByTagName("STYLE")[n].innerHTML works!!!!!!
+import './StyleSheetsDemo1.css'
+import './StyleSheetsDemo2.css'
+import './StyleSheetsDemo3.css'
+import './StyleSheetsDemo4.css'
+//*/
 
 //import App from './AppInitial'
 //import App from './App'
