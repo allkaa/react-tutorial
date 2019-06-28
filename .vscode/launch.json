@@ -50,13 +50,13 @@
       {
         "type": "chrome",
         "request": "launch",
-        "name": "Launch Chrome ./StyleSheetsDemo.html",
+        "name": "StyleSheetsDemo.html",
         "file": "${workspaceFolder}/StyleSheetsDemo.html"
       },
       {
         "type": "chrome",
         "request": "launch",
-        "name": "Launch Chrome ./StyleSheetsDemoGood.html",
+        "name": "StyleSheetsDemoGood.html",
         "file": "${workspaceFolder}/StyleSheetsDemoGood.html"
       }
   ]
