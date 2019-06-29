@@ -55,7 +55,7 @@ body {
 
 #menulist {
   padding:0;
-  font: 16px verdana;
+  font: 10px verdana; /* 16px */
 }
 
 .menuitem {
@@ -65,8 +65,8 @@ body {
   border-radius: 40px;
   color: #ffffff;
   list-style-type: none;
-  margin: 10px;
-  padding: 5px;
+  margin: 5px; /* 10px */
+  padding: 2px; /* 5px */
   text-align: center;
   cursor: pointer;
 }
