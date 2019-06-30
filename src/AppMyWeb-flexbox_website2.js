@@ -77,7 +77,7 @@ class App extends Component {
     // Declare inline styles used below:
     // style={bYp5px}
     const bYp5px = {
-      background: 'yellow', padding: '5px',
+      background: 'yellow', padding: '2px',
     };
     // style={taCenter}
     const taCenter = {
@@ -101,52 +101,87 @@ class App extends Component {
 </div>
 
 {/*</div><!-- Header -->*/}
+{/*
 <div className="header">
   <h1>My Website</h1>
   <p>With a <b>flexible</b> layout.</p>
 </div>
+*/}
+<header>
+  <h1>My Website</h1>
+  <p>With a <b>flexible nav and row</b> and with <b>float images</b> layout.</p>
+</header>
+
 
 {/*<!-- Navigation Bar -->*/}
+{/*
 <div className="navbar">
   <a href="#1">Link1</a>
   <a href="#2">Link2</a>
   <a href="#3">Link3</a>
   <a href="#4">Link4</a>
 </div>
+*/}
+<nav>
+  <a href="#1">Link1</a>
+  <a href="#2">Link2</a>
+  <a href="#3">Link3</a>
+  <a href="#4">Link4</a>
+</nav>
 
 {/*<!-- The flexible grid (content) -->*/}
 <div className="row">
-  <div className="side">
-    <h2>About Me</h2>
-    <h5>Photo of me:</h5>
-    <div className="fakeimg" style={ht200px}>Image</div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div className="fakeimg" style={ht60px}>Image</div><br/>
-    <div className="fakeimg" style={ht60px}>Image</div><br/>
-    <div className="fakeimg" style={ht60px}>Image</div>
-  </div>
-  <div className="main">
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div className="fakeimg" style={ht200px}>Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br/>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div className="fakeimg" style={ht200px}>Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-  </div>
+
+<div className="side">
+  <h2>About me</h2>
+  <h3>Photo of me</h3>
+  <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
+  <p>Short paragraph</p>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+  <h3>Photo of me2</h3>
+  <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro </p>
+  <h3>Photo of me3</h3>
+  <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+</div>
+<div className="main">
+  <h2>TITLE HEADING1</h2>
+  <h3>Title description1</h3>
+  <img className='imgMain' src="logo.png" alt="logo-png"></img>
+  <p>short paragraph text1</p>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  </p>
+  <h2>TITLE HEADING2</h2>
+  <h3>Title description2</h3>
+  <img className='imgMain' src="logo.png" alt="logo-png"></img>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry
+  </p>
+  <h2>TITLE HEADING3</h2>
+  <h3>Title description3</h3>
+  <img className='imgMain' src="logo.png" alt="logo-png"></img>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  </p>
+</div>
+
 </div>
 
 {/*<!-- Footer -->*/}
+{/*
 <div className="footer">
   <h2>Footer</h2>
 </div>
-      
+*/}
+<footer>
+  <p>Posted by: Hege Refsnes</p>
+  <p>Contact information: <a href="mailto:someone@example.com">
+  someone@example.com</a>.</p>
+</footer>
+
     </div>
     )
   }

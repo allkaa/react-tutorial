@@ -63,8 +63,13 @@ header h1 {
 }
 
 /* Style the top nav bar */
+/* default overflow: visible does NOT work if elements inside are using float: left */
+ /* overflow: clip; - not allowed in Chrome */
 nav {
   overflow: hidden; /* Hide overflow */
+  /* overflow: scroll; */
+  /* overflow: auto; */
+  /* overflow: visible; */
   background-color: #333; /* Dark background color */
 }
 
@@ -120,6 +125,10 @@ nav a:hover {
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
   .navbar a {
+    float: none;
+    width: 100%;
+  }
+  nav a {
     float: none;
     width: 100%;
   }

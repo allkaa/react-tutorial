@@ -74,7 +74,7 @@ class App extends Component {
     // {/* <h1>Positioning</h1> */}
     // Below used <img src="long.jpg"/> element must be in public dir
 
-    /*
+    ///*
     // Declare inline styles used below:
     // style={bYp5px}
     const bYp5px = {
@@ -92,10 +92,15 @@ class App extends Component {
     const ht60px = {
       height: '60px',
     };
-    */
+    ///*
 
     return (
     <div className="container">
+
+{/*<!-- Note -->}*/}
+<div style={bYp5px}>
+  <h4 style={taCenter}>Resize the browser window to see the responsive effect.</h4>
+</div>
 
 {/* 
 <div className="header">
@@ -105,7 +110,7 @@ class App extends Component {
 */}
 <header>
   <h1>My Website</h1>
-  <p>A website created by me.</p>
+  <p>A float_nav, flex_row+float_img website created by me.</p>
 </header>
 
 {/*
