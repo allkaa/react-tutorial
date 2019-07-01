@@ -57,7 +57,7 @@ function showStyle(n) {
 //*/
 
 function w3_open() {
-  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("mySidebar").style.width = "25%";
   document.getElementById("mySidebar").style.display = "block";
 }
 
@@ -171,8 +171,8 @@ class App extends Component {
     return (
     <div className="container">
 
-{/*<!-- Sidebar -->*/}
-<div className="w3-sidebar w3-bar-block" style={dispNone} id="mySidebar">
+{/*<!-- Sidebar --> w3-sidebar w3-bar-block w3-border-right */}
+<div className="w3-sidebar w3-bar-block w3-border-right" style={dispNone} id="mySidebar">
   <button onClick={() => {w3_close()}} className="w3-bar-item w3-button w3-large">Close &times;</button>
   <a href="#1" className="w3-bar-item w3-button">Link 1</a>
   <a href="#2" className="w3-bar-item w3-button">Link 2</a>
@@ -190,10 +190,10 @@ class App extends Component {
 {/*<img src="img_car.jpg" alt="Car" style={wdth100}/>*/}
 <img src="img_car.jpg" alt="Car"/>
 
-<div claclassNamess="w3-container">
+<div classNames="w3-container">
 <p>In this example, the sidebar is hidden (style="display:none")</p>
 <p>It is shown when you click on the menu icon in the top left corner.</p>
-<p>When it is opened, it hides all the page content (style.width="100%").</p>
+<p>When it is opened, it hides 25% the page content (style.width="25%").</p>
 </div>
       
     </div>
