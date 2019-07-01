@@ -31,14 +31,14 @@ import ReactDOM from 'react-dom'
 //import './styleLayoutPositioning2.css'
 //import './styleLayoutMultiCol.css'
 //import './styleLayoutLegacy.css'
-//import './styleMyWeb-flexbox_website2.css'
+import './styleMyWeb-flexbox_website2.css'
 /* NB! document.getElementsByTagName("STYLE")[n].innerHTML works!!!!!!
-import './StyleSheetsDemo1.css'
+//import './StyleSheetsDemo1.css'
 import './StyleSheetsDemo2.css'
 import './StyleSheetsDemo3.css'
 import './StyleSheetsDemo4.css'
 */
-import './styleMyWeb-make-a-website.css' // float+flex
+//import './styleMyWeb-make-a-website.css' // float+flex
 
 //import App from './AppInitial'
 //import App from './App'
@@ -72,9 +72,9 @@ import './styleMyWeb-make-a-website.css' // float+flex
 //import App from './AppLayoutPositioning2'
 //import App from './AppLayoutMultiCol'
 //import App from './AppLayoutLegacy'
-//import App from './AppMyWeb-flexbox_website2'
+import App from './AppMyWeb-flexbox_website2'
 //import App from './AppStylesheetsDemo' // StylesheetsDemo
-import App from './AppMyWeb-make-a-website' // float+flex
+//import App from './AppMyWeb-make-a-website' // float+flex
 
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:
