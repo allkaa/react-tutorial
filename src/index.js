@@ -39,7 +39,8 @@ import './StyleSheetsDemo3.css'
 import './StyleSheetsDemo4.css'
 */
 //import './styleMyWeb-make-a-website.css' // float+flex
-import './styleMyWeb-flexbox_website2a.css'
+//import './styleMyWeb-flexbox_website2a.css'
+import './w3.css'
 
 //import App from './AppInitial'
 //import App from './App'
@@ -76,7 +77,9 @@ import './styleMyWeb-flexbox_website2a.css'
 //import App from './AppMyWeb-flexbox_website2'
 //import App from './AppStylesheetsDemo' // StylesheetsDemo
 //import App from './AppMyWeb-make-a-website' // float+flex
-import App from './AppMyWeb-flexbox_website2a'
+//import App from './AppMyWeb-flexbox_website2a'
+import App from './AppW3css'
+
 
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:
