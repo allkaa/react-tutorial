@@ -53,12 +53,13 @@ header h1 {
 nav {
   display: flex;
   background-color: #333; /* Dark background color */
+  /* overflow: hidden; */
 }
 
 /* Style the nav bar links */
-nav a {
+nav  a {
   color: white;
-  padding: 14px 20px;
+  padding: 0 20px;
   text-decoration: none;
   text-align: center;
 }

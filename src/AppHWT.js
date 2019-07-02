@@ -57,15 +57,6 @@ function showStyle(n) {
 }
 //*/
 
-function w3_open() {
-  document.getElementById("mySidebar").style.width = "25%";
-  document.getElementById("mySidebar").style.display = "block";
-}
-
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-
 // App is HOC (High Order Component) by extending React Component.
 class App extends Component {
 
@@ -127,7 +118,7 @@ class App extends Component {
     //console.log(this.initialState)
   }
 
-  // A class component must include render(), and the return statement can only return ONE parent element:
+    // A class component must include render(), and the return statement can only return ONE parent element:
   render() {
     //const { characters } = this.state
     // Render of re-render with Table and Form childs.
@@ -136,16 +127,42 @@ class App extends Component {
     // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
     // {/* <h1>Positioning</h1> */}
     // Below used <img src="long.jpg"/> element must be in public dir
+    /*<!-- Sidebar --> w3-sidebar w3-bar-block w3-border-right
+    <div className="w3-sidebar w3-bar-block w3-border-right" style={dispNone} id="mySidebar">
+    <button onClick={() => {w3_close()}} className="w3-bar-item w3-button w3-large">Close &times;</button>
+    <a href="#1" className="w3-bar-item w3-button">Link 1</a>
+    <a href="#2" className="w3-bar-item w3-button">Link 2</a>
+    <a href="#3" className="w3-bar-item w3-button">Link 3</a>
+    </div>
+    */
+    /*<!-- Page Content -->
+    <div className="w3-teal">
+    <button className="w3-button w3-teal w3-xlarge" onClick={() => {w3_open()}}>☰</button>
+    div className="w3-container">
+      <h1>My Page</h1>
+    </div>
+    </div>
+    */
+    /*<img src="img_car.jpg" alt="Car" style={wdth100}/>*/
+
+    /*<!-- Navigation Bar -->*/
+    /*
+    <div className="navbar">
+      <a href="#1">Link1</a>
+      <a href="#2">Link2</a>
+      <a href="#3">Link3</a>
+      <a href="#4">Link4</a>
+    </div>
+    <nav>
+      <a href="#1">Link1</a>
+      <a href="#2">Link2</a>
+      <a href="#3">Link3</a>
+      <a href="#4">Link4</a>
+    </nav>
+    */
 
     // Declare inline styles used below:
-    // style={bYp5px}
-    const bYp5px = {
-      background: 'yellow', padding: '2px',
-    };
-    // style={taCenter}
-    const taCenter = {
-      textAlign: 'center',
-    };
+    /*
     // style={ht200px}
     const ht200px = {
       height: '200px',
@@ -155,37 +172,42 @@ class App extends Component {
       height: '60px',
     };
 
-   // style={dispNone}
-   const dispNone = {
-    display: 'none',
-  };
-  
-  // style={wdth100}
-  const wdth100 = {
-    width: '100%',
-  };
-  //*/
+    // style={wdth100}
+    const wdth100 = {
+      width: '100%',
+    };
+    */
 
-  /*<!-- Sidebar --> w3-sidebar w3-bar-block w3-border-right
-  <div className="w3-sidebar w3-bar-block w3-border-right" style={dispNone} id="mySidebar">
-  <button onClick={() => {w3_close()}} className="w3-bar-item w3-button w3-large">Close &times;</button>
-  <a href="#1" className="w3-bar-item w3-button">Link 1</a>
-  <a href="#2" className="w3-bar-item w3-button">Link 2</a>
-  <a href="#3" className="w3-bar-item w3-button">Link 3</a>
-  </div>
-  */
-  /*<!-- Page Content -->
-  <div className="w3-teal">
-  <button className="w3-button w3-teal w3-xlarge" onClick={() => {w3_open()}}>☰</button>
-  div className="w3-container">
-    <h1>My Page</h1>
-  </div>
-  </div>
-  */
-  /*<img src="img_car.jpg" alt="Car" style={wdth100}/>*/
+    // style={bYp5px}
+    const bYp5px = {
+    background: 'yellow', padding: '2px',
+  };
+  // style={taCenter}
+  const taCenter = {
+      textAlign: 'center',
+  };
+  // style={floatLeft}
+  const floatLeft = {
+      float: 'left',
+  };
+  // style={dispNone}
+    const dispNone = {
+      display: 'none',
+    };
+
+  function w3_open() {
+    document.getElementById("mySmallMenu").style.display = "none";
+    document.getElementById("MenuBar").style.width = "100%";
+    document.getElementById("MenuBar").style.display = "block";
+  }
+  
+    function w3_close() {
+      document.getElementById("MenuBar").style.display = "none";
+      document.getElementById("mySmallMenu").style.display = "block";
+    }
 
     return (
-    <div className="container">
+  <div className="container">
 
 {/*<!-- Note -->}*/}
 <div style={bYp5px}>
@@ -201,24 +223,15 @@ class App extends Component {
 */}
 <header>
   <h1>My Website</h1>
+  <button onClick={() => {w3_open()}} id="mySmallMenu" style={floatLeft}>☰</button>
   <p>With a <b>flexible nav and row</b> and with <b>float images</b> layout.</p>
 </header>
 
-
-{/*<!-- Navigation Bar -->*/}
-{/*
-<div className="navbar">
-  <a href="#1">Link1</a>
-  <a href="#2">Link2</a>
-  <a href="#3">Link3</a>
-  <a href="#4">Link4</a>
-</div>
-*/}
-<nav>
-  <a href="#1">Link1</a>
-  <a href="#2">Link2</a>
-  <a href="#3">Link3</a>
-  <a href="#4">Link4</a>
+<nav id="MenuBar" style={dispNone} >
+    <button onClick={() => {w3_close()}}>Close &times;</button>
+    <a href="#1">Link 1</a>
+    <a href="#2">Link 2</a>
+    <a href="#3">Link 3</a>
 </nav>
 
 {/*<!-- The flexible grid (content) -->*/}
