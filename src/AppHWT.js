@@ -191,7 +191,7 @@ class App extends Component {
 
     return (
     <div className="container">
-    <h1>How To sample</h1>
+    <h1>How To Sample</h1>
 
 
       
