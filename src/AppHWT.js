@@ -3,71 +3,6 @@
 import React, { Component } from 'react'
 //import logo from './logo.svg'; // logo.svg in srs dir
 
-/*
-function noStyles() {
-  //console.log(`noStyles started`)
-  document.styleSheets[0].disabled = true;
-  document.styleSheets[1].disabled = true;
-  document.styleSheets[2].disabled = true;
-  document.styleSheets[3].disabled = true;
-  console.log(`noStyles finished`)
-}
-
-function reStyle(n) {
-  //console.log(`reStyle ${n} started`)
-  noStyles()
-  document.styleSheets[n].disabled = false;
-  console.log(`reStyle ${n} finished`)
-}
-*/
-
-/*
-// NB! On separate linked css files does not work.
-function closeBlackdiv() { // called from showStyle(n) created background dimmed div onclick.
-  console.log(`closeBlackdiv started`)
-  let blackdiv, stylediv;
-  blackdiv = document.getElementById("blackdiv")
-  blackdiv.parentNode.removeChild(blackdiv);
-  stylediv = document.getElementById("stylediv")
-  stylediv.parentNode.removeChild(stylediv);
-  console.log(`closeBlackdiv finished`)
-}
-
-// NB! On separate linked css files does not work.
-function showStyle(n) {
-  console.log(`showStyles ${n} started`)
-  let div, text, blackdiv;
-  // create dimmed background.
-  blackdiv = document.createElement("div"); // div may be also used.
-  blackdiv.setAttribute("style","background-color:#000000;position:absolute;width:100%;height:100%;top:0;opacity:0.5;margin-left:-20px;");
-  blackdiv.setAttribute("id","blackdiv");
-  //blackdiv.setAttribute("onclick","closeBlackdiv()"); // do NOT work in React.
-  //blackdiv.onclick = closeBlackdiv; // OK works - do NOT use closeBlackdiv() !!!
-  blackdiv.addEventListener("click", closeBlackdiv, false);  // OK works - do NOT use closeBlackdiv() , false is default btw.
-  document.body.appendChild(blackdiv);
-  // create stylesheet source text window.
-  div = document.createElement("DIV");
-  div.setAttribute("id","stylediv");
-  div.setAttribute("style","background-color:#ffffff;padding-left:5px;position:absolute;width:auto;height:auto;top:100px;bottom:50px;left:200px;right:200px;overflow:auto;font-family: monospace; white-space: pre;line-height:16px;");
-  // NB! On separate linked css files does not work.
-  text = document.createTextNode(document.getElementsByTagName("STYLE")[n].innerHTML); // "style" may be also used.
-  div.appendChild(text);
-  document.body.appendChild(div);
-  alert('Click on dimmed background to close style source text window created next.');
-  console.log(`showStyles ${n} finished`)
-}
-*/
-
-/*
-function w3_open() {
-  document.getElementById("mySidebar").style.width = "25%";
-  document.getElementById("mySidebar").style.display = "block";
-}
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-*/
-
 // App is HOC (High Order Component) by extending React Component.
 class App extends Component {
 
@@ -105,7 +40,6 @@ class App extends Component {
   // Code is invoked after the component is mounted/inserted into the DOM tree.
   componentDidMount() {
     console.log('========> App componentDidMount <==========')
-    //reStyle(0);
   }
 
   handleOnClick = event => {
@@ -140,11 +74,10 @@ class App extends Component {
     // {/* <h1>Positioning</h1> */}
     // Below used <img src="long.jpg"/> element must be in public dir
 
-    /*
     // Declare inline styles used below:
     // style={bYp5px}
     const bYp5px = {
-      background: 'yellow', padding: '5px',
+      background: 'yellow', padding: '2px',
     };
     // style={taCenter}
     const taCenter = {
@@ -158,43 +91,100 @@ class App extends Component {
     const ht60px = {
       height: '60px',
     };
-    
-
-    // style={dispNone}
-    const dispNone = {
-      display: 'none',
-    };
-    
-    // style={wdth100}
-    const wdth100 = {
-      width: '100%',
-    };
-    */
-
-/*<!-- Sidebar --> w3-sidebar w3-bar-block w3-border-right
-<div className="w3-sidebar w3-bar-block w3-border-right" style={dispNone} id="mySidebar">
-  <button onClick={() => {w3_close()}} className="w3-bar-item w3-button w3-large">Close &times;</button>
-  <a href="#1" className="w3-bar-item w3-button">Link 1</a>
-  <a href="#2" className="w3-bar-item w3-button">Link 2</a>
-  <a href="#3" className="w3-bar-item w3-button">Link 3</a>
-</div>
- */
-/*<!-- Page Content -->
-<div className="w3-teal">
-  <button className="w3-button w3-teal w3-xlarge" onClick={() => {w3_open()}}>☰</button>
-  <div className="w3-container">
-    <h1>My Page</h1>
-  </div>
-</div>
-*/
-/*<img src="img_car.jpg" alt="Car" style={wdth100}/>*/
 
     return (
     <div className="container">
-    <h1>How To Sample</h1>
+
+{/*<!-- Note -->}*/}
+<div style={bYp5px}>
+  <h4 style={taCenter}>Resize the browser window to see the responsive effect.</h4>
+</div>
+
+{/*</div><!-- Header -->*/}
+{/*
+<div className="header">
+  <h1>My Website</h1>
+  <p>With a <b>flexible</b> layout.</p>
+</div>
+*/}
+<header>
+  <h1>My Website</h1>
+  <p>With a <b>flexible nav and row</b> and with <b>float images</b> layout.</p>
+</header>
 
 
-      
+{/*<!-- Navigation Bar -->*/}
+{/*
+<div className="navbar">
+  <a href="#1">Link1</a>
+  <a href="#2">Link2</a>
+  <a href="#3">Link3</a>
+  <a href="#4">Link4</a>
+</div>
+*/}
+<nav>
+  <a href="#1">Link1</a>
+  <a href="#2">Link2</a>
+  <a href="#3">Link3</a>
+  <a href="#4">Link4</a>
+</nav>
+
+{/*<!-- The flexible grid (content) -->*/}
+<div className="row">
+
+<div className="side">
+  <h2>About me</h2>
+  <h3>Photo of me</h3>
+  <div className="divSide">
+    <img className="imgSide2" src="teddy-bear.jpg" alt="teddy-bear"></img>
+    <p>Short paragraph flex</p>
+    <p id="lastp" className="lp2">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+  </div>
+  <h3>Photo of me2</h3>
+  <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro </p>
+  <h3>Photo of me3</h3>
+  <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
+  <p>Short paragraph float</p>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+</div>
+<div className="main">
+  <h2>TITLE HEADING1</h2>
+  <h3>Title description1</h3>
+  <img className='imgMain' src="logo.png" alt="logo-png"></img>
+  <p>short paragraph text1</p>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  </p>
+  <h2>TITLE HEADING2</h2>
+  <h3>Title description2</h3>
+  <img className='imgMain' src="logo.png" alt="logo-png"></img>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry
+  </p>
+  <h2>TITLE HEADING3</h2>
+  <h3>Title description3</h3>
+  <img className='imgMain' src="logo.png" alt="logo-png"></img>
+  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
+  </p>
+</div>
+
+</div>
+
+{/*<!-- Footer -->*/}
+{/*
+<div className="footer">
+  <h2>Footer</h2>
+</div>
+*/}
+<footer>
+  <p>Posted by: Hege Refsnes</p>
+  <p>Contact information: <a href="mailto:someone@example.com">
+  someone@example.com</a>.</p>
+</footer>
+
     </div>
     )
   }
