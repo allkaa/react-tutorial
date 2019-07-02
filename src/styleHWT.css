@@ -1,0 +1,11 @@
+/* Ensure proper sizing */
+* {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* margin: 0; */
+}
