@@ -66,7 +66,7 @@ function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
 
-/ App is HOC (High Order Component) by extending React Component.
+// App is HOC (High Order Component) by extending React Component.
 class App extends Component {
 
   // Declare state as Public field and it will be seen in constructor immediately (always present).
