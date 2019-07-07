@@ -213,6 +213,15 @@ class App extends Component {
     return (
   <div className="container">
 
+<ul id="test">
+  <li><a href="#1">Link 1</a></li>
+  <li><a href="#2">Link 2</a></li>
+  <li><a href="#3">Link 3</a></li>
+</ul>
+
+<br/>
+<p>It is the end</p>
+
 {/*<!-- Note -->}*/}
 <div style={bWSp2px}>
   <h4 style={taCenter}>Resize the browser window to see the responsive effect.</h4>
@@ -245,16 +254,9 @@ class App extends Component {
       <button id="MenuBarCloseBtn" type="button" onClick={() => {w3_close()}}>Close &times;</button>
     </div>
     <ul>
-      <li><a href="#1">Link 1</a></li>
-      <li><a href="#2">Link 2</a></li>
-      <li className="dropdown">
-        <a href="#3" className="dropbtn">Link 3</a>
-        <div class="dropdown-content">
-          <a href="#1d">Link 1d</a>
-          <a href="#2d">Link 2d</a>
-          <a href="#3d">Link 3d</a>
-        </div>
-      </li>
+    <li><a href="#1">Link 1</a></li>
+    <li><a href="#2">Link 2</a></li>
+    <li><a href="#3">Link 3</a></li>
     </ul>
 </nav>
 

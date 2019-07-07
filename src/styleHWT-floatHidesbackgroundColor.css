@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+/* ul and li create vertical menu */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: 2px solid brown;
+  background-color: burlywood; /* Dark background color #1abc9c */
+}
+li a {
+  display: block;
+  /* width: 20%; */
+  text-align: center;
+}
+
+li {
+  /* border-bottom: 1px solid white; */
+  /* display: inline; */
+  float: left;
+  width: 20%;
+  border: 1px solid white;
+  background-color: #1abc9c;
+}
+
+li:last-child {
+  /* border-bottom: none; */
+  float:right;
+}
