@@ -9,13 +9,77 @@ body {
   margin: 0;
 }
 
-.menuBar {
+header {
+  position: sticky;
+  top: 0;
+  padding: 10px; /* some padding */
+  text-align: center; /* center the text */
+  background: #1abc9c; /* green background */
+  color: white; /* white text color */
+}
+
+/* Increase the font size of the <h1> element */
+header h1 {
+  font-size: 20px;
+}
+
+#mySmallMenu {
+  padding: 0;
+  margin: 0;
+}
+
+#mySmallMenu:hover {
+  cursor: pointer;
+}
+
+/* stylie in function */
+/*
+#menuBar {
+}
+*/
+
+.MenuDrop {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  border: solid 2px;
+  border: solid 2px black;
   overflow: visible;
+  background-color: #333;
+  justify-content: space-around;
 }
+
+/*
+#MenuBarCloseDiv {
+  color: #333;
+  background-color: white;
+  border: 1px solid black;
+}
+ 
+#MenuBarCloseDiv::before {
+  color: #333;
+  content: "";
+  width: 33%;
+  display: inline-block;
+  text-align: left;
+}
+
+#MenuBarCloseDiv::after {
+  color: #333;
+  content: "";
+  width: 33%;
+  display: inline-block;
+  text-align: right;
+}
+
+#MenuBarCloseBtn {
+  background-color: #1abc9c;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 34%;
+  margin: 0 0 2px 0;
+}
+*/
 
 .linkbtn {
   background-color: rgb(99, 76, 175);
@@ -81,4 +145,103 @@ body {
 
 .dropdown:hover .dropbtn {
   background-color: #3e438e;
+}
+
+/* =============================================== */
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.divSide {
+  display: flex;
+}
+
+.divSide .imgSide2 {
+  flex: 30%;
+  width: 30%;
+  height: 30%;
+  margin: 0;
+  padding: 0 5px 0 0; /* top right bottom left*/
+}
+
+.divSide .lp2 {
+  flex: 70%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+  /* display: block; */
+  /* max-height: 100%; n/u */
+  /* height: 30%; distortottion */
+  .imgSide {
+  float: left;
+  max-width: 30%;
+  /* width: 30%; */
+  margin: 0;
+  padding: 0 5px 0 0; /* top right bottom left*/
+}
+
+.imgMain {
+  display: block;
+  float: right;
+  max-width: 20%;
+  /* max-height: 100%; n/u */
+  margin: 0;
+  padding: 0 0 0 5px; /* top right bottom left*/
+}
+
+.lp::after {
+  content: "";
+  clear: both;
+  display: block;
+  /* overflow: auto; */ /* does not work */
+  /* display: flow-root; */ /* does not work */
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+footer {
+  padding: 20px; /* Some padding */
+  text-align: center; /* Center text*/
+  background: #ddd; /* Grey background */
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead 
+   of next to each other */
+@media screen and (max-width: 600px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+  .row, nav {   
+    flex-direction: column;
+  }
 }

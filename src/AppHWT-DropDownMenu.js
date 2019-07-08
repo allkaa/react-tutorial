@@ -180,36 +180,30 @@ class App extends Component {
 
     // style={bYp5px}
     const bWSp2px = {
-      background: 'whitesmoke', padding: '2px',
-    };
-    // style={taCenter}
-    const taCenter = {
+    background: 'whitesmoke', padding: '2px',
+  };
+  // style={taCenter}
+  const taCenter = {
       textAlign: 'center',
-    };
-    // style={floatLeft}
-    const floatLeft = {
+  };
+  // style={floatLeft}
+  const floatLeft = {
       float: 'left',
-    };
-    // style={floatLeft}
-    const floatRight = {
-      float: 'right',
-    };
-    // style={dispNone}
+  };
+  // style={floatLeft}
+  const floatRight = {
+    float: 'right',
+  };
+  // style={dispNone}
     const dispNone = {
       display: 'none',
-      width: '100%',
     };
 
-    function w3_open() {
-      //document.getElementById("mySmallMenu").style.display = "none";
-      //document.getElementById("MenuBar").style.width = "100%"; // 25%
-      if (document.getElementById("MenuBar").style.display === "block") {
-        document.getElementById("MenuBar").style.display = "none";
-      }
-      else { // document.getElementById("MenuBar").style.display === "none"
-        document.getElementById("MenuBar").style.display = "block";
-      }
-    }
+  function w3_open() {
+    document.getElementById("mySmallMenu").style.display = "none";
+    document.getElementById("MenuBar").style.width = "100%"; // 25%
+    document.getElementById("MenuBar").style.display = "block";
+  }
   
     function w3_close() {
       document.getElementById("MenuBar").style.display = "none";
@@ -219,110 +213,23 @@ class App extends Component {
     return (
   <div className="container">
 
-{/*</div><!-- Header -->*/}
-{/*
-<div className="header">
-  <h1>My Website</h1>
-  <p>With a <b>flexible</b> layout.</p>
-</div>
-*/}
-{/*
-<nav id="MenuBar" style={dispNone} >
-    <button onClick={() => {w3_close()}}>Close &times;</button>
-    <a href="#1">Link 1</a>
-    <a href="#2">Link 2</a>
-    <a href="#3">Link 3</a>
-</nav>
-*/}
 
-{/*<!-- Note -->}
-<div style={bWSp2px}>
-  <h4 style={taCenter}>Resize the browser window to see the responsive effect.</h4>
-</div>
-*/}
+<h2>Hoverable Dropdown</h2>
+<p>Hover mouse over Drop Button.</p>
 
-<header>
-  <h1>My Website</h1>
-  <p onClick={() => {w3_open()}} id="mySmallMenu" style={floatLeft}>☰</p>
-  <p className="lp">With a <b>flexible nav and row</b> and with <b>float images</b> layout.</p>
-
-  <nav id="MenuBar" style={dispNone} >
-  {/* 
-  <div id="MenuBarCloseDiv" >
-    <button id="MenuBarCloseBtn" type="button" onClick={() => {w3_close()}}>Close &times;</button>
-  </div>
-  */}
-  <div className="MenuDrop">
-    <a href="#1" className="linkbtn">Link 1</a>
-    <a href="#2" className="linkbtn">Link 2</a>
-    <div className="dropdown">
-      {/* <button type="button" className="dropbtn">Dropdown button</button> */}
-      <a href="#Drop" className="dropbtn">Drop Button</a>
-      <div className="dropdown-content">
-        <a href="#1">Link 1</a>
-        <a href="#2">Link 2</a>
-        <a href="#3">Link 3</a>
-      </div>
+<div className="menuBar">
+  <a href="#Btn1" className="linkbtn">Link 1</a>
+  <a href="#Btn2" className="linkbtn">Link 2</a>
+  <div className="dropdown">
+    {/* <button type="button" className="dropbtn">Dropdown button</button> */}
+    <a href="#Drop" className="dropbtn">Drop Button</a>
+    <div className="dropdown-content">
+      <a href="#1">Link 1</a>
+      <a href="#2">Link 2</a>
+      <a href="#3">Link 3</a>
     </div>
   </div>
-  </nav>
-</header>
-
-{/*<!-- The flexible grid (content) -->*/}
-<div className="row">
-
-<div className="side">
-  <h2>About me</h2>
-  <h3>Photo of me</h3>
-  <div className="divSide">
-    <img className="imgSide2" src="teddy-bear.jpg" alt="teddy-bear"></img>
-    {/*<p>Short paragraph flex</p>*/}
-    <p id="lastp" className="lp2">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
-  </div>
-  <h3>Photo of me2</h3>
-  <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
-  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro </p>
-  <h3>Photo of me3</h3>
-  <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
-  <p>Short paragraph float</p>
-  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
 </div>
-<div className="main">
-  <h2>TITLE HEADING1</h2>
-  <h3>Title description1</h3>
-  <img className='imgMain' src="logo.png" alt="logo-png"></img>
-  <p>short paragraph text1</p>
-  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  </p>
-  <h2>TITLE HEADING2</h2>
-  <h3>Title description2</h3>
-  <img className='imgMain' src="logo.png" alt="logo-png"></img>
-  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry
-  </p>
-  <h2>TITLE HEADING3</h2>
-  <h3>Title description3</h3>
-  <img className='imgMain' src="logo.png" alt="logo-png"></img>
-  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  </p>
-</div>
-
-</div>
-
-{/*<!-- Footer -->*/}
-{/*
-<div className="footer">
-  <h2>Footer</h2>
-</div>
-*/}
-<footer>
-  <p>Posted by: Hege Refsnes</p>
-  <p>Contact information: <a href="mailto:someone@example.com">
-  someone@example.com</a>.</p>
-</footer>
 
     </div>
     )
