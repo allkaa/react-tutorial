@@ -254,14 +254,23 @@ class App extends Component {
   */}
   <div className="MenuDrop">
     <a href="#1" className="linkbtn">Link 1</a>
-    <a href="#2" className="linkbtn">Link 2</a>
+    {/*<a href="#2" className="linkbtn">Link 2</a>*/}
     <div className="dropdown">
       {/* <button type="button" className="dropbtn">Dropdown button</button> */}
-      <a href="#Drop" className="dropbtn">Drop Button</a>
+      <a href="#Drop1" className="dropbtn">Drop Button 1</a>
       <div className="dropdown-content">
-        <a href="#1">Link 1</a>
-        <a href="#2">Link 2</a>
-        <a href="#3">Link 3</a>
+        <a href="#1">Link 1-1</a>
+        <a href="#2">Link 2-1</a>
+        <a href="#3">Link 3-1</a>
+      </div>
+    </div>
+    <div className="dropdown">
+      {/* <button type="button" className="dropbtn">Dropdown button</button> */}
+      <a href="#Drop2" className="dropbtn">Drop Button 2</a>
+      <div className="dropdown-content">
+        <a href="#1">Link 1-2</a>
+        <a href="#2">Link 2-2</a>
+        <a href="#3">Link 3-2</a>
       </div>
     </div>
   </div>
