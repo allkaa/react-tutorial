@@ -194,6 +194,14 @@ class App extends Component {
     const floatRight = {
       float: 'right',
     };
+    // style={left0}
+    const left0 = {
+      left: '0',
+    };
+    // style={right0}
+    const right0 = {
+      right: '0',
+    };
     // style={dispNone}
     const dispNone = {
       display: 'none',
@@ -243,7 +251,7 @@ class App extends Component {
 
 <header>
   <h1>My Website</h1>
-  <p onClick={() => {w3_open()}} id="mySmallMenu" style={floatLeft}>☰</p>
+  <p onClick={() => {w3_open()}} id="mySmallMenu" style={floatLeft}>☰</p> {/* Show/Hide className="MenuDrop" div  */}
   <p className="lp">With a <b>flexible nav and row</b> and with <b>float images</b> layout.</p>
 
   <nav id="MenuBar" style={dispNone} >
@@ -252,28 +260,28 @@ class App extends Component {
     <button id="MenuBarCloseBtn" type="button" onClick={() => {w3_close()}}>Close &times;</button>
   </div>
   */}
-  <div className="MenuDrop"> {/* display: flex; flex-wrap: wrap; */}
-    <a href="#1" className="linkbtn">Link 1</a> {/* width: 30%; */}
-    {/*<a href="#2" className="linkbtn">Link 2</a>*/}
-    <div className="dropdown"> {/* position: relative; width: 30%; */}
-      {/* <button type="button" className="dropbtn">Dropdown button</button> */}
-      <a href="#Drop1" className="dropbtn">Drop Button 1</a>
-      <div className="dropdown-content"> {/* position: absolute; width: 100%; */}
-        <a href="#1">Link 1-1</a>
-        <a href="#2">Link 2-1</a>
-        <a href="#3">Link 3-1</a>
+  <div className="MenuDrop"> {/* overflow: visible; .MenuDrop::after clear content */}
+
+    <div class="dropdown" style={floatLeft}>
+      <button class="dropbtn">Left</button>
+      <div class="dropdown-content" style={left0}>
+        <a href="#1-1">Link 1-1</a>
+        <a href="#2-1">Link 2-1</a>
+        <a href="#3-1">Link 3-1</a>
       </div>
     </div>
-    <div className="dropdown"> {/* position: relative; width: 30%; */}
-      {/* <button type="button" className="dropbtn">Dropdown button</button> */}
-      <a href="#Drop2" className="dropbtn">Drop Button 2</a>
-      <div className="dropdown-content"> {/* position: absolute; width: 100%; */}
-        <a href="#1">Link 1-2</a> {/* display: block; */}
-        <a href="#2">Link 2-2</a>
-        <a href="#3">Link 3-2</a>
-      </div>
+
+    <div class="dropdown" style={floatRight}>
+        <button class="dropbtn">Right</button>
+        <div class="dropdown-content" style={right0}>
+          <a href="#1-2">Link 1-2</a>
+          <a href="#2-2">Link 2-2</a>
+          <a href="#3-2">Link 3-2</a>
+        </div>
     </div>
-  </div>
+
+
+  </div> {/* end of className="MenuDrop" */}
   </nav>
 </header>
 
