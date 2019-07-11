@@ -262,18 +262,25 @@ class App extends Component {
   */}
   <div className="MenuDrop"> {/* overflow: visible; .MenuDrop::after clear content */}
 
-    <div class="dropdown" style={floatLeft}>
-      <button class="dropbtn">Left</button>
-      <div class="dropdown-content" style={left0}>
+    <div className="dropdown" style={floatLeft}>
+      <button className="dropbtn" type="button">Left</button>
+      <div className="dropdown-content" style={left0}>
         <a href="#1-1">Link 1-1</a>
         <a href="#2-1">Link 2-1</a>
         <a href="#3-1">Link 3-1</a>
       </div>
     </div>
 
-    <div class="dropdown" style={floatRight}>
-        <button class="dropbtn">Right</button>
-        <div class="dropdown-content" style={right0}>
+    <div className="dropdown"> {/*  style={floatLeft} */}
+      <img src="img_5terre.jpg" alt="Cinque Terre" width="100" height="50"></img>
+      <div className="dropdown-content" style={left0}>
+        <img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200"></img>
+      </div>
+    </div>
+
+    <div className="dropdown" style={floatRight}>
+        <button className="dropbtn"type="button">Right</button>
+        <div className="dropdown-content" style={right0}>
           <a href="#1-2">Link 1-2</a>
           <a href="#2-2">Link 2-2</a>
           <a href="#3-2">Link 3-2</a>
