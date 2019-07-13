@@ -126,42 +126,10 @@ class App extends Component {
     // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
     // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
     // {/* <h1>Positioning</h1> */}
-    // Below used <img src="long.jpg"/> element must be in public dir
-    /*<!-- Sidebar --> w3-sidebar w3-bar-block w3-border-right
-    <div className="w3-sidebar w3-bar-block w3-border-right" style={dispNone} id="mySidebar">
-    <button onClick={() => {w3_close()}} className="w3-bar-item w3-button w3-large">Close &times;</button>
-    <a href="#1" className="w3-bar-item w3-button">Link 1</a>
-    <a href="#2" className="w3-bar-item w3-button">Link 2</a>
-    <a href="#3" className="w3-bar-item w3-button">Link 3</a>
-    </div>
-    */
-    /*<!-- Page Content -->
-    <div className="w3-teal">
-    <button className="w3-button w3-teal w3-xlarge" onClick={() => {w3_open()}}>☰</button>
-    div className="w3-container">
-      <h1>My Page</h1>
-    </div>
-    </div>
-    */
+    // Below used <img src="img_car.jpg"/> element must be in public dir
     /*<img src="img_car.jpg" alt="Car" style={wdth100}/>*/
 
-    /*<!-- Navigation Bar -->*/
-    /*
-    <div className="navbar">
-      <a href="#1">Link1</a>
-      <a href="#2">Link2</a>
-      <a href="#3">Link3</a>
-      <a href="#4">Link4</a>
-    </div>
-    <nav>
-      <a href="#1">Link1</a>
-      <a href="#2">Link2</a>
-      <a href="#3">Link3</a>
-      <a href="#4">Link4</a>
-    </nav>
-    */
-
-    // Declare inline styles used below:
+    // Declare inline styles used below in elements:
     /*
     // style={ht200px}
     const ht200px = {
@@ -176,8 +144,7 @@ class App extends Component {
     const wdth100 = {
       width: '100%',
     };
-    */
-
+   
     // style={bYp5px}
     const bWSp2px = {
       background: 'whitesmoke', padding: '2px',
@@ -186,6 +153,8 @@ class App extends Component {
     const taCenter = {
       textAlign: 'center',
     };
+    */
+
     // style={floatLeft}
     const floatLeft = {
       float: 'left',
@@ -208,6 +177,11 @@ class App extends Component {
       width: '100%',
     };
 
+    // style={wdth100}
+    const wdth100 = {
+      width: '100%',
+    };
+   
     function w3_open() {
       //document.getElementById("mySmallMenu").style.display = "none";
       //document.getElementById("MenuBar").style.width = "100%"; // 25%
@@ -219,29 +193,16 @@ class App extends Component {
       }
     }
   
+    /*
     function w3_close() {
       document.getElementById("MenuBar").style.display = "none";
       document.getElementById("mySmallMenu").style.display = "block";
     }
+    */
 
     return (
   <div className="container">
 
-{/*</div><!-- Header -->*/}
-{/*
-<div className="header">
-  <h1>My Website</h1>
-  <p>With a <b>flexible</b> layout.</p>
-</div>
-*/}
-{/*
-<nav id="MenuBar" style={dispNone} >
-    <button onClick={() => {w3_close()}}>Close &times;</button>
-    <a href="#1">Link 1</a>
-    <a href="#2">Link 2</a>
-    <a href="#3">Link 3</a>
-</nav>
-*/}
 
 {/*<!-- Note -->}
 <div style={bWSp2px}>
@@ -252,9 +213,9 @@ class App extends Component {
 <header>
   <h1>My Website</h1>
   <p onClick={() => {w3_open()}} id="mySmallMenu" style={floatLeft}>☰</p> {/* Show/Hide className="MenuDrop" div  */}
-  <p className="lp">With a <b>flexible nav and row</b> and with <b>float images</b> layout.</p>
+  <p className="lp">With a <b>float nav and flex row</b> and with <b>float images</b> in row side and main layout.</p>
 
-  <nav id="MenuBar" style={dispNone} >
+  <nav id="MenuBar" style={dispNone} > {/* initially display: none */}
   {/* 
   <div id="MenuBarCloseDiv" >
     <button id="MenuBarCloseBtn" type="button" onClick={() => {w3_close()}}>Close &times;</button>
@@ -272,6 +233,7 @@ class App extends Component {
     </div>
 
     <div className="dropdown"> {/*  style={floatLeft} */}
+      {/*<img src="img_5terre.jpg" alt="Cinque Terre" style={wdth100}/>*/}
       <img src="img_5terre.jpg" alt="Cinque Terre" width="100" height="50"></img>
       <div className="dropdown-content" style={left0}>
         <img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200"></img>
@@ -337,16 +299,16 @@ class App extends Component {
 </div>
 
 {/*<!-- Footer -->*/}
-{/*
-<div className="footer">
-  <h2>Footer</h2>
-</div>
-*/}
 <footer>
   <p>Posted by: Hege Refsnes</p>
   <p>Contact information: <a href="mailto:someone@example.com">
   someone@example.com</a>.</p>
 </footer>
+{/* <img src="img_5terre.jpg" alt="Cinque Terre" width="100" height="50"></img> */}
+<img src="img_5terre.jpg" alt="Cinque Terr"></img>
+<p>real picture size</p>
+<br/>
+
 
     </div>
     )
