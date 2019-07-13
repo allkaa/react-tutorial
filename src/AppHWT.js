@@ -181,6 +181,16 @@ class App extends Component {
     const wdth100 = {
       width: '100%',
     };
+    // style={wdth30}
+    const wdth30 = {
+      display: 'inline-block',
+      width: '12.2%',
+    };
+    // style={wdth50}
+    const wdth50 = {
+      display: 'block',
+      width: '50%',
+    };
    
     function w3_open() {
       //document.getElementById("mySmallMenu").style.display = "none";
@@ -223,20 +233,25 @@ class App extends Component {
   */}
   <div className="MenuDrop"> {/* overflow: visible; .MenuDrop::after clear content */}
 
+  <div className="dropdownImg" style={floatLeft}> {/*  style={floatLeft} */}
+      {/*<img src="img_5terre.jpg" alt="Cinque Terre" width="90" height="60"></img>*/}
+      {/*<img src="img_5terre.jpg" alt="Cinque Terre" style={wdth30}/>*/}
+      {/*<img className="imgMenu" src="img_5terre.jpg" alt="Cinque Terre"/>*/}
+      <img src="img_5terre.jpg" alt="Cinque Terre" width="75" height="50"></img>
+      <div className="dropdown-contentImg">
+        {/*<img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200"></img>*/}
+        {/*<img className="imgDropDown" src="img_5terre.jpg" alt="Cinque Terre" style={wdth50}/>*/}
+        <img className="imgDropDown" src="img_5terre.jpg" alt="Cinque Terre"/>
+        {/*<img src="img_5terre.jpg" alt="Cinque Terre" width="390" height="260"></img>*/}
+        </div>
+    </div>
+
     <div className="dropdown" style={floatLeft}>
       <button className="dropbtn" type="button">Left</button>
       <div className="dropdown-content" style={left0}>
         <a href="#1-1">Link 1-1</a>
         <a href="#2-1">Link 2-1</a>
         <a href="#3-1">Link 3-1</a>
-      </div>
-    </div>
-
-    <div className="dropdown"> {/*  style={floatLeft} */}
-      {/*<img src="img_5terre.jpg" alt="Cinque Terre" style={wdth100}/>*/}
-      <img src="img_5terre.jpg" alt="Cinque Terre" width="100" height="50"></img>
-      <div className="dropdown-content" style={left0}>
-        <img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200"></img>
       </div>
     </div>
 
@@ -259,23 +274,23 @@ class App extends Component {
 
 <div className="side">
   <h2>About me</h2>
-  <h3>Photo of me</h3>
+  <h3>Photo of me flex</h3>
   <div className="divSide">
     <img className="imgSide2" src="teddy-bear.jpg" alt="teddy-bear"></img>
     {/*<p>Short paragraph flex</p>*/}
     <p id="lastp" className="lp2">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
   </div>
-  <h3>Photo of me2</h3>
+  <h3>Photo of me2 float></h3>
   <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
   <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro </p>
-  <h3>Photo of me3</h3>
+  <h3>Photo of me3 float</h3>
   <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
   <p>Short paragraph float</p>
   <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
 </div>
 <div className="main">
   <h2>TITLE HEADING1</h2>
-  <h3>Title description1</h3>
+  <h3>Title description1 float</h3>
   <img className='imgMain' src="logo.png" alt="logo-png"></img>
   <p>short paragraph text1</p>
   <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
@@ -283,11 +298,11 @@ class App extends Component {
   Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
   </p>
   <h2>TITLE HEADING2</h2>
-  <h3>Title description2</h3>
+  <h3>Title description2 float</h3>
   <img className='imgMain' src="logo.png" alt="logo-png"></img>
   <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry
   </p>
-  <h2>TITLE HEADING3</h2>
+  <h2>TITLE HEADING3 float</h2>
   <h3>Title description3</h3>
   <img className='imgMain' src="logo.png" alt="logo-png"></img>
   <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
@@ -304,10 +319,11 @@ class App extends Component {
   <p>Contact information: <a href="mailto:someone@example.com">
   someone@example.com</a>.</p>
 </footer>
-{/* <img src="img_5terre.jpg" alt="Cinque Terre" width="100" height="50"></img> */}
-<img src="img_5terre.jpg" alt="Cinque Terr"></img>
-<p>real picture size</p>
 <br/>
+{/* <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400"></img> whole picture*/}
+{/* <img src="img_5terre.jpg" alt="Cinque Terr"></img>
+<p>real picture size</p>
+<br/>*/}
 
 
     </div>

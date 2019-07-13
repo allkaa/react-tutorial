@@ -53,6 +53,13 @@ header h1 {
   /* display: flow-root; */ /* does not work */
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  /* width: 20%; */
+}
+
 .dropbtn {
   background-color: #4CAF50;
   color: white;
@@ -62,10 +69,8 @@ header h1 {
   cursor: pointer;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-  /*width: 10%;*/
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }
 
 .dropdown-content {
@@ -92,11 +97,33 @@ header h1 {
   display: block;
 }
 
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+.dropdownImg {
+  position: relative;
+  display: inline-block;
 }
 
+.dropdown-contentImg {
+  display: none;
+  position: absolute;
+  /* min-width: 160px; */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
+.dropdownImg:hover .dropdown-contentImg {
+  display: block;
+}
+
+.imgMenu {
+  display: inline-block;
+  width: 12.2%;
+}
+
+.imgDropDown {
+  display: block;
+  width: 600%;
+  height: auto;
+}
 
 /*
 #MenuBarCloseDiv {
