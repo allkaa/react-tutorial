@@ -210,6 +210,11 @@ class App extends Component {
     }
     */
 
+    // style={padding6px}
+    const padding6px = {
+      padding: '6px',
+    };
+
     return (
   <div className="container">
 
@@ -220,111 +225,52 @@ class App extends Component {
 </div>
 */}
 
-<header>
-  <h1>My Website</h1>
-  <p onClick={() => {w3_open()}} id="mySmallMenu" style={floatLeft}>☰</p> {/* Show/Hide className="MenuDrop" div  */}
-  <p className="lp">With a <b>float nav and flex row</b> and with <b>float images</b> in row side and main layout.</p>
+<h2>Responsive Image Gallery</h2>
+<h4>Resize the browser window to see the effect.</h4>
 
-  <nav id="MenuBar" style={dispNone} > {/* initially display: none */}
-  {/* 
-  <div id="MenuBarCloseDiv" >
-    <button id="MenuBarCloseBtn" type="button" onClick={() => {w3_close()}}>Close &times;</button>
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_5terre.jpg">
+      <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400"/>
+    </a>
+    <div class="desc">Add a description of the image here</div>
   </div>
-  */}
-  <div className="MenuDrop"> {/* overflow: visible; .MenuDrop::after clear content */}
-
-  <div className="dropdownImg" style={floatLeft}> {/*  style={floatLeft} */}
-      {/*<img src="img_5terre.jpg" alt="Cinque Terre" width="90" height="60"></img>*/}
-      {/*<img src="img_5terre.jpg" alt="Cinque Terre" style={wdth30}/>*/}
-      {/*<img className="imgMenu" src="img_5terre.jpg" alt="Cinque Terre"/>*/}
-      <img src="img_5terre.jpg" alt="Cinque Terre" width="75" height="50"></img>
-      <div className="dropdown-contentImg">
-        {/*<img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200"></img>*/}
-        {/*<img className="imgDropDown" src="img_5terre.jpg" alt="Cinque Terre" style={wdth50}/>*/}
-        <img className="imgDropDown" src="img_5terre.jpg" alt="Cinque Terre"/>
-        {/*<img src="img_5terre.jpg" alt="Cinque Terre" width="390" height="260"></img>*/}
-        </div>
-    </div>
-
-    <div className="dropdown" style={floatLeft}>
-      <button className="dropbtn" type="button">Left</button>
-      <div className="dropdown-content" style={left0}>
-        <a href="#1-1">Link 1-1</a>
-        <a href="#2-1">Link 2-1</a>
-        <a href="#3-1">Link 3-1</a>
-      </div>
-    </div>
-
-    <div className="dropdown" style={floatRight}>
-        <button className="dropbtn"type="button">Right</button>
-        <div className="dropdown-content" style={right0}>
-          <a href="#1-2">Link 1-2</a>
-          <a href="#2-2">Link 2-2</a>
-          <a href="#3-2">Link 3-2</a>
-        </div>
-    </div>
+</div>
 
 
-  </div> {/* end of className="MenuDrop" */}
-  </nav>
-</header>
-
-{/*<!-- The flexible grid (content) -->*/}
-<div className="row">
-
-<div className="side">
-  <h2>About me</h2>
-  <h3>Photo of me flex</h3>
-  <div className="divSide">
-    <img className="imgSide2" src="teddy-bear.jpg" alt="teddy-bear"></img>
-    {/*<p>Short paragraph flex</p>*/}
-    <p id="lastp" className="lp2">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_forest.jpg">
+      <img src="img_forest.jpg" alt="Forest" width="600" height="400"/>
+    </a>
+    <div class="desc">Add a description of the image here</div>
   </div>
-  <h3>Photo of me2 float></h3>
-  <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
-  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro </p>
-  <h3>Photo of me3 float</h3>
-  <img className="imgSide" src="teddy-bear.jpg" alt="teddy-bear"></img>
-  <p>Short paragraph float</p>
-  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
-</div>
-<div className="main">
-  <h2>TITLE HEADING1</h2>
-  <h3>Title description1 float</h3>
-  <img className='imgMain' src="logo.png" alt="logo-png"></img>
-  <p>short paragraph text1</p>
-  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  </p>
-  <h2>TITLE HEADING2</h2>
-  <h3>Title description2 float</h3>
-  <img className='imgMain' src="logo.png" alt="logo-png"></img>
-  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry
-  </p>
-  <h2>TITLE HEADING3 float</h2>
-  <h3>Title description3</h3>
-  <img className='imgMain' src="logo.png" alt="logo-png"></img>
-  <p id="lastp" className="lp">Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.
-  </p>
 </div>
 
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_lights.jpg">
+      <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400"/>
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
 </div>
 
-{/*<!-- Footer -->*/}
-<footer>
-  <p>Posted by: Hege Refsnes</p>
-  <p>Contact information: <a href="mailto:someone@example.com">
-  someone@example.com</a>.</p>
-</footer>
-<br/>
-{/* <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400"></img> whole picture*/}
-{/* <img src="img_5terre.jpg" alt="Cinque Terr"></img>
-<p>real picture size</p>
-<br/>*/}
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_mountains.jpg">
+      <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"/>
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
 
+<div class="clearfix"></div>
+
+<div style={padding6px}>
+  <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than 700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images side by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
+  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+</div>
 
     </div>
     )
