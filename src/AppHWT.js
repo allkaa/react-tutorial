@@ -215,6 +215,18 @@ class App extends Component {
       padding: '6px',
     };
 
+    function wxh() {
+      let w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0];
+      //x = w.innerWidth || e.clientWidth || g.clientWidth;
+      //y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+      //alert(x + ' × ' + y);
+      //alert('window ' + w.innerWidth + ', document ' + e.clientWidth + ', body ' + g.clientWidth);
+      document.getElementById('wdt').innerText = 'window ' + w.innerWidth + 'px, document ' + e.clientWidth + 'px, body ' + g.clientWidth + "px."
+    }
+    
     return (
   <div className="container">
 
@@ -225,47 +237,47 @@ class App extends Component {
 </div>
 */}
 
-<h2>Responsive Image Gallery</h2>
-<h4>Resize the browser window to see the effect.</h4>
+<button type='button' onClick={()=>wxh()}>Resize the browser window to see the effect.</button>
+<h2 id="wdt">Responsive Image Gallery</h2>
 
-<div class="responsive">
-  <div class="gallery">
+<div className="responsive">
+  <div className="gallery">
     <a target="_blank" href="img_5terre.jpg">
       {/* NB! <img> styles attributes width and height will be overrun by class CSS styles width and height */}
       <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400"/>
     </a>
-    <div class="desc">Add a description of the image1 here</div>
+    <div className="desc">Add a description of the image1 here</div>
   </div>
 </div>
 
-<div class="responsive">
-  <div class="gallery">
+<div className="responsive">
+  <div className="gallery">
     <a target="_blank" href="img_forest.jpg">
       <img src="img_forest.jpg" alt="Forest" width="600" height="400"/>
     </a>
-    <div class="desc">Add a description of the image2 here</div>
+    <div className="desc">Add a description of the image2 here</div>
   </div>
 </div>
 
-<div class="responsive">
-  <div class="gallery">
+<div className="responsive">
+  <div className="gallery">
     <a target="_blank" href="img_lights.jpg">
       <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400"/>
     </a>
-    <div class="desc">Add a description of the image3 here</div>
+    <div className="desc">Add a description of the image3 here</div>
   </div>
 </div>
 
-<div class="responsive">
-  <div class="gallery">
+<div className="responsive">
+  <div className="gallery">
     <a target="_blank" href="img_mountains.jpg">
       <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"/>
     </a>
-    <div class="desc">Add a description of the image4 here</div>
+    <div className="desc">Add a description of the image4 here</div>
   </div>
 </div>
 
-<div class="clearfix"></div>
+<div className="clearfix"></div>
 
 {/* very last information div must be after clearfix */}
 <div style={padding6px}>
