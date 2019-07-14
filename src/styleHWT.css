@@ -9,28 +9,39 @@ body {
   margin: 0;
 }
 
-div.gallery {
-  border: 1px solid #ccc;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-
+/* class responsive float divs create images gallery vision in body div */
 .responsive {
   padding: 0 6px;
   float: left;
   width: 24.99999%; /* 4 images */
+}
+
+/* NB! class clrearfix div takes action after all responsive divs float elements in body div */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* gallery div is nested in responsive div */
+.gallery {
+  border: 1px solid #ccc;
+}
+
+.gallery:hover {
+  border: 1px solid #777;
+}
+
+/* image element nested in class gallery as part of <a> will take 100% width of it's ancessor responsive div element */
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+/* class desc is nested in responsive div */
+.desc {
+  padding: 15px;
+  text-align: center;
 }
 
 @media only screen and (max-width: 700px) {
@@ -44,11 +55,4 @@ div.desc {
   .responsive {
     width: 100%; /* one image */
   }
-}
-
-/* NB! works after all float elements */
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
 }
