@@ -224,7 +224,10 @@ class App extends Component {
       //y = w.innerHeight|| e.clientHeight|| g.clientHeight;
       //alert(x + ' × ' + y);
       //alert('window ' + w.innerWidth + ', document ' + e.clientWidth + ', body ' + g.clientWidth);
-      document.getElementById('wdt').innerText = 'window ' + w.innerWidth + 'px, document ' + e.clientWidth + 'px, body ' + g.clientWidth + "px."
+      let txt = 'window.innerWidth ' + w.innerWidth + 'px, document.clientWidth ' + e.clientWidth + 'px, body.clientWidth ' + g.clientWidth + "px, ";
+      txt = txt + 'window.outerWidth' + w.outerWidth + "px, window.outerHeight " + w.outerHeight + 'px, window.innerHeight ' ;
+      txt = txt + w.innerHeight + 'px.';
+      document.getElementById('wdt').innerText = txt;
     }
     
     return (
@@ -243,7 +246,7 @@ class App extends Component {
 <div className="responsive">
   <div className="gallery">
     <a target="_blank" href="img_5terre.jpg">
-      {/* NB! <img> styles attributes width and height will be overrun by class CSS styles width and height */}
+      {/* NB! <img> styles attributes with INITIAL width and height will be overrun by class CSS styles width and height */}
       <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400"/>
     </a>
     <div className="desc">Add a description of the image1 here</div>
@@ -281,7 +284,9 @@ class App extends Component {
 
 {/* very last information div must be after clearfix */}
 <div style={padding6px}>
-  <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than 700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images side by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
+  <p>For screens larger than 700px wide, it will show four images side by side (24.99999%).</p>
+  <p>For screens 700px and up to 501px, it will show two images side by side (49.99999%).</p>
+  <p>For screens 500px and smaller, the images will stack vertically (100%).</p>
   <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
 </div>
 
