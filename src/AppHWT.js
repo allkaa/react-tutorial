@@ -287,6 +287,25 @@ class App extends Component {
 
 <iframe src="http://www.ee" title="test"></iframe>
 
+{/* srcset and sizes sample:
+<img src="one.png"
+  srcset="two.png 100w,
+  three.png 500w,
+  four.png 1000w"
+
+sizes="(min-width: 900px) 1000px,
+      (max-width: 900px) and (min-width: 400px) 50em,
+      ( not (orientation: portrait) ) 300px,
+      ( (orientation: landscape) or (min-width: 1000px) ) 50vw, 
+      100vw">
+</img>
+*/}
+
+<img id="imset" srcset="img_5terre.jpg320x200 300w, img_5terre.jpg 600w"
+     sizes="(max-width: 500px) 48vw, 48vw"
+     src="img_5terre.jpg" alt="Elva dressed as a fairy">
+</img>
+
 {/* very last information div must be after clearfix */}
 <footer>
 <div style={padding6px}>

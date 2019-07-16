@@ -26,8 +26,15 @@ body footer {
 }
 
 iframe {
-  width: 50vw;
+  width: 49vw;
   height: 30vh;
+  border: solid black 2px;
+  margin: 1px 8px 1px 1px;
+}
+
+#imset {
+  margin: 1px 0px 1px 0px;
+  border: solid black 2px;
 }
 
 /* class responsive float divs create images gallery vision in body div */
