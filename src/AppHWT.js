@@ -240,8 +240,11 @@ class App extends Component {
 </div>
 */}
 
-<button type='button' onClick={()=>wxh()}>Resize the browser window to see the effect.</button>
-<h2 id="wdt">Responsive Image Gallery</h2>
+<header>
+  <button type='button' onClick={()=>wxh()}>Resize the browser window to see the effect.</button>
+  <h2 id="wdt">Responsive Image Gallery</h2>
+  <br/>
+</header>
 
 <div className="responsive">
   <div className="gallery">
@@ -282,13 +285,18 @@ class App extends Component {
 
 <div className="clearfix"></div>
 
+<iframe src="http://www.ee" title="test"></iframe>
+
 {/* very last information div must be after clearfix */}
+<footer>
 <div style={padding6px}>
   <p>For screens larger than 700px wide, it will show four images side by side (24.99999%).</p>
   <p>For screens 700px and up to 501px, it will show two images side by side (49.99999%).</p>
   <p>For screens 500px and smaller, the images will stack vertically (100%).</p>
   <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
 </div>
+</footer>
+
 
     </div>
     )

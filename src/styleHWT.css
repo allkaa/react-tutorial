@@ -9,6 +9,27 @@ body {
   margin: 0;
 }
 
+body header {
+  position: sticky;
+  top: 0;
+  background: whitesmoke;
+  border: solid 1px;
+  margin: 2px;
+}
+
+body footer {
+  position: sticky;
+  bottom: 0;
+  background: whitesmoke;
+  border: solid 1px;
+  margin: 2px;
+}
+
+iframe {
+  width: 50vw;
+  height: 30vh;
+}
+
 /* class responsive float divs create images gallery vision in body div */
 .responsive {
   padding: 0 6px;
