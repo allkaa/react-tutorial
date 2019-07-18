@@ -230,6 +230,10 @@ class App extends Component {
       document.getElementById('wdt').innerText = txt;
     }
     
+    function nameChng() {
+      document.getElementById('name').innerText = "1111";
+    }
+
     return (
   <div className="container">
 
@@ -241,70 +245,31 @@ class App extends Component {
 */}
 
 <header>
-  <button type='button' onClick={()=>wxh()}>Resize the browser window to see the effect.</button>
-  <h2 id="wdt">Responsive Image Gallery</h2>
+  <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
+  <h3 id="wdt">viewport info</h3>
   <br/>
 </header>
 
-<div className="responsive">
-  <div className="gallery">
-    <a target="_blank" href="img_5terre.jpg">
-      {/* NB! <img> styles attributes with INITIAL width and height will be overrun by class CSS styles width and height */}
-      <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400"/>
-    </a>
-    <div className="desc">Add a description of the image1 here</div>
+<form action="/my-handling-form-page" method="post"> {/* action="/my-handling-form-page" "#1" */}
+
+  <div>
+    <label htmlFor="name">Name:</label>
+    <input type="text" id="name" name="user_name" defaultValue="Alex" onClick={()=>nameChng()}></input> {/*  value="default value" */}
   </div>
-</div>
-
-<div className="responsive">
-  <div className="gallery">
-    <a target="_blank" href="img_forest.jpg">
-      <img src="img_forest.jpg" alt="Forest" width="600" height="400"/>
-    </a>
-    <div className="desc">Add a description of the image2 here</div>
+  <div>
+    <label htmlFor="mail">E-mail:</label>
+    <input type="email" id="mail" name="user_mail"/>
   </div>
-</div>
-
-<div className="responsive">
-  <div className="gallery">
-    <a target="_blank" href="img_lights.jpg">
-      <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400"/>
-    </a>
-    <div className="desc">Add a description of the image3 here</div>
+  <div>
+    <label htmlFor="msg">Message:</label>
+    <textarea id="msg" name="user_message" defaultValue="default value" ></textarea>
   </div>
-</div>
 
-<div className="responsive">
-  <div className="gallery">
-    <a target="_blank" href="img_mountains.jpg">
-      <img src="img_mountains.jpg" alt="Mountains" width="600" height="400"/>
-    </a>
-    <div className="desc">Add a description of the image4 here</div>
+  <div className="button">
+    <button type="submit">Send your message</button>
   </div>
-</div>
 
-<div className="clearfix"></div>
-
-<iframe src="http://www.ee" title="test"></iframe>
-
-{/* srcset and sizes sample:
-<img src="one.png"
-  srcset="two.png 100w,
-  three.png 500w,
-  four.png 1000w"
-
-sizes="(min-width: 900px) 1000px,
-      (max-width: 900px) and (min-width: 400px) 50em,
-      ( not (orientation: portrait) ) 300px,
-      ( (orientation: landscape) or (min-width: 1000px) ) 50vw, 
-      100vw">
-</img>
-*/}
-
-<img id="imset" srcset="img_5terre.jpg320x200 300w, img_5terre.jpg 600w"
-     sizes="(max-width: 500px) 48vw, 48vw"
-     src="img_5terre.jpg" alt="Elva dressed as a fairy">
-</img>
+</form>
 
 {/* very last information div must be after clearfix */}
 <footer>

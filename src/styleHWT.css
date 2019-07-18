@@ -9,78 +9,61 @@ body {
   margin: 0;
 }
 
-body header {
-  position: sticky;
-  top: 0;
-  background: whitesmoke;
-  border: solid 1px;
-  margin: 2px;
+form {
+  /* Just to center the form on the page */
+  margin: 0 auto;
+  width: 70%;
+  /* To see the outline of the form */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
 }
 
-body footer {
-  position: sticky;
-  bottom: 0;
-  background: whitesmoke;
-  border: solid 1px;
-  margin: 2px;
+/* Selects all <div> elements that are placed immediately after <div> elements */
+form div + div {
+  margin-top: 1em;
 }
 
-iframe {
-  width: 49vw;
-  height: 30vh;
-  border: solid black 2px;
-  margin: 1px 8px 1px 1px;
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 10%;
+  text-align: right;
 }
 
-#imset {
-  margin: 1px 0px 1px 0px;
-  border: solid black 2px;
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 70%;
+  /* box-sizing: border-box; */
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
 }
 
-/* class responsive float divs create images gallery vision in body div */
-.responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%; /* 4 images */
+input:focus, textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
 }
 
-/* NB! class clrearfix div takes action after all responsive divs float elements in body div */
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* To give enough room to type some text */
+  height: 10em;
 }
 
-/* gallery div is nested in responsive div */
-.gallery {
-  border: 1px solid #ccc;
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 10%; /* same size as the label elements */
 }
 
-.gallery:hover {
-  border: 1px solid #777;
-}
-
-/* image element nested in class gallery as part of <a> will take 100% width of it's ancessor responsive div element */
-.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-/* class desc is nested in responsive div */
-.desc {
-  padding: 15px;
-  text-align: center;
-}
-
-@media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%; /* 2 images */
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive {
-    width: 100%; /* one image */
-  }
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  /* margin-left: .5em; */
 }
