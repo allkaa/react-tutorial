@@ -231,7 +231,10 @@ class App extends Component {
     }
     
     function nameChng() {
-      document.getElementById('name').innerText = "1111";
+      document.getElementById('name').value = "1111";
+      //alert("name chng done");
+      //let x = document.getElementById('user_message').innerText;
+      //alert(x)
     }
 
     return (
@@ -251,7 +254,7 @@ class App extends Component {
 </header>
 
 <form action="/my-handling-form-page" method="post"> {/* action="/my-handling-form-page" "#1" */}
-
+  <button type="button" onClick={()=>nameChng()}>Set Name value</button>
   <div>
     <label htmlFor="name">Name:</label>
     <input type="text" id="name" name="user_name" defaultValue="Alex" onClick={()=>nameChng()}></input> {/*  value="default value" */}
@@ -262,7 +265,7 @@ class App extends Component {
   </div>
   <div>
     <label htmlFor="msg">Message:</label>
-    <textarea id="msg" name="user_message" defaultValue="default value" ></textarea>
+    <textarea id="msg" name="user_message" defaultValue="Default textarea" ></textarea>
   </div>
 
   <div className="button">
