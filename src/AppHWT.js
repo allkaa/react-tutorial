@@ -253,11 +253,11 @@ class App extends Component {
   <br/>
 </header>
 
-<form action="/my-handling-form-page" method="post"> {/* action="/my-handling-form-page" "#1" */}
+<form action="/my-handling-form-page" method="post"> {/* action="#1" */}
   <button type="button" onClick={()=>nameChng()}>Set Name value</button>
   <div>
-    <label htmlFor="name">Name:</label>
-    <input type="text" id="name" name="user_name" defaultValue="Alex" onClick={()=>nameChng()}></input> {/*  value="default value" */}
+    <label htmlFor="name">>Name: <abbr title="required">*</abbr> </label>
+    <input type="text" id="name" name="user_name" defaultValue="Alex"></input> {/*  value="default value" */}
   </div>
   <div>
     <label htmlFor="mail">E-mail:</label>
@@ -272,6 +272,100 @@ class App extends Component {
     <button type="submit">Send your message</button>
   </div>
 
+</form>
+<br/>
+<form>
+  <fieldset>
+    <legend>Fruit juice size</legend>
+    <p>
+      <input type="radio" name="size" id="size_1" defaultValue="small"/>
+      <label htmlFor="size_1">Small</label>
+    </p>
+    <p>
+      <input type="radio" name="size" id="size_2" defaultValue="medium"/>
+      <label htmlFor="size_2">Medium</label>
+    </p>
+    <p>
+      <input type="radio" name="size" id="size_3" defaultValue="large"/>
+      <label htmlFor="size_3">Large</label>
+    </p>
+  </fieldset>
+</form>
+<br/>
+<form>
+  <h1>Payment form</h1>
+  <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+  <section>
+    <h2>Contact information</h2>
+    <fieldset>
+      <legend>Title</legend>
+      <ul>
+          <li>
+            <label htmlFor="title_1">
+              <input type="radio" id="title_1" name="title" value="M." />
+              Mister
+            </label>
+          </li>
+          <li>
+            <label htmlFor="title_2">
+              <input type="radio" id="title_2" name="title" value="Ms."/>
+              Miss
+            </label>
+          </li>
+      </ul>
+    </fieldset>
+    <p>
+      <label htmlFor="name">
+        <span>Name: </span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="text" id="name" name="username"/>
+    </p>
+    <p>
+      <label htmlFor="mail">
+        <span>E-mail: </span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="email" id="mail" name="usermail"/>
+    </p>
+    <p>
+      <label htmlFor="pwd">
+        <span>Password: </span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="password" id="pwd" name="password"/>
+    </p>
+  </section>
+  <section>
+    <h2>Payment information</h2>
+    <p>
+      <label htmlFor="card">
+        <span>Card type:</span>
+      </label>
+      <select id="card" name="usercard">
+        <option value="visa">Visa</option>
+        <option value="mc">Mastercard</option>
+        <option value="amex">American Express</option>
+      </select>
+    </p>
+    <p>
+      <label htmlFor="number">
+        <span>Card number:</span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="number" id="number" name="cardnumber"/>
+    </p>
+    <p>
+      <label htmlFor="date">
+        <span>Expiration date:</span>
+        <strong><abbr title="required">*</abbr></strong>
+        <em>formatted as mm/yy</em>
+      </label>
+      <input type="date" id="date" name="expiration"/>
+    </p>
+  </section>
+
+  <p> <button type="submit">Validate the payment</button> </p>
 </form>
 
 {/* very last information div must be after clearfix */}
