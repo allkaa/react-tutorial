@@ -2,7 +2,7 @@
 // (capitalize custom components to differentiate them from regular HTML elements).
 import React, { Component } from 'react'
 //import logo from './logo.svg'; // logo.svg in srs dir
-import NameForm from './NameForm.js'
+
 
 function noStyles() {
   //console.log(`noStyles started`)
@@ -32,7 +32,6 @@ function closeBlackdiv() { // called from showStyle(n) created background dimmed
   console.log(`closeBlackdiv finished`)
 }
 
-/*
 // NB! On separate linked css files does not work.
 function showStyle(n) {
   console.log(`showStyles ${n} started`)
@@ -56,7 +55,7 @@ function showStyle(n) {
   alert('Click on dimmed background to close style source text window created next.');
   console.log(`showStyles ${n} finished`)
 }
-*/
+//*/
 
 // App is HOC (High Order Component) by extending React Component.
 class App extends Component {
@@ -156,7 +155,6 @@ class App extends Component {
     };
     */
 
-    /*
     // style={floatLeft}
     const floatLeft = {
       float: 'left',
@@ -204,19 +202,11 @@ class App extends Component {
         document.getElementById("MenuBar").style.display = "block";
       }
     }
-    */
-
+  
     /*
     function w3_close() {
       document.getElementById("MenuBar").style.display = "none";
       document.getElementById("mySmallMenu").style.display = "block";
-    }
-
-    function nameChng() {
-      document.getElementById('name').value = "1111";
-      //alert("name chng done");
-      //let x = document.getElementById('user_message').innerText;
-      //alert(x)
     }
     */
 
@@ -239,8 +229,14 @@ class App extends Component {
       txt = txt + w.innerHeight + 'px.';
       document.getElementById('wdt').innerText = txt;
     }
+    
+    function nameChng() {
+      document.getElementById('name').value = "1111";
+      //alert("name chng done");
+      //let x = document.getElementById('user_message').innerText;
+      //alert(x)
+    }
 
-    // A class component must include render(), and the return statement can only return ONE parent element:
     return (
   <div className="container">
 
@@ -257,7 +253,120 @@ class App extends Component {
   <br/>
 </header>
 
-<NameForm />
+<form action="/my-handling-form-page" method="post"> {/* action="#1" */}
+  <button type="button" onClick={()=>nameChng()}>Set Name value</button>
+  <div>
+    <label htmlFor="name">>Name: <abbr title="required">*</abbr> </label>
+    <input type="text" id="name" name="user_name" defaultValue="Alex"></input> {/*  value="default value" */}
+  </div>
+  <div>
+    <label htmlFor="mail">E-mail:</label>
+    <input type="email" id="mail" name="user_mail"/>
+  </div>
+  <div>
+    <label htmlFor="msg">Message:</label>
+    <textarea id="msg" name="user_message" defaultValue="Default textarea" ></textarea>
+  </div>
+
+  <div className="button">
+    <button type="submit">Send your message</button>
+  </div>
+
+</form>
+<br/>
+<form>
+  <fieldset>
+    <legend>Fruit juice size</legend>
+    <p>
+      <input type="radio" name="size" id="size_1" defaultValue="small"/>
+      <label htmlFor="size_1">Small</label>
+    </p>
+    <p>
+      <input type="radio" name="size" id="size_2" defaultValue="medium"/>
+      <label htmlFor="size_2">Medium</label>
+    </p>
+    <p>
+      <input type="radio" name="size" id="size_3" defaultValue="large"/>
+      <label htmlFor="size_3">Large</label>
+    </p>
+  </fieldset>
+</form>
+<br/>
+<form>
+  <h1>Payment form</h1>
+  <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+  <section>
+    <h2>Contact information</h2>
+    <fieldset>
+      <legend>Title</legend>
+      <ul>
+          <li>
+            <label htmlFor="title_1">
+              <input type="radio" id="title_1" name="title" value="M." />
+              Mister
+            </label>
+          </li>
+          <li>
+            <label htmlFor="title_2">
+              <input type="radio" id="title_2" name="title" value="Ms."/>
+              Miss
+            </label>
+          </li>
+      </ul>
+    </fieldset>
+    <p>
+      <label htmlFor="name">
+        <span>Name: </span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="text" id="name" name="username"/>
+    </p>
+    <p>
+      <label htmlFor="mail">
+        <span>E-mail: </span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="email" id="mail" name="usermail"/>
+    </p>
+    <p>
+      <label htmlFor="pwd">
+        <span>Password: </span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="password" id="pwd" name="password"/>
+    </p>
+  </section>
+  <section>
+    <h2>Payment information</h2>
+    <p>
+      <label htmlFor="card">
+        <span>Card type:</span>
+      </label>
+      <select id="card" name="usercard">
+        <option value="visa">Visa</option>
+        <option value="mc">Mastercard</option>
+        <option value="amex">American Express</option>
+      </select>
+    </p>
+    <p>
+      <label htmlFor="number">
+        <span>Card number:</span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="number" id="number" name="cardnumber"/>
+    </p>
+    <p>
+      <label htmlFor="date">
+        <span>Expiration date:</span>
+        <strong><abbr title="required">*</abbr></strong>
+        <em>formatted as mm/yy</em>
+      </label>
+      <input type="date" id="date" name="expiration"/>
+    </p>
+  </section>
+
+  <p> <button type="submit">Validate the payment</button> </p>
+</form>
 
 {/* very last information div must be after clearfix */}
 <footer>
