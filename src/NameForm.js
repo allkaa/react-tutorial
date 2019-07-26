@@ -10,14 +10,18 @@ class NameForm extends Component {
       name:
         'Alex Raven',
       essay:
-        'Please write an essay about your favorite DOM element.'
+        'Please write an essay about your favorite DOM element.',
+      fruit:
+        'Coconut'
     }; // very initial value.
 
     console.log(this.state.name);
     console.log(this.state.essay);
+    console.log(this.state.fruit);
 
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleChangeEssay = this.handleChangeEssay.bind(this);
+    this.handleChangeFruit = this.handleChangeFruit.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -28,6 +32,7 @@ class NameForm extends Component {
     this.setState({name: this.state.name.toUpperCase()})
     console.log(this.state.name);
     console.log(this.state.essay);
+    console.log(this.state.fruit);
   }
 
   handleChangeName(event) {
@@ -45,10 +50,17 @@ class NameForm extends Component {
     console.log(this.state.essay);
   }
 
+  handleChangeFruit(event) {
+    console.log('========> NameForm handleChangeFruit event <==========')
+    console.log(event.target.value);
+    this.setState({fruit: event.target.value});
+    console.log(this.state.fruit);
+  }
+
   handleSubmit(event) {
     console.log('========> NameForm handleSubmit <==========')
     console.log(event.target);
-    alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" were submitted.');
+    alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
     event.preventDefault();
   }
 
@@ -65,7 +77,15 @@ class NameForm extends Component {
           Essay:
           <textarea value={this.state.value} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <label>
+          Pick your favorite flavor:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
+        </label>
         <input type="submit" value="Submit" />
         */}
         <div>
@@ -78,7 +98,18 @@ class NameForm extends Component {
           <textarea id="msg" name="user_essay" value={this.state.essay} onChange={this.handleChangeEssay} ></textarea> {/* for uncontrolled state use  defaultValue="Default textarea" */}
         </div>
 
+        <br/>
+        <fieldset>
+          <legend>Pick your favorite flavor:</legend>
+          <select value={this.state.fruit} onChange={this.handleChangeFruit}>
+            <option value="Grapefruit">Grapefruit</option>
+            <option value="Lime">Lime</option>
+            <option value="Coconut">Coconut</option>
+            <option value="Mango">Mango</option>
+          </select>
+        </fieldset>
 
+        <br/>
         <div className="button">
           <button type="submit">Send your message</button>
         </div>
