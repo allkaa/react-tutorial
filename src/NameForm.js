@@ -12,7 +12,7 @@ class NameForm extends Component {
       essay:
         'Please write an essay about your favorite DOM element.',
       fruit:
-        'Coconut'
+        ['Coconut','Lime']
     }; // very initial value.
 
     console.log(this.state.name);
@@ -50,10 +50,19 @@ class NameForm extends Component {
     console.log(this.state.essay);
   }
 
+  // Multiple select - do not use Ctrl in React.
   handleChangeFruit(event) {
     console.log('========> NameForm handleChangeFruit event <==========')
     console.log(event.target.value);
-    this.setState({fruit: event.target.value});
+    let arrFruits = this.state.fruit; // this.state.fruit
+    let indFruits = this.state.fruit.indexOf(event.target.value);
+    if (indFruits === -1) {
+      arrFruits.push(event.target.value)
+    }
+    else {
+      arrFruits.splice(indFruits,1)
+    }
+    this.setState({fruit: arrFruits});
     console.log(this.state.fruit);
   }
 
@@ -101,7 +110,7 @@ class NameForm extends Component {
         <br/>
         <fieldset>
           <legend>Pick your favorite flavor:</legend>
-          <select value={this.state.fruit} onChange={this.handleChangeFruit}>
+          <select multiple={true} value={this.state.fruit} onChange={this.handleChangeFruit}>
             <option value="Grapefruit">Grapefruit</option>
             <option value="Lime">Lime</option>
             <option value="Coconut">Coconut</option>
