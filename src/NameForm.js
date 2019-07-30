@@ -37,7 +37,9 @@ class NameForm extends Component {
 
   handleChangeName(event) {
     console.log('========> NameForm handleChangeName event <==========')
-    //console.log(event)
+    console.log(event.target);
+    console.log(event.target.name);
+    console.log(event.target.type)
     console.log(event.target.value);
     this.setState({name: event.target.value.toUpperCase()});
     console.log(this.state.name);
@@ -45,6 +47,9 @@ class NameForm extends Component {
 
   handleChangeEssay(event) {
     console.log('========> NameForm handleChangeEsssay event <==========')
+    console.log(event.target);
+    console.log(event.target.name);
+    console.log(event.target.type)
     console.log(event.target.value);
     this.setState({essay: event.target.value});
     console.log(this.state.essay);
@@ -53,6 +58,9 @@ class NameForm extends Component {
   // Multiple select - do not use Ctrl in React.
   handleChangeFruit(event) {
     console.log('========> NameForm handleChangeFruit event <==========')
+    console.log(event.target);
+    console.log(event.target.name);
+    console.log(event.target.type)
     console.log(event.target.value);
     let arrFruits = this.state.fruit; // this.state.fruit
     let indFruits = this.state.fruit.indexOf(event.target.value);
@@ -68,8 +76,17 @@ class NameForm extends Component {
 
   handleSubmit(event) {
     console.log('========> NameForm handleSubmit <==========')
+    console.log('event: ' + event);
+    console.log(event);
+    console.log('event.target: ' + event.target);
     console.log(event.target);
-    alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
+    console.log('event.target.name: ' + event.target.name);
+    console.log(event.target.name);
+    console.log('event.target.type: ' + event.target.type)
+    console.log(event.target.type)
+    console.log('event.target.value: ' + event.target.value);
+    console.log(event.target.value);
+    //alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
     event.preventDefault();
   }
 
@@ -99,9 +116,11 @@ class NameForm extends Component {
         */}
         <div>
           <label htmlFor="name">Name: <abbr title="required">*</abbr> </label>
+          {/* event target type will be text */}
           <input type="text" id="name" name="user_name"  value={this.state.name} onChange={this.handleChangeName}></input> {/*  value="default value" */}
         </div>
 
+        {/* event target type will be textarea */}
         <div>
           <label htmlFor="msg">Essay: <abbr title="required">*</abbr> </label>
           <textarea id="msg" name="user_essay" value={this.state.essay} onChange={this.handleChangeEssay} ></textarea> {/* for uncontrolled state use  defaultValue="Default textarea" */}
@@ -110,7 +129,8 @@ class NameForm extends Component {
         <br/>
         <fieldset>
           <legend>Pick your favorite flavor:</legend>
-          <select multiple={true} value={this.state.fruit} onChange={this.handleChangeFruit}>
+          {/* event target type will be select-multiple */}
+          <select name="fruits" multiple={true} value={this.state.fruit} onChange={this.handleChangeFruit}>
             <option value="Grapefruit">Grapefruit</option>
             <option value="Lime">Lime</option>
             <option value="Coconut">Coconut</option>
@@ -120,6 +140,7 @@ class NameForm extends Component {
 
         <br/>
         <div className="button">
+          {/* event target type will be submit */}
           <button type="submit">Send your message</button>
         </div>
 
