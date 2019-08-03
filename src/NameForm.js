@@ -37,9 +37,15 @@ class NameForm extends Component {
 
   handleChangeName(event) {
     console.log('========> NameForm handleChangeName event <==========')
+    console.log('event: ' + event);
+    console.log(event);
+    console.log('event.target: ' + event.target);
     console.log(event.target);
+    console.log('event.target.name: ' + event.target.name);
     console.log(event.target.name);
+    console.log('event.target.type: ' + event.target.type)
     console.log(event.target.type)
+    console.log('event.target.value: ' + event.target.value);
     console.log(event.target.value);
     this.setState({name: event.target.value.toUpperCase()});
     console.log(this.state.name);
@@ -47,9 +53,15 @@ class NameForm extends Component {
 
   handleChangeEssay(event) {
     console.log('========> NameForm handleChangeEsssay event <==========')
+    console.log('event: ' + event);
+    console.log(event);
+    console.log('event.target: ' + event.target);
     console.log(event.target);
+    console.log('event.target.name: ' + event.target.name);
     console.log(event.target.name);
+    console.log('event.target.type: ' + event.target.type)
     console.log(event.target.type)
+    console.log('event.target.value: ' + event.target.value);
     console.log(event.target.value);
     this.setState({essay: event.target.value});
     console.log(this.state.essay);
@@ -58,9 +70,15 @@ class NameForm extends Component {
   // Multiple select - do not use Ctrl in React.
   handleChangeFruit(event) {
     console.log('========> NameForm handleChangeFruit event <==========')
+    console.log('event: ' + event);
+    console.log(event);
+    console.log('event.target: ' + event.target);
     console.log(event.target);
+    console.log('event.target.name: ' + event.target.name);
     console.log(event.target.name);
+    console.log('event.target.type: ' + event.target.type)
     console.log(event.target.type)
+    console.log('event.target.value: ' + event.target.value);
     console.log(event.target.value);
     let arrFruits = this.state.fruit; // this.state.fruit
     let indFruits = this.state.fruit.indexOf(event.target.value);
