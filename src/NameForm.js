@@ -14,6 +14,7 @@ class NameForm extends Component {
       fruit:
         ['Coconut','Lime']
     }; // very initial value.
+    this.fileInput = React.createRef();
 
     console.log(this.state.name);
     console.log(this.state.essay);
@@ -106,6 +107,11 @@ class NameForm extends Component {
     console.log(event.target.value);
     //alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
     event.preventDefault();
+    alert(
+      `Selected file to upload - ${
+        this.fileInput.current.files[0].name
+      }`
+    );
   }
 
   render() {
@@ -131,11 +137,20 @@ class NameForm extends Component {
           </select>
         </label>
         <input type="submit" value="Submit" />
+        <label>
+          Upload file:
+          <input type="file" ref={this.fileInput} />
+        </label>
         */}
+        <div>
+          <label htmlFor="file_name">Upload file:: <abbr title="required">*</abbr> </label>
+          <input type="file" id="file_name" ref={this.fileInput} />
+        </div>
+        
         <div>
           <label htmlFor="name">Name: <abbr title="required">*</abbr> </label>
           {/* event target type will be text */}
-          <input type="text" id="name" name="user_name"  value={this.state.name} onChange={this.handleChangeName}></input> {/*  value="default value" */}
+          <input type="text" id="name" name="user_name"  value={this.state.name} onChange={this.handleChangeName}></input> {/* setting e.g.  value="Hi" prevents the user from changing the input  */}
         </div>
 
         {/* event target type will be textarea */}
