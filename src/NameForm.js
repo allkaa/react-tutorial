@@ -14,6 +14,7 @@ class NameForm extends Component {
       fruit:
         ['Coconut','Lime']
     }; // very initial value.
+    // Create a ref to the DOM node to access file(s) in a submit handler:
     this.fileInput = React.createRef();
 
     console.log(this.state.name);
@@ -107,6 +108,7 @@ class NameForm extends Component {
     console.log(event.target.value);
     //alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
     event.preventDefault();
+    // Use created ref to the DOM node to access file(s) in a submit handler:
     alert(
       `Selected file to upload - ${
         this.fileInput.current.files[0].name
