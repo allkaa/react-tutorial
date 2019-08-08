@@ -162,8 +162,9 @@ class NameForm extends Component {
         </div>
 
         <br/>
+        {/* The <fieldset> tag draws a box around the related elements. */}
         <fieldset>
-          <legend>Pick your favorite flavor:</legend>
+          <legend>Pick your favorite flavor:</legend> {/* The <legend> tag defines a caption for the <fieldset> element. */}
           {/* event target type will be select-multiple */}
           <select name="fruits" multiple={true} value={this.state.fruit} onChange={this.handleChangeFruit}>
             <option value="Grapefruit">Grapefruit</option>
