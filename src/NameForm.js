@@ -12,7 +12,11 @@ class NameForm extends Component {
       essay:
         'Please write an essay about your favorite DOM element.',
       fruit:
-        ['Coconut','Lime']
+        ['Coconut','Lime'],
+      checkOption:
+        ['option1'],
+      radioOption:
+        'option1'
     }; // very initial value.
     // Create a ref to the DOM node to access file(s) in a submit handler:
     this.fileInput = React.createRef();
@@ -24,6 +28,8 @@ class NameForm extends Component {
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleChangeEssay = this.handleChangeEssay.bind(this);
     this.handleChangeFruit = this.handleChangeFruit.bind(this);
+    this.handleChangeCheckOption = this.handleChangeCheckOption.bind(this);
+    this.handleChangeRadioOption = this.handleChangeRadioOption.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -35,6 +41,8 @@ class NameForm extends Component {
     console.log(this.state.name);
     console.log(this.state.essay);
     console.log(this.state.fruit);
+    console.log(this.state.checkOption);
+    console.log(this.state.radioOption);
   }
 
   handleChangeName(event) {
@@ -94,6 +102,48 @@ class NameForm extends Component {
     console.log(this.state.fruit);
   }
 
+  // Multiple select.
+  handleChangeCheckOption(event) {
+    console.log('========> NameForm handleCheckOption event <==========')
+    console.log('event: ' + event);
+    console.log(event);
+    console.log('event.target: ' + event.target);
+    console.log(event.target);
+    console.log('event.target.name: ' + event.target.name);
+    console.log(event.target.name);
+    console.log('event.target.type: ' + event.target.type)
+    console.log(event.target.type)
+    console.log('event.target.value: ' + event.target.value);
+    console.log(event.target.value);
+    let arrOpts = this.state.checkOption; // this.state.fruit
+    let indOpts = this.state.checkOption.indexOf(event.target.value);
+    if (indOpts === -1) {
+      arrOpts.push(event.target.value)
+    }
+    else {
+      arrOpts.splice(indOpts,1)
+    }
+    this.setState({checkOption: arrOpts});
+    console.log(this.state.checkOption);
+  }
+
+  handleChangeRadioOption(event) {
+    console.log('========> NameForm handleRadioOption event <==========')
+    console.log('event: ' + event);
+    console.log(event);
+    console.log('event.target: ' + event.target);
+    console.log(event.target);
+    console.log('event.target.name: ' + event.target.name);
+    console.log(event.target.name);
+    console.log('event.target.type: ' + event.target.type)
+    console.log(event.target.type)
+    console.log('event.target.value: ' + event.target.value);
+    console.log(event.target.value);
+    this.setState({radioOption: event.target.value});
+    console.log(this.state.radioOption);
+  }
+
+
   handleSubmit(event) {
     console.log('========> NameForm handleSubmit <==========')
     console.log('event: ' + event);
@@ -106,6 +156,7 @@ class NameForm extends Component {
     console.log(event.target.type)
     console.log('event.target.value: ' + event.target.value);
     console.log(event.target.value);
+    console.log(this.state);
     //alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
     event.preventDefault();
     // Use created ref to the DOM node to access file(s) in a submit handler:
@@ -172,6 +223,52 @@ class NameForm extends Component {
             <option value="Coconut">Coconut</option>
             <option value="Mango">Mango</option>
           </select>
+        </fieldset>
+
+        <br/>
+        {/* The <fieldset> tag draws a box around the related elements. this.state.checkOption.indexOf(event.target.value); */}
+        <fieldset>
+          <legend>Check box:</legend> {/* The <legend> tag defines a caption for the <fieldset> element. */}
+          <ul>
+            <li>
+          <label htmlFor="carrots">Carrots</label>
+          <input type="checkbox" id="carrots" name="carrots" value="option1" checked={this.state.checkOption.indexOf('option1') !== -1} 
+          onChange={this.handleChangeCheckOption}/>
+          </li>
+          <li>
+          <label htmlFor="carrots2">Carrots2</label>
+          <input type="checkbox" id="carrots2" name="carrots2" value="option2" checked={this.state.checkOption.indexOf('option2') !== -1}
+          onChange={this.handleChangeCheckOption}/>
+          </li>
+          <li>
+          <label htmlFor="carrots3">Carrots3</label>
+          <input type="checkbox" id="carrots3" name="carrots3" value="option3" checked={this.state.checkOption.indexOf('option3') !== -1}
+          onChange={this.handleChangeCheckOption}/>
+          </li>
+          </ul>
+        </fieldset>
+
+        <br/>
+        {/* The <fieldset> tag draws a box around the related elements. */}
+        <fieldset>
+          <legend>Radio button:</legend> {/* The <legend> tag defines a caption for the <fieldset> element. */}
+          <ul>
+          <li>
+          <label htmlFor="soup">Soup</label>
+          <input type="radio" id="soup" name="meal" value="option1" checked={this.state.radioOption === 'option1'}
+          onChange={this.handleChangeRadioOption}/>
+          </li>
+          <li>
+          <label htmlFor="soup2">Soup</label>
+          <input type="radio" id="soup2" name="meal" value="option2" checked={this.state.radioOption === 'option2'}
+          onChange={this.handleChangeRadioOption}/>
+          </li>
+          <li>
+          <label htmlFor="soup3">Soup</label>
+          <input type="radio" id="soup3" name="meal" value="option3"checked={this.state.radioOption === 'option3'}
+          onChange={this.handleChangeRadioOption}/>
+          </li>
+          </ul>
         </fieldset>
 
         <br/>
