@@ -1,5 +1,5 @@
 'use strict';
-//file:///home/akaarna/react-bolt/build/index.html
+//file:///home/akaarna/react-tutorial/build/index.html
 
 //let methodType = 'post'; // or 'get' for secure server.
 //let formNameIni = 'submitFormAK-Ini';
