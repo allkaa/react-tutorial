@@ -1,6 +1,6 @@
 'use strict';
 
-let methodType = 'post'; // or 'get'.
+let methodType = 'get'; // 'post' or 'get'.
 let formNameIni = 'submitFormAK-Ini';
 let formName = 'submitFormAK';
 
@@ -78,7 +78,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
   // Verify that it is very first page request or rendering page after GET or POST form submit processed.
   // After POST form submit will be processed rendering page will be as GET.
   // objUrl.search is ? and query e.g. "?fname=Alex&sname=Raven" or ""
-  if ((req.method != "POST") && (objUrl.search == "")) { // if req.method == "POST" then ObjUrl.search will be "" always.
+  if ((req.method !== "POST") && (objUrl.search === "")) { // if req.method == "POST" then ObjUrl.search will be "" always.
     let contType = '';
     if (objUrl.pathname.endsWith('.css')) {
       contType = 'text/css';
@@ -95,7 +95,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
     else if (objUrl.pathname.endsWith('.htm') || objUrl.pathname.endsWith('.html')) {
       contType = 'text/html';
     }
-    if (contType == '') {  // default app.html.
+    if (contType === '') {  // default app.html.
       contType = 'text/plain';
       fs.readFile('./app.html', (err, data) => {
         if (err) {
@@ -131,7 +131,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
     // Begin of POST or GET form submit case.
     // /submitFormAK-Ini/submitFormAK-Ini - hacks.
     if (req.url.includes('/'  + formName) || req.url.includes('/' + formNameIni)) { // For method="post" req.url = "/submitFormAK", for method="get" e.g. req.url = "/submitFormAK?fname=Alex&sname=Raven"
-      if (req.method == "POST" && methodType == 'post' && (req.url.lastIndexOf('/' + formName) == 0)) {
+      if (req.method === "POST" && methodType === 'post' && (req.url.lastIndexOf('/' + formName) === 0)) {
         let body = '';
         req.on('data', function (data) {
           body += data;
