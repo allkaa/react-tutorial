@@ -1,20 +1,8 @@
 'use strict';
-//file:///home/akaarna/react-tutorial/build/index.html
 
-/*
-Dirs:
-images
-pages
-scripts
-styles
-*/
-
-//let methodType = 'post'; // or 'get' for secure server.
-//let formNameIni = 'submitFormAK-Ini';
-//let formName = 'submitFormAK';
-//let dirName = 'build'
-let dirName = 'arch/pages'
-let formNameIni = 'index.html';
+let methodType = 'post'; // or 'get'.
+let formNameIni = 'submitFormAK-Ini';
+let formName = 'submitFormAK';
 
 //const http = require('http');
 const https = require('https');
@@ -23,10 +11,10 @@ const urlLegacy = require('url'); // Legacy url module.
 const fs = require('fs');
 const qs = require('querystring');
 //const formidable = require('formidable');
-//const {userInfo} = require('./appWeb.js');
+const {userInfo} = require('./appWeb.js');
 
 let dtVar = new Date();
-console.log('Server starts ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+console.log('Secure server starts ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
 /*
 //var envObj = process.env;
 for (let prop in process.env) {
@@ -37,8 +25,7 @@ console.log('==================================== ' + dtVar.getSeconds() + "." +
 */
 
 // https://localhost:8081
-//const hostname = 'localhost';
-// https://unl.test:8081
+//const hostname = 'localhost'; // debian930 installation hostname
 const hostname = 'unl.test';
 //const port = process.env.PORT; //  Windows - default port is 1337 for WebApp and 1542 for ConsoleApp;
 const port = 8081; // for Linux must be set manually;
@@ -46,16 +33,14 @@ const port = 8081; // for Linux must be set manually;
 dtVar = new Date();
 console.log('before https.createServer() ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
 
-///*
 const options = {
-  pfx: fs.readFileSync('./unl.test.pfx'), // '../../unl_works.pfx'
+//  pfx: fs.readFileSync('./unl_works.pfx'), // '../../unl_works.pfx'
+  pfx: fs.readFileSync('./unl.test.pfx'),
   passphrase: 'unl'
 };
-//*/
 
 //const server = http.createServer((req, res) => { // request is <http.IncomingMessage>, response is <http.ServerResponse> ...}
 const server = https.createServer(options);
-//const server = http.createServer();
 
 server.on('error', (err) => {
   var dtVar = new Date();
@@ -93,7 +78,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
   // Verify that it is very first page request or rendering page after GET or POST form submit processed.
   // After POST form submit will be processed rendering page will be as GET.
   // objUrl.search is ? and query e.g. "?fname=Alex&sname=Raven" or ""
-  if ((req.method !== "POST") && (objUrl.search === "")) { // if req.method === "POST" then ObjUrl.search will be "" always.
+  if ((req.method != "POST") && (objUrl.search == "")) { // if req.method == "POST" then ObjUrl.search will be "" always.
     let contType = '';
     if (objUrl.pathname.endsWith('.css')) {
       contType = 'text/css';
@@ -110,9 +95,9 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
     else if (objUrl.pathname.endsWith('.htm') || objUrl.pathname.endsWith('.html')) {
       contType = 'text/html';
     }
-    if (contType === '') {  // default app.html.
-      contType = 'text/html';
-      fs.readFile('./' + dirName + '/' + formNameIni, (err, data) => {
+    if (contType == '') {  // default app.html.
+      contType = 'text/plain';
+      fs.readFile('./app.html', (err, data) => {
         if (err) {
           res.writeHead(200, { 'Content-Type': `${contType}` });
           res.write(`Who cares what the idiot says!\n (c) Paul McCartney`);
@@ -126,7 +111,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
       });
     }
     else {
-      fs.readFile('./' + dirName + objUrl.pathname, (err, data) => { // './' + dirName  + "/path/name.type"
+      fs.readFile('.' + objUrl.pathname, (err, data) => { //'.' + "/path/name.type"
       if (err) {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.write(`Who cares what the idiots says!\nWho cares what the idiots do!\n (c) Paul McCartney`);
@@ -145,8 +130,8 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
   else {
     // Begin of POST or GET form submit case.
     // /submitFormAK-Ini/submitFormAK-Ini - hacks.
-    if (req.url.includes('/' + formNameIni)) { // For method="post" req.url = "/submitFormAK", for method="get" e.g. req.url = "/submitFormAK?fname=Alex&sname=Raven"
-      if (req.method === "POST" && (req.url.lastIndexOf('/' + formNameIni) === 0)) {
+    if (req.url.includes('/'  + formName) || req.url.includes('/' + formNameIni)) { // For method="post" req.url = "/submitFormAK", for method="get" e.g. req.url = "/submitFormAK?fname=Alex&sname=Raven"
+      if (req.method == "POST" && methodType == 'post' && (req.url.lastIndexOf('/' + formName) == 0)) {
         let body = '';
         req.on('data', function (data) {
           body += data;
@@ -170,8 +155,8 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
           //console.log(objBody);
           if (req.url.includes('/' + formNameIni)) {
             let blnOk = false;
-            if (objBody.userId === "Unl") {
-              if (objBody.passWord === "123qwe!") {
+            if (objBody.userId == "Unl") {
+              if (objBody.passWord == "123qwe!") {
                 blnOk = true;
               }
             }
@@ -225,7 +210,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
         }); // end req.on('end', function ()...
       } // end of if req.method == "POST".
       // <==================================== end of POST, begin of GET =====================================>
-      else if (req.method === "GET") { // for method="get" e.g. req.url = "/submitFormAK?fname=Alex&sname=Raven"
+      else if (req.method = "GET" && methodType == 'get') { // for method="get" e.g. req.url = "/submitFormAK?fname=Alex&sname=Raven"
         let q = objUrl.query; // formerly parsed query property object e.g. Object {fname: "Alex", sname: "Raven"}.
         fs.readFile('./pages/index.html', (err, data) => { // file index.html reading.
           if (err) throw err;
@@ -275,10 +260,11 @@ console.log('after https.createServer ' + dtVar.getSeconds() + "." + dtVar.getMi
 // Begin accepting connections on the specified port and hostname.
 // If hostname is omitted, server will accept connections on the unspecified IPv6 address (::) when IPv6 is available,
 // or the unspecified IPv4 address (0.0.0.0) otherwise.
+console.log(`Strart listening at https://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
 server.listen(port, hostname, () => {
   // Place holders in template literals are indicated by the $ (Dollar sign) and curly braces e.g. (${expression}).
   console.log(`Server running and listening at https://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
 });
 
 dtVar = new Date();
-console.log('End Serer main PROGAM path after server.listen(port, hostname, callback) ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+console.log('End Secure Server main PROGAM path after server.listen(port, hostname, callback) ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
