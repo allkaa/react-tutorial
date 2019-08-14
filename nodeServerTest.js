@@ -9,7 +9,7 @@ scripts
 styles
 */
 
-//let methodType = 'post'; // or 'get' for secure server.
+//let methodType = 'get'; // 'post' or 'get' for secure server.
 //let formNameIni = 'submitFormAK-Ini';
 //let formName = 'submitFormAK';
 //let dirName = 'build'
