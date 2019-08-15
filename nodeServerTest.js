@@ -12,7 +12,7 @@ styles
 //let methodType = 'get'; // 'post' or 'get' for secure server.
 //let formNameIni = 'submitFormAK-Ini';
 //let formName = 'submitFormAK';
-//let dirName = 'build'
+//let dirName = 'build'; // React build dir.
 let dirName = 'arch/pages'
 let formNameIni = 'index.html';
 
@@ -86,14 +86,14 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
   });
   // The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays,
   // or properties from objects, into distinct variables.
-  const { method, url, headers } = req;
+  //const { method, url, headers } = req;
   //let aaa = new Object();
   // url "/submitFormAK?fname=Alex&sname=Raven" or "/"
   let objUrl = urlLegacy.parse(req.url, true, true); // non standard object.s
   // Verify that it is very first page request or rendering page after GET or POST form submit processed.
   // After POST form submit will be processed rendering page will be as GET.
   // objUrl.search is ? and query e.g. "?fname=Alex&sname=Raven" or ""
-  if ((req.method !== "POST") && (objUrl.search === "")) { // if req.method === "POST" then ObjUrl.search will be "" always.
+  if ((req.method === "GET") && (objUrl.search === null)) { // if req.method === "POST" then ObjUrl.search will be "" always.
     let contType = '';
     if (objUrl.pathname.endsWith('.css')) {
       contType = 'text/css';
@@ -242,7 +242,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
             if (q.sname == "") msg += 'Surname = ' + 'not entered!' + '<br />';
             else msg += 'Surname = ' + q.sname + '<br />';
             */
-            msg += userInfo(q);
+            //msg += userInfo(q);
             msg += msgOrig.substring(msgOrig.indexOf(`</body>`));
             res.writeHead(200, { 'Content-Type': 'text/html' });
             res.write(msg);
