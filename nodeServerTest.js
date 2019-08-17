@@ -61,7 +61,7 @@ const server = https.createServer(options);
 server.on('error', (err) => {
   var dtVar = new Date();
   //throw err;
-  console.log(`httpsServer 'error' event - error code:` + " ==> " + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+  console.log(`httpsServer 'error' event - error code: ==> ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
   console.log(err.code);
   console.log('httpsServer error stack:');
   console.log(err.stack);
@@ -70,7 +70,7 @@ server.on('error', (err) => {
 /*
 server.on('connection', (socket) => {
   var dtVar = new Date();
-  console.log(`httpsServer 'connection' event - client connected at` + " ==> " + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+  console.log(`httpsServer 'connection' event - client connected at + ==> ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
   console.log(socket.remoteAddress + ' ' + socket.remoteFamily + ' ' + socket.remotePort);
 });
 */
@@ -78,19 +78,20 @@ server.on('connection', (socket) => {
 server.on('request', (req, res) => { // request is <http.IncomingMessage>, response is <http.ServerResponse>
   req.on('error', (err) => {
     // This prints the error message and stack trace to `stderr`.
-    console.log(`httpsServer request 'error' event - error stack:` + " ==> " + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+    console.log(`httpsServer request 'error' event - error stack: ==> ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
     console.error(err.stack);
   });
   res.on('error', (err) => {
-    console.log(`httpsServer response 'error' event - error code:` + " ==> " + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+    console.log(`httpsServer response 'error' event - error code: ==> ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
     console.error(err);
   });
   // The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays,
   // or properties from objects, into distinct variables.
   //const { method, url, headers } = req;
   //let aaa = new Object();
-  // url "/submitFormAK?fname=Alex&sname=Raven" or "/"
-  let objUrl = urlLegacy.parse(req.url, true, true); // non standard object.s
+  // req.url if GET "/" for very initial and for next "/submitFormAK?fname=Alex&sname=Raven"
+  // if POST "/submitformAK"
+  let objUrl = urlLegacy.parse(req.url, true, true); // non standard object.
   // Verify that it is very first page request or rendering page after GET or POST form submit processed.
   // After POST form submit will be processed rendering page will be as GET.
   if ((req.method === "GET")) {
@@ -192,10 +193,9 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
         return res.end();
       }
     }
-  } // end of GET method case.
-  // <==================== end of GET method ================================================>
-  // POST method, if req.method === "POST" then ObjUrl.search will be Null always.
-  else {
+  } // <==================== end of GET method ================================================>
+  else { // <==================== POST method form submit case start ============================================>
+    // POST method, if req.method === "POST" then ObjUrl.search will be Null always.
     //let objUrl = urlLegacy.parse(req.url, true, true); // non standard object is got earlier befor GET or POST analyze.
     /*
     req.url = "/submitformAK"
@@ -265,25 +265,17 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
         }); // end of file index.html reading.
       } // end of if (req.url.includes('/submitFormAK'))
     }); // end req.on('end', function ()...
+  } // <==================================== End of POST mtthod form submit case.  =====================================>
+}) // end of server.on('request'...)
 
   /*
-  if (req.url.includes('/' + formNameIni)) {
-      if (req.method === "POST" && (req.url.lastIndexOf('/' + formNameIni) === 0)) {
-      } // end of if req.method == "POST".
-      // <==================================== end of POST, begin of GET =====================================>
-    } // end of if req.url.includes('/submitForm...')
-    else { // no "/submitFormAK" but search is not emty e.g. "?fname=Alex&sname=Raven"
       // HACKER ATTACK OR FAULTY CLIENT.
       //req.connection.destroy();
       res.writeHead(200, { 'Content-Type': 'text/plain' });
       res.write(`Who cares what the idiots says!\nWho cares what the idiots do!\n (c) Paul McCartney`);
       return res.end();
-    }
   */
   
-  } // <==================================== End of POST or GET form submit case.  =====================================>
-}) // end of server.on('request'...)
-
 dtVar = new Date();
 console.log('after https.createServer ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
 
