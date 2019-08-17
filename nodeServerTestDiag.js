@@ -15,16 +15,16 @@ styles
 //let dirName = 'build'; // React build dir.
 let dirName = 'arch';
 let formNameIni = 'index.html';
-let formName = 'submitFormAK';
+//let formName = 'submitFormAK';
 
 //const http = require('http');
 const https = require('https');
 const urlLegacy = require('url'); // Legacy url module.
 //const { URL } = require('url'); // ES6 url module
 const fs = require('fs');
-const qs = require('querystring');
+//const qs = require('querystring');
 //const formidable = require('formidable');
-const {userInfo} = require('./appWeb.js');
+//const {userInfo} = require('./appWeb.js');
 
 let dtVar = new Date();
 console.log('Server starts ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
@@ -96,18 +96,18 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
   // After POST form submit will be processed rendering page will be as GET.
   if ((req.method === "GET")) {
     // for req.method === "GET" objUrl.search is ? + query e.g. "?fname=Alex&sname=Raven" or Null
-    // req.url = "/submitFormAK?fname=Alex&sname=Raven"
+    // req.url = "/" or "/submitFormAK?fname=Alex&sname=Raven"
     // if req.method === "POST" then ObjUrl.search will be "" always.
     /*
-    req.url = "/submitformAK?fname=al&sname=kaa"
+    req.url = "/" or "/submitformAK?fname=al&sname=kaa"
     ObjUrl {
-      href: = path: "/submitformAK?fname=al&sname=kaa"
-      pathname: "/submitformAK"
-      search: "?fname=al&sname=kaa"
-      query: Object {fname: "al", sname: "kaa"}
+      href: = path: "/ or "/submitformAK?fname=al&sname=kaa"
+      pathname: "/" or "/submitformAK"
+      search: null or  "?fname=al&sname=kaa"
+      query: Object {} or {fname: "al", sname: "kaa"}
     }
     */
-    if (objUrl.search === null) {
+    if (req.url === "/") { // very initial request https://unl.test:8081/
       let contType = '';
       if (objUrl.pathname.endsWith('.css')) {
         contType = 'text/css';
@@ -157,41 +157,20 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
     // for req.method === "GET" objUrl.search is ? + query e.g. "?fname=Alex&sname=Raven" or Null
     // req.url = "/submitFormAK?fname=Alex&sname=Raven"
     else {
-      if (req.url.includes('/' + formName)) { // e.g. req.url = "/submitFormAK?fname=Alex&sname=Raven"
-        //res.writeHead(200, { 'Content-Type': 'text/plain' });
-        //res.write(`Form asked ${req.url} is OK!`);
-        //return res.end();
-        let q = objUrl.query; // formerly parsed query property object e.g. Object {fname: "Alex", sname: "Raven"}.
-        fs.readFile('./' + dirName + '/pages/formAK.html', (err, data) => { // file formAK.html reading.
-          if (err) throw err;
-          else { // file formAK.html read OK - modify template file.
-            let msgOrig = '';
-            for (let i=0; i<data.length; i++) {
-              msgOrig = msgOrig + String.fromCharCode(data[i]);
-            }
-            let msg = msgOrig.substring(0,msgOrig.indexOf(`</body>`));
-            msg += 'LAST ENTERED by method ' + req.method + ':<br />';
-            /*
-            if (q.fname === "") msg += 'Name not entered!<br />';
-            else msg += 'Name = ' + q.fname + '<br />';
-            if (q.sname === "") msg += 'Surname not entered!<br />';
-            else msg += 'Surname = ' + q.sname + '<br />';
-            */
-            msg += userInfo(q);
-            msg += msgOrig.substring(msgOrig.indexOf(`</body>`));
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.write(msg);
-            return res.end();
-          } // end  of file index.html read OK - modify template file.
-        }); // end of file index.html reading.
+      /*
+      req.url = /submitformAK?fname=al&sname=kaa"
+      ObjUrl {
+      href: = path: /submitformAK?fname=al&sname=kaa"
+      pathname: /submitformAK"
+      search: "?fname=al&sname=kaa"
+      query: {fname: "al", sname: "kaa"}
       }
-      else { // no "/submitFormAK" but search is not emty e.g. "?fname=Alex&sname=Raven"
-        // HACKER ATTACK OR FAULTY CLIENT.
-        //req.connection.destroy();
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.write(`Form asked ${req.url} is not permitted!`);
-        return res.end();
-      }
+      */
+      // HACKER ATTACK OR FAULTY CLIENT.
+      //req.connection.destroy();
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.write(`Form asked by GET: ${req.url}`);
+      return res.end();
     }
   } // <==================== end of GET method ================================================>
   else { // <==================== POST method form submit case start ============================================>
@@ -227,7 +206,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
       console.log(strVar);
       */
       //console.log(objBody);
-      let objBody = qs.parse(body, "\r\n", "="); // using const qs = require('querystring') module.
+      //let objBody = qs.parse(body, "\r\n", "="); // using const qs = require('querystring') module.
       /*
         req.url = "/submitformAK"
         ObjUrl {
@@ -238,44 +217,15 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
         body: "fname=al\r\nsname=kaa\r\n"
         objBody: Object {fname: "al", sname: "kaa"}    }
       */
-      if (req.url.includes('/' + formName)) {
-        fs.readFile('./' + dirName + '/pages/formAK.html', (err, data) => { // index.html reading.
-          if (err) throw err;
-          else { // file index.html read OK -  modify template file.
-            let msgOrig = ''; //, appWebReturn = '';
-            for (let i=0; i<data.length; i++) {
-              msgOrig = msgOrig + String.fromCharCode(data[i]);
-            }
-            let msg = msgOrig.substring(0,msgOrig.indexOf(`</body>`));
-            msg += 'LAST ENTERED by method ' + req.method + ':<br />';
-            /*
-            if (objBody.fname == "") msg += 'Name = ' + 'not entered!' + '<br />';
-            else msg += 'Name = ' + objBody.fname + '<br />';
-            if (objBody.sname == "") msg += 'Surname = ' + 'not entered!' + '<br />';
-            else msg += 'Surname = ' + objBody.sname + '<br />';
-            */
-            //let appWebReturn = userInfo(objBody);
-            //msg += appWebReturn;
-            msg += userInfo(objBody);
-            msg += msgOrig.substring(msgOrig.indexOf(`</body>`));
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.write(msg);
-            return res.end();
-          } // end  of file index.html read OK - modify template file.
-        }); // end of file index.html reading.
-      } // end of if (req.url.includes('/submitFormAK'))
+      // HACKER ATTACK OR FAULTY CLIENT.
+      //req.connection.destroy();
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.write(`Form asked by PUT: ${req.url} body ${body}`);
+      return res.end();
     }); // end req.on('end', function ()...
   } // <==================================== End of POST mtthod form submit case.  =====================================>
 }) // end of server.on('request'...)
 
-  /*
-      // HACKER ATTACK OR FAULTY CLIENT.
-      //req.connection.destroy();
-      res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.write(`Who cares what the idiots says!\nWho cares what the idiots do!\n (c) Paul McCartney`);
-      return res.end();
-  */
-  
 dtVar = new Date();
 console.log('after https.createServer ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
 
