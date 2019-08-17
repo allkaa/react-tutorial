@@ -158,7 +158,7 @@ class NameForm extends Component {
     console.log(event.target.value);
     console.log(this.state);
     //alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
-    event.preventDefault();
+    //event.preventDefault();
     // Use created ref to the DOM node to access file(s) in a submit handler:
     alert(
       `Selected file to upload - ${
