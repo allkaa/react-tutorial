@@ -274,7 +274,7 @@ class NameForm extends Component {
         <br/>
         <div className="button">
           {/* event target type will be submit */}
-          <button type="submit">Send your message</button>
+          <button type="submit" formMethod="post" formAction="formAK">Send your message</button>
         </div>
 
       </form>
