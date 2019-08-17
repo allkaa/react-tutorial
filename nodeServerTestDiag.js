@@ -12,8 +12,8 @@ styles
 //let methodType = 'get'; // 'post' or 'get' for secure server.
 //let formNameIni = 'submitFormAK-Ini';
 //let formName = 'submitFormAK';
-//let dirName = 'build'; // React build dir.
-let dirName = 'arch';
+let dirName = 'build'; // React build dir.
+//let dirName = 'arch';
 let formNameIni = 'index.html';
 //let formName = 'submitFormAK';
 
@@ -89,14 +89,14 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
   // or properties from objects, into distinct variables.
   //const { method, url, headers } = req;
   //let aaa = new Object();
-  // req.url if GET "/" for very initial and for next "/submitFormAK?fname=Alex&sname=Raven"
+  // req.url if GET "/" for very initial and for next  e.g. "styles/style.css" or "/submitFormAK?fname=Alex&sname=Raven"
   // if POST "/submitformAK"
   let objUrl = urlLegacy.parse(req.url, true, true); // non standard object.
   // Verify that it is very first page request or rendering page after GET or POST form submit processed.
   // After POST form submit will be processed rendering page will be as GET.
   if ((req.method === "GET")) {
     // for req.method === "GET" objUrl.search is ? + query e.g. "?fname=Alex&sname=Raven" or Null
-    // req.url = "/" or "/submitFormAK?fname=Alex&sname=Raven"
+    // req.url = "/" or e.g. "styles/style.css" or "/submitFormAK?fname=Alex&sname=Raven"
     // if req.method === "POST" then ObjUrl.search will be "" always.
     /*
     req.url = "/" or "/submitformAK?fname=al&sname=kaa"
@@ -107,7 +107,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
       query: Object {} or {fname: "al", sname: "kaa"}
     }
     */
-    if (req.url === "/") { // very initial request https://unl.test:8081/
+    if (objUrl.search === null) { // very initial request https://unl.test:8081/
       let contType = '';
       if (objUrl.pathname.endsWith('.css')) {
         contType = 'text/css';
@@ -169,7 +169,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
       // HACKER ATTACK OR FAULTY CLIENT.
       //req.connection.destroy();
       res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.write(`Form asked by GET: ${req.url}`);
+      res.write(`Form request submitted by GET: ${req.url}`);
       return res.end();
     }
   } // <==================== end of GET method ================================================>
@@ -220,7 +220,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
       // HACKER ATTACK OR FAULTY CLIENT.
       //req.connection.destroy();
       res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.write(`Form asked by PUT: ${req.url} body ${body}`);
+      res.write(`Form request submitted by PUT: ${req.url} with body: \r\n${body}`);
       return res.end();
     }); // end req.on('end', function ()...
   } // <==================================== End of POST mtthod form submit case.  =====================================>
