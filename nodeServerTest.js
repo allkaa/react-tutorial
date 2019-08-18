@@ -189,6 +189,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
       else { // no "/submitFormAK" but search is not emty e.g. "?fname=Alex&sname=Raven"
         // HACKER ATTACK OR FAULTY CLIENT.
         //req.connection.destroy();
+        console.log(req.url);
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.write(`Form request submitted by GET: ${req.url}`);
         return res.end();
@@ -271,6 +272,10 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
       } // end of if (req.url.includes('/submitFormAK'))
       else {
         // HACKER ATTACK OR FAULTY CLIENT.
+        // using const qs = require('querystring') module with defaults:
+        // qs.parse( body, "&", "=", { querystring.unescape, 1000} )
+        let objBody = qs.parse(body);
+        console.log(objBody);
         //req.connection.destroy();
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.write(`Form request submitted by POST: ${req.url} with body: \r\n${body}`);
@@ -280,14 +285,6 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
   } // <==================================== End of POST mtthod form submit case.  =====================================>
 }) // end of server.on('request'...)
 
-  /*
-      // HACKER ATTACK OR FAULTY CLIENT.
-      //req.connection.destroy();
-      res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.write(`Who cares what the idiots says!\nWho cares what the idiots do!\n (c) Paul McCartney`);
-      return res.end();
-  */
-  
 dtVar = new Date();
 console.log('after https.createServer ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
 
