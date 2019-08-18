@@ -273,7 +273,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
       else {
         // HACKER ATTACK OR FAULTY CLIENT.
         // using const qs = require('querystring') module with defaults:
-        // qs.parse( body, "&", "=", { querystring.unescape, 1000} )
+        // qs.parse( body, "&", "=", { decodeURIComponent: querystring.unescape, 1000} )
         let objBody = qs.parse(body);
         console.log(objBody);
         //req.connection.destroy();
