@@ -22,6 +22,7 @@ const https = require('https');
 const urlLegacy = require('url'); // Legacy url module.
 //const { URL } = require('url'); // ES6 url module
 const fs = require('fs');
+// The querystring module provides utilities for parsing and formatting URL query strings.
 //const qs = require('querystring'); // used as let objBody = qs.parse(body, "\r\n", "=");
 //const formidable = require('formidable');
 //const {userInfo} = require('./appWeb.js');
