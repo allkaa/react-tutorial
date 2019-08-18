@@ -22,7 +22,7 @@ const https = require('https');
 const urlLegacy = require('url'); // Legacy url module.
 //const { URL } = require('url'); // ES6 url module
 const fs = require('fs');
-//const qs = require('querystring');
+//const qs = require('querystring'); // used as let objBody = qs.parse(body, "\r\n", "=");
 //const formidable = require('formidable');
 //const {userInfo} = require('./appWeb.js');
 
@@ -220,7 +220,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
       // HACKER ATTACK OR FAULTY CLIENT.
       //req.connection.destroy();
       res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.write(`Form request submitted by PUT: ${req.url} with body: \r\n${body}`);
+      res.write(`Form request submitted by POST: ${req.url} with body: \r\n${body}`);
       return res.end();
     }); // end req.on('end', function ()...
   } // <==================================== End of POST mtthod form submit case.  =====================================>

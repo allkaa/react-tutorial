@@ -12,8 +12,8 @@ styles
 //let methodType = 'get'; // 'post' or 'get' for secure server.
 //let formNameIni = 'submitFormAK-Ini';
 //let formName = 'submitFormAK';
-//let dirName = 'build'; // React build dir.
-let dirName = 'arch';
+let dirName = 'build'; // React build dir.
+//let dirName = 'arch';
 let formNameIni = 'index.html';
 let formName = 'submitFormAK';
 
@@ -189,13 +189,17 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
         // HACKER ATTACK OR FAULTY CLIENT.
         //req.connection.destroy();
         res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.write(`Form asked ${req.url} is not permitted!`);
+        res.write(`Form request submitted by GET: ${req.url}`);
         return res.end();
       }
     }
   } // <==================== end of GET method ================================================>
   else { // <==================== POST method form submit case start ============================================>
     // POST method, if req.method === "POST" then ObjUrl.search will be Null always.
+    /*
+    Form request submitted by POST: /formAK with body: 
+    user_name=ALEX+RAVEN%7E&user_essay=Please+write+an+essay+about+your+favorite+DOM+element.%5E&fruits=Lime&fruits=Coconut&carrots=option1&meal=option1
+    */
     //let objUrl = urlLegacy.parse(req.url, true, true); // non standard object is got earlier befor GET or POST analyze.
     /*
     req.url = "/submitformAK"
@@ -264,6 +268,13 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
           } // end  of file index.html read OK - modify template file.
         }); // end of file index.html reading.
       } // end of if (req.url.includes('/submitFormAK'))
+      else {
+        // HACKER ATTACK OR FAULTY CLIENT.
+        //req.connection.destroy();
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.write(`Form request submitted by POST: ${req.url} with body: \r\n${body}`);
+        return res.end();
+      }
     }); // end req.on('end', function ()...
   } // <==================================== End of POST mtthod form submit case.  =====================================>
 }) // end of server.on('request'...)
