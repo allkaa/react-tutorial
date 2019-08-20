@@ -1,13 +1,18 @@
 const app = document.getElementById('root')
+console.log(document.domain);
 
 const logo = document.createElement('img')
 logo.src = 'logo.png'
 
+const h1 = document.createElement('h1');
+h1.textContent = 'XMLHttpRequest reply:';
+
 const container = document.createElement('div')
 container.setAttribute('class', 'container')
 
-app.appendChild(logo)
-app.appendChild(container)
+app.appendChild(logo);
+app.appendChild(h1);
+app.appendChild(container);
 
 //return; // NB! return can not be used in browser DOM.
 

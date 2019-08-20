@@ -44,6 +44,13 @@
       {
         "type": "chrome",
         "request": "launch",
+        "name": "Chrome unl.test:8080",
+        "url": "http://unl.test:8080",
+        "webRoot": "${workspaceFolder}",
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
         "name": "Launch Chrome ./index.html",
         "file": "${workspaceFolder}/index.html"
       },
