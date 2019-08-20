@@ -95,6 +95,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
   let objUrl = urlLegacy.parse(req.url, true, true); // non standard object.
   // Verify that it is very first page request or rendering page after GET or POST form submit processed.
   // After POST form submit will be processed rendering page will be as GET.
+  // In req.headers Object property host: "unl.test:8081"
   if ((req.method === "GET")) {
     // for req.method === "GET" objUrl.search is ? + query e.g. "?fname=Alex&sname=Raven" or Null
     // req.url = "/submitFormAK?fname=Alex&sname=Raven"
