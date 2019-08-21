@@ -10,13 +10,14 @@ class App extends Component {
     let txtErr 
     //let objThis = this
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://10.8.194.3:4200/?testDebian', true);
+    xhr.open('GET', 'http://10.8.194.3:42001/?testDebian', true);
     // If specified, responseType must be empty string or "document"
     xhr.responseType = 'document';
     // Force the response to be parsed as XML
     xhr.overrideMimeType('text/xml');
     
     xhr.onload = () => {
+      console.log(xhr.getAllResponseHeaders());
       let docXml
       if (xhr.readyState === xhr.DONE && xhr.status === 200) {
         //console.log(xhr.response);
@@ -26,9 +27,10 @@ class App extends Component {
         let xmlString = xmlS.serializeToString(docXml);
         console.log(xmlString)
         let nodeValue = docXml.getElementsByTagName("result")[0].childNodes[0].nodeValue; // get <result> tag text value.
+        let nodeValue2 = docXml.getElementsByTagName("comment")[0].childNodes[0].nodeValue; // get <comment> tag text value.
         this.setState({
           //data: xmlString,
-          data: nodeValue,
+          data: `result = ${nodeValue}, comment = ${nodeValue2}`
         })
       }
       else {
