@@ -86,12 +86,13 @@ class App extends Component {
       this.setState({ data: txtErr,})
     }
 
-    //xhr.send(); // for GET case.
+    //xhr.send(); // for GET case with empty body.
 
+    // PUT case:
     //Send the proper header information along with the request
     //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.setRequestHeader("Content-Type", "text/plain");
-    xhr.send("foo=bar&lorem=ipsum");
+    xhr.send("foo=bar&lorem=ipsum"); // send with body for POST.
     // xhr.send(new Int8Array()); 
     // xhr.send(document);
 
