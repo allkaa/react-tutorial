@@ -10,12 +10,17 @@ class App extends Component {
     let txtErr 
     //let objThis = this
     const xhr = new XMLHttpRequest();
+    /*
     xhr.open('GET', 'http://10.8.194.3:42001/?testDebian', true);
+    */
+    xhr.open('POST', 'http://10.8.194.3:42001/?testDebian', true);
     // If specified, responseType must be empty string or "document"
     xhr.responseType = 'document';
     // Force the response to be parsed as XML
     xhr.overrideMimeType('text/xml');
     
+
+    ///* GET or PUT state case using onload event.
     xhr.onload = () => {
       console.log(xhr.getAllResponseHeaders());
       let docXml
@@ -34,12 +39,41 @@ class App extends Component {
         })
       }
       else {
-        txtErr = `Request onload error - status ${xhr.status}`
+        txtErr = `Request onload error - status ${xhr.status}, readyState ${xhr.readyState}`
         console.log(txtErr)
         this.setState({ data: txtErr,})
         }
     }
-    
+    //*/
+
+    /*
+    // GET or PUT case using onreadystatechange event;
+    xhr.onreadystatechange = () => { // Call a function when the state changes.
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        // Request finished. Do processing here.
+        console.log(xhr.getAllResponseHeaders());
+        let docXml
+        //console.log(xhr.response);
+        docXml = xhr.responseXML
+        //console.log(docXml);
+        let xmlS = new XMLSerializer();
+        let xmlString = xmlS.serializeToString(docXml);
+        console.log(xmlString)
+        let nodeValue = docXml.getElementsByTagName("result")[0].childNodes[0].nodeValue; // get <result> tag text value.
+        let nodeValue2 = docXml.getElementsByTagName("comment")[0].childNodes[0].nodeValue; // get <comment> tag text value.
+        this.setState({
+        //data: xmlString,
+        data: `result = ${nodeValue}, comment = ${nodeValue2}`
+        })
+      }
+      else {
+        txtErr = `Request onreadystate event - status ${xhr.status}, readyState ${xhr.readyState}`
+        console.log(txtErr)
+        this.setState({ data: txtErr,})
+      }
+    }
+    */
+
     xhr.onerror = () => {
       txtErr = `Request failed -> onerror event occured.`
       console.log(txtErr)
@@ -51,9 +85,16 @@ class App extends Component {
       console.log(txtErr)
       this.setState({ data: txtErr,})
     }
-    
-    xhr.send();
-    
+
+    //xhr.send(); // for GET case.
+
+    //Send the proper header information along with the request
+    //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-Type", "text/plain");
+    xhr.send("foo=bar&lorem=ipsum");
+    // xhr.send(new Int8Array()); 
+    // xhr.send(document);
+
   } // end of componentDidMount.
   
   render() {
