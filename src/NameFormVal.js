@@ -207,7 +207,8 @@ class NameForm extends Component {
         <div>
           <label htmlFor="name">Name: <abbr title="required">*</abbr> </label>
           {/* event target type will be text */}
-          <input type="text" id="name" name="user_name"  value={this.state.name} onChange={this.handleChangeName}></input> {/* setting e.g.  value="Hi" prevents the user from changing the input  */}
+          <input type="text" id="name" name="user_name"  value={this.state.name} onChange={this.handleChangeName} required>
+          </input> {/* setting e.g.  value="Hi" prevents the user from changing the input  */}
         </div>
 
         {/* event target type will be textarea */}
@@ -277,8 +278,8 @@ class NameForm extends Component {
 
         <br/>
         <div className="button">
-          {/* event target type will be submit */}
-          <button type="submit" formMethod="post" formAction="formAK">Send your message</button>
+          {/* event target type will be submit formAction="formAK" */}
+          <button type="submit" formMethod="post" formAction="http://10.8.194.3:42001/">Send your message</button>
         </div>
 
       </form>
