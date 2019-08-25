@@ -203,7 +203,7 @@ class NameForm extends Component {
           <input type="file" id="file_name" ref={this.fileInput} />
         </div>
         */}
-        
+
         <div>
           <label htmlFor="name">Name: <abbr title="required">*</abbr> </label>
           {/* event target type will be text */}
