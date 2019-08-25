@@ -19,7 +19,7 @@ class NameForm extends Component {
         'option1'
     }; // very initial value.
     // Create a ref to the DOM node to access file(s) in a submit handler:
-    this.fileInput = React.createRef();
+    //this.fileInput = React.createRef();
 
     console.log(this.state.name);
     console.log(this.state.essay);
@@ -158,13 +158,15 @@ class NameForm extends Component {
     console.log(event.target.value);
     console.log(this.state);
     //alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
-    //event.preventDefault();
+    event.preventDefault();
+    /*
     // Use created ref to the DOM node to access file(s) in a submit handler:
     alert(
       `Selected file to upload - ${
         this.fileInput.current.files[0].name
       }`
     );
+    */
   }
 
   render() {
@@ -195,10 +197,12 @@ class NameForm extends Component {
           <input type="file" ref={this.fileInput} />
         </label>
         */}
+        {/*
         <div>
           <label htmlFor="file_name">Upload file:: <abbr title="required">*</abbr> </label>
           <input type="file" id="file_name" ref={this.fileInput} />
         </div>
+        */}
         
         <div>
           <label htmlFor="name">Name: <abbr title="required">*</abbr> </label>
