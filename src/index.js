@@ -81,9 +81,9 @@ import './styleHWT.css' // use external link in <head>
 //import App from './AppMyWeb-make-a-website' // float+flex
 //import App from './AppMyWeb-flexbox_website2a'
 //import App from './AppW3css'
-//import App from './AppHWT'
+import App from './AppHWT'
 //import App from './AppFetchXML'
-import App from './AppXhrXml'
+//import App from './AppXhrXml'
 
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:

@@ -2,7 +2,8 @@
 // (capitalize custom components to differentiate them from regular HTML elements).
 import React, { Component } from 'react'
 //import logo from './logo.svg'; // logo.svg in srs dir
-import NameForm from './NameForm.js'
+//import NameForm from './NameForm.js'
+import NameFormVal from './NameFormVal.js'
 
 function noStyles() {
   //console.log(`noStyles started`)
@@ -257,7 +258,8 @@ class App extends Component {
   <br/>
 </header>
 
-<NameForm />
+{/*<NameForm />*/}
+<NameFormVal />
 
 {/* very last information div must be after clearfix */}
 <footer>
