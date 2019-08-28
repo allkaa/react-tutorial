@@ -25,6 +25,8 @@ myEventTarget.dispatchEvent(event);
 let newValue = myEventTarget.secret; // == 7
 console.log(newValue);
 */
+
+/*
 let state = {
       uname:
         'Alex Raven',
@@ -66,3 +68,12 @@ for (let prop in state) {
   }
 }
 console.log(urlEncodedData);
+*/
+
+let debug = {hello: "world"};
+let ttt = JSON.stringify(debug,null, 2);
+let blob = new Blob([ttt], {type : 'application/json'});
+console.log(debug);
+console.log(ttt);
+console.log(blob);
+console.log(blob.text());

@@ -71,6 +71,12 @@
         "request": "launch",
         "name": "StyleSheetsDemoGood.html",
         "file": "${workspaceFolder}/StyleSheetsDemoGood.html"
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "indexTest.html",
+        "file": "${workspaceFolder}/indexTest.html"
       }
   ]
 }
