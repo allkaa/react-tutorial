@@ -195,7 +195,7 @@ class NameForm extends Component {
 
     ///* GET or PUT state case using onload event.
     xhr.onload = () => {
-      console.log('========> FormData event xhr.onload subevent <==========')
+      console.log('========> FormData event xhr.onload subevent AllResponseHeaders<==========')
       console.log(xhr.getAllResponseHeaders());
       let docXml
       if (xhr.readyState === xhr.DONE && xhr.status === 200) {
@@ -284,7 +284,8 @@ class NameForm extends Component {
   
     // Combine the pairs into a single string and replace all %-encoded spaces to 
     // the '+' character; matches the behaviour of browser form submissions.
-    urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+    //urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+    urlEncodedData = this.state.name.replace(/%20/g, '+');
     console.log('========> FormData event unlEncodedData to send <==========')
     console.log(urlEncodedData);
 
