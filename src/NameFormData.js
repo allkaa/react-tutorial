@@ -7,7 +7,7 @@ class NameForm extends Component {
     console.log('========> NameForm constructor <==========')
     super(props);
     this.state = {
-      name:
+      uname:
         'Alex Raven',
       essay:
         'Please write an essay about your favorite DOM element.',
@@ -21,7 +21,7 @@ class NameForm extends Component {
     // Create a ref to the DOM node to access file(s) in a submit handler:
     //this.fileInput = React.createRef();
 
-    console.log(this.state.name);
+    console.log(this.state.uname);
     console.log(this.state.essay);
     console.log(this.state.fruit);
 
@@ -37,9 +37,9 @@ class NameForm extends Component {
   // Code is invoked after the component is mounted/inserted into the DOM tree.
   componentDidMount() {
     console.log('========> NameForm componentDidMount <==========')
-    console.log(this.state.name);
-    this.setState({name: this.state.name.toUpperCase()})
-    console.log(this.state.name);
+    console.log(this.state.uname);
+    this.setState({uname: this.state.uname.toUpperCase()})
+    console.log(this.state.uname);
     console.log(this.state.essay);
     console.log(this.state.fruit);
     console.log(this.state.checkOption);
@@ -58,8 +58,8 @@ class NameForm extends Component {
     console.log(event.target.type)
     console.log('event.target.value: ' + event.target.value);
     console.log(event.target.value);
-    this.setState({name: event.target.value.toUpperCase()});
-    console.log(this.state.name);
+    this.setState({uname: event.target.value.toUpperCase()});
+    console.log(this.state.uname);
   }
 
   handleChangeEssay(event) {
@@ -272,6 +272,7 @@ class NameForm extends Component {
     // xhr.send(document);
 
 
+    /*
     let data = {test:'ok', test2: 'ok2'};
     let urlEncodedData = "";
     let urlEncodedDataPairs = [];
@@ -284,10 +285,16 @@ class NameForm extends Component {
   
     // Combine the pairs into a single string and replace all %-encoded spaces to 
     // the '+' character; matches the behaviour of browser form submissions.
-    //urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
-    urlEncodedData = this.state.name.replace(/%20/g, '+');
+    urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+    */
+
     console.log('========> FormData event unlEncodedData to send <==========')
-    console.log(urlEncodedData);
+    //urlEncodedData = "uname" + '=' + encodeURIComponent(this.state.uname.replace(/%20/g, '+'))
+    //console.log(urlEncodedData);
+
+    let FD  = new FormData();
+    FD.append("uname", encodeURIComponent(this.state.uname).replace(/%20/g, '+'));
+    console.log(FD);
 
     /*
     // Define what happens on successful data submission
@@ -302,10 +309,17 @@ class NameForm extends Component {
 
     // Set up our request
     //xhr.open('POST', 'https://example.com/cors.php');
-    // Add the required HTTP header for form data POST requests
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    // Add the required HTTP header for form data POST requests if FormData is not used.
+    //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     // Finally, send our data.
-    xhr.send(urlEncodedData);
+    //xhr.send(urlEncodedData);
+
+    // Send our FormData object; HTTP headers are set automatically!!!
+    //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); <---- do not use with FD.
+    xhr.send(FD);
+
+
 
   }
 
@@ -347,7 +361,7 @@ class NameForm extends Component {
         <div>
           <label htmlFor="name">Name: <abbr title="required">*</abbr> </label>
           {/* event target type will be text */}
-          <input type="text" id="name" name="user_name"  value={this.state.name} onChange={this.handleChangeName} required>
+          <input type="text" id="name" name="user_name"  value={this.state.uname} onChange={this.handleChangeName} required>
           </input> {/* setting e.g.  value="Hi" prevents the user from changing the input  */}
         </div>
 
