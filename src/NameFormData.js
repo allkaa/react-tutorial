@@ -253,7 +253,7 @@ class NameForm extends Component {
       txtErr = `Request failed -> onerror event occured.`
       console.log(txtErr)
       this.setState({ data: txtErr,})
-  }
+    }
     
     xhr.ontimeout = () => {
       txtErr = `Request failed -> ontimeout event occured`
@@ -289,12 +289,40 @@ class NameForm extends Component {
     */
 
     console.log('========> FormData event unlEncodedData to send <==========')
-    //urlEncodedData = "uname" + '=' + encodeURIComponent(this.state.uname.replace(/%20/g, '+'))
-    //console.log(urlEncodedData);
 
     let FD  = new FormData();
-    FD.append("uname", encodeURIComponent(this.state.uname).replace(/%20/g, '+'));
+    let urlEncodedData = "";
+    for (let prop in this.state) {
+      //console.log(name);
+      //console.log(state[name]);
+      if (Array.isArray(this.state[prop])) {
+        // state[prop].forEach(function(item, index, array) {});
+        for (let item of this.state[prop]) {
+          //console.log(item, index);
+          console.log(prop + '=' + item);
+          if (urlEncodedData === "") {
+            urlEncodedData = encodeURIComponent(prop) + '=' + encodeURIComponent(item).replace(/%20/g, '+');
+          }
+          else {
+            urlEncodedData = urlEncodedData + '&' + encodeURIComponent(prop) + '=' + encodeURIComponent(item).replace(/%20/g, '+');
+          }
+          FD.append(encodeURIComponent(prop), encodeURIComponent(item).replace(/%20/g, '+'));
+        };
+      }
+      else {
+        console.log(prop + '=' + this.state[prop]);
+        if (urlEncodedData === "") {
+          urlEncodedData = encodeURIComponent(prop) + '=' + encodeURIComponent(this.state[prop]).replace(/%20/g, '+');
+        }
+        else {
+          urlEncodedData = urlEncodedData + '&' + encodeURIComponent(prop) + '=' + encodeURIComponent(this.state[prop]).replace(/%20/g, '+');
+        }
+        FD.append(encodeURIComponent(prop), encodeURIComponent(this.state[prop]).replace(/%20/g, '+'));
+      }
+    }
+    console.log(urlEncodedData);
     console.log(FD);
+   
 
     /*
     // Define what happens on successful data submission
@@ -307,13 +335,12 @@ class NameForm extends Component {
     });
     */
 
-    // Set up our request
-    //xhr.open('POST', 'https://example.com/cors.php');
-
+    /*
     // Add the required HTTP header for form data POST requests if FormData is not used.
-    //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     // Finally, send our data.
-    //xhr.send(urlEncodedData);
+    xhr.send(urlEncodedData);
+    */
 
     // Send our FormData object; HTTP headers are set automatically!!!
     //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); <---- do not use with FD.

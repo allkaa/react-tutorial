@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 class My_Event_Target_class extends EventTarget {
   constructor(mySecret) {
     super();
@@ -23,3 +24,45 @@ let event = new CustomEvent("foo", { detail: 7 }); // Name of the event ("foo") 
 myEventTarget.dispatchEvent(event);
 let newValue = myEventTarget.secret; // == 7
 console.log(newValue);
+*/
+let state = {
+      uname:
+        'Alex Raven',
+      essay:
+        'Please write an essay about your favorite DOM element.',
+      fruit:
+        ['Coconut','Lime'],
+      checkOption:
+        ['option1'],
+      radioOption:
+        'option1'
+    }; // very initial value.
+
+let urlEncodedData = "";
+for (let prop in state) {
+  //console.log(name);
+  //console.log(state[name]);
+  if (Array.isArray(state[prop])) {
+    // state[prop].forEach(function(item, index, array) {});
+    for (let item of state[prop]) {
+      //console.log(item, index);
+      console.log(prop + '=' + item);
+      if (urlEncodedData === "") {
+        urlEncodedData = encodeURIComponent(prop) + '=' + encodeURIComponent(item).replace(/%20/g, '+');
+      }
+      else {
+        urlEncodedData = urlEncodedData + '&' + encodeURIComponent(prop) + '=' + encodeURIComponent(item).replace(/%20/g, '+');
+      }
+    };
+  }
+  else {
+    console.log(prop + '=' + state[prop]);
+    if (urlEncodedData === "") {
+      urlEncodedData = encodeURIComponent(prop) + '=' + encodeURIComponent(state[prop]).replace(/%20/g, '+');
+    }
+    else {
+      urlEncodedData = urlEncodedData + '&' + encodeURIComponent(prop) + '=' + encodeURIComponent(state[prop]).replace(/%20/g, '+');
+    }
+  }
+}
+console.log(urlEncodedData);
