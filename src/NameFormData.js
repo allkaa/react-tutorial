@@ -170,7 +170,7 @@ class NameForm extends Component {
   }
 
   handleClickFormData(event) {
-    console.log('========> NameForm handlFormData event <==========')
+    console.log('========> NameForm handleClickFormData event <==========')
     console.log('event: ' + event);
     console.log(event);
     console.log('event.target: ' + event.target);
@@ -195,6 +195,7 @@ class NameForm extends Component {
 
     ///* GET or PUT state case using onload event.
     xhr.onload = () => {
+      console.log('========> FormData event xhr.onload subevent <==========')
       console.log(xhr.getAllResponseHeaders());
       let docXml
       if (xhr.readyState === xhr.DONE && xhr.status === 200) {
@@ -203,12 +204,13 @@ class NameForm extends Component {
         //console.log(docXml);
         let xmlS = new XMLSerializer();
         let xmlString = xmlS.serializeToString(docXml);
+        console.log('========> FormData event xhr.onload subevent xmlSting <==========')
         console.log(xmlString)
         let nodeValue = docXml.getElementsByTagName("result")[0].childNodes[0].nodeValue; // get <result> tag text value.
         let nodeValue2 = docXml.getElementsByTagName("comment")[0].childNodes[0].nodeValue; // get <comment> tag text value.
         this.setState({
           //data: xmlString,
-          data: `result = ${nodeValue}, comment = ${nodeValue2}`
+          essay: `result = ${nodeValue}, comment = ${nodeValue2}`
         })
       }
       else {
@@ -283,6 +285,7 @@ class NameForm extends Component {
     // Combine the pairs into a single string and replace all %-encoded spaces to 
     // the '+' character; matches the behaviour of browser form submissions.
     urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+    console.log('========> FormData event unlEncodedData to send <==========')
     console.log(urlEncodedData);
 
     /*
