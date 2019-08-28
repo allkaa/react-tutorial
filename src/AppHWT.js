@@ -3,7 +3,8 @@
 import React, { Component } from 'react'
 //import logo from './logo.svg'; // logo.svg in srs dir
 //import NameForm from './NameForm.js'
-import NameFormVal from './NameFormVal.js'
+//import NameFormVal from './NameFormVal.js'
+import NameFormData from './NameFormData.js'
 
 function noStyles() {
   //console.log(`noStyles started`)
@@ -259,7 +260,8 @@ class App extends Component {
 </header>
 
 {/*<NameForm />*/}
-<NameFormVal />
+{/*<NameFormVal />*/}
+<NameFormData />
 
 {/* very last information div must be after clearfix */}
 <footer>
