@@ -4,8 +4,8 @@ var http = require('http');
 //var fs = require('fs');
 var qs = require('querystring');
 
-const hostname = 'localhost';
-const port = 8081; // process.env.Port;
+const hostname = 'unl.test'; // localhost
+const port = 8080; // process.env.Port;
 //const server = http.createServer((req, res) => { // request is <http.IncomingMessage>, response is <http.ServerResponse> ...}
 const server = http.createServer();
 server.on('request', (req, res) => { // request is <http.IncomingMessage>, response is <http.ServerResponse>
