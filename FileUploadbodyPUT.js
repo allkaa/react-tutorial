@@ -2,7 +2,7 @@
 var http = require('http');
 //var formidable = require('formidable');
 //var fs = require('fs');
-var qs = require('querystring');
+//var qs = require('querystring');
 
 const hostname = 'unl.test'; // localhost
 const port = 8080; // process.env.Port;
@@ -12,10 +12,17 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
   // The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays,
   // or properties from objects, into distinct variables.
   const { method, url, headers } = req;
-  const responseBody = { headers, method, url };
-  const responceBodyStringify = JSON.stringify(responseBody);
+  console.log(`<============= request event occured - method: ${method} , url: ${url}  ===================>`);
+  console.log(`headers begin =============================================`);
+  for (let prop in headers) {
+    console.log(prop + ' ' + headers[prop]);
+  }
+  console.log(`headers end =============================================`);
+
+  //const responseBody = { headers, method, url };
+  //const responceBodyStringify = JSON.stringify(responseBody);
   if (req.url.includes('/fileupload')) { // (req.url == '/fileupload')
-    if (method == 'POST') { // if (req.method == 'POST') {
+    if (method === 'POST') { // if (req.method == 'POST') {
       let body = []; // at this point body as standard Javascript array.
       req.on('data', (chunk) => { // chunk is Uint8Array.
         body.push(chunk); // appends new element to array and set new array length, at this point body as Uint8Array.
@@ -50,7 +57,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
         // response.setHeader('Content-Type', 'application/json');
         // response.setHeader('X-Powered-By', 'bacon');
         res.writeHead(200, { 'Content-Type': 'text/html' }); // res is instance of ServerResponse, which is a WritableStream.
-        res.write('form POST method info read' + '<br />');
+        res.write('form POST method info read<br />');
         return res.end();
       }).on('error', (err) => {
         // This prints the error message and stack trace to `stderr`.
