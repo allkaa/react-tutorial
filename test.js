@@ -70,6 +70,7 @@ for (let prop in state) {
 console.log(urlEncodedData);
 */
 
+/*
 let debug = {hello: "world"};
 let ttt = JSON.stringify(debug,null, 2);
 let blob = new Blob([ttt], {type : 'application/json'});
@@ -77,3 +78,4 @@ console.log(debug);
 console.log(ttt);
 console.log(blob);
 console.log(blob.text());
+*/
