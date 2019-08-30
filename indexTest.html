@@ -30,13 +30,19 @@
     </nav>
     -->
 
-
+    <!--
     <form enctype="multipart/form-data" name="fileinfo">
       <label>File to stash:</label>
       <input type="file" name="file" required />
       <button type="submit" formMethod="post" formAction="http://10.8.194.3:42001/">Send your message</button>
     </form>
     <div></div>
+    -->
+    <form action="http://unl.test:8081/fileupload" method="post" enctype="multipart/form-data">
+      <input type="file" name="filetoupload">
+      <br>
+      <input type="submit">
+    </form>
 
     <script src="test.js"></script>
   

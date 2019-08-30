@@ -5,7 +5,7 @@ var http = require('http');
 //var qs = require('querystring');
 
 const hostname = 'unl.test'; // localhost
-const port = 8080; // process.env.Port;
+const port = 8081; // process.env.Port;
 //const server = http.createServer((req, res) => { // request is <http.IncomingMessage>, response is <http.ServerResponse> ...}
 const server = http.createServer();
 server.on('request', (req, res) => { // request is <http.IncomingMessage>, response is <http.ServerResponse>
@@ -27,9 +27,9 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
       req.on('data', (chunk) => { // chunk is Uint8Array.
         body.push(chunk); // appends new element to array and set new array length, at this point body as Uint8Array.
       }).on('end', () => {
-        console.log('request method = ' + method); // + req.method
+        console.log(`fileupload POST body 'end' request method = ` + method); // + req.method
         console.log('request url = ' + url); // + req.url
-        console.log('=================================================');
+        console.log('======== begin of POST body =========================================');
         body = Buffer.concat(body).toString(); // Buffer.concat() returns a new Buffer which is the result of concatenating all the Buffer or Uint8Array instances in the list together.
         // at this point, `body` is the entire request body Uint8Array converted into a string
       /*
@@ -47,9 +47,9 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
         console.log('request method = ' + method); // + req.method
         console.log('request url = ' + url); // + req.url
         console.log('=================================================');
-        */
+      */
         console.log(body);
-        console.log('=================================================');
+        console.log('====== end of POST body ===========================================');
         res.on('error', (err) => {
           console.error(err);
         });
@@ -57,22 +57,24 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
         // response.setHeader('Content-Type', 'application/json');
         // response.setHeader('X-Powered-By', 'bacon');
         res.writeHead(200, { 'Content-Type': 'text/html' }); // res is instance of ServerResponse, which is a WritableStream.
-        res.write('form POST method info read<br />');
+        res.write('<p>form POST method info read<p><br/>');
+        console.log(`<========= End 0f request event occured - method: ${method} , url: ${url}  ===================>`);
         return res.end();
       }).on('error', (err) => {
         // This prints the error message and stack trace to `stderr`.
         console.error(err.stack);
       });
     }
-    else {
+    else { // NOT the method === 'POST' case for req.url.includes('/fileupload')
       res.on('error', (err) => {
         console.error(err);
       });
-      res.write('form GET read');
+      res.write('form GET not POST read');
+      console.log(`<========= End 0f request event occured - method: ${method} , url: ${url}  ===================>`);
       return res.end();
     }
   }
-  else {
+  else { // NOT the req.url.includes('/fileupload') case - can be PUT or GET and url="/"
     req.on('error', (err) => {
       // This prints the error message and stack trace to `stderr`.
       console.error(err.stack);
@@ -87,9 +89,10 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
     res.write('<input type="file" name="filetoupload"><br>');
     res.write('<input type="submit">');
     res.write('</form>');
+    console.log(`<========= End 0f request event occured - method: ${method} , url: ${url}  ===================>`);
     return res.end();
-  }
-})
+  } // end of 
+}) // end of server.on('request' .... case
 
 // Begin accepting connections on the specified port and hostname.
 // If hostname is omitted, server will accept connections on the unspecified IPv6 address (::) when IPv6 is available,
