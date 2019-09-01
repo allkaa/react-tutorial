@@ -54,7 +54,7 @@ class NameForm extends Component {
     console.log(event.target.value);
     console.log(this.state);
     //alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
-    event.preventDefault();
+    //event.preventDefault();
     // Use created ref to the DOM node to access file(s) in a submit handler:
     alert(
       `Selected file to upload - ${
@@ -63,9 +63,11 @@ class NameForm extends Component {
     );
   }
 
+  // onSubmit={this.handleSubmit} action="http://unl.test:8081/fileupload" method="post" enctype="multipart/form-data"
+  // formMethod="post" formAction="http://unl.test:8081/fileupload" enctype="multipart/form-data"
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}  action="http://unl.test:8081/fileupload" method="post" enctype="multipart/form-data">
 
         {/*
         <label>
@@ -99,7 +101,9 @@ class NameForm extends Component {
         <br/>
         <div className="button">
           {/* event target type will be submit */}
-          <button type="submit" formMethod="post" formAction="http://unl.test:8081/fileupload" enctype="multipart/form-data">Upload file</button>
+          <button type="submit">
+            Upload file
+          </button>
         </div>
 
       </form>
