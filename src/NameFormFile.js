@@ -101,7 +101,7 @@ class NameForm extends Component {
         docXml = xhr.responseText;
         this.setState({
           //data: xmlString,
-          essay: `Server reply: ${docXml}, file ${this.fileInput.current.files[0].name} uploaded.`
+          essay: `Server reply: ${docXml}\nFile ${this.fileInput.current.files[0].name} uploaded.`
         })
         console.log('========> FormFile event xhr.onload xhr.responseText<==========')
         console.log(docXml);
