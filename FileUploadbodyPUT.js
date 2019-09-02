@@ -58,7 +58,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
         // response.setHeader('X-Powered-By', 'bacon');
         res.writeHead(200, { 'Content-Type': 'text/html', 'Access-Control-Allow-Origin': 'http://unl.test:8080' }); // or '*' for all, res is instance of ServerResponse, which is a WritableStream.
         res.write('<p>form POST method info read<p><br/>');
-        console.log(`<========= End 0f request event occured - method: ${method} , url: ${url}  ===================>`);
+        console.log(`<========= End of request event occured - method: ${method} , url: ${url}  ===================>`);
         return res.end();
       }).on('error', (err) => {
         // This prints the error message and stack trace to `stderr`.
