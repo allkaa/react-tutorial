@@ -10,7 +10,7 @@ class NameForm extends Component {
       name:
         'Alex Raven',
       essay:
-        'Please write an essay about your favorite DOM element.',
+        '',
       fruit:
         ['Coconut','Lime'],
       checkOption:
@@ -41,7 +41,7 @@ class NameForm extends Component {
   }
 
   handleSubmit(event) {
-    console.log('========> NameForm handleSubmit <==========')
+    console.log('========> NameFormFile handleSubmit <==========')
     console.log('event: ' + event);
     console.log(event);
     console.log('event.target: ' + event.target);
@@ -54,20 +54,91 @@ class NameForm extends Component {
     console.log(event.target.value);
     console.log(this.state);
     //alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
-    //event.preventDefault();
+    event.preventDefault(); // prevent standard form submit to take control over.
     // Use created ref to the DOM node to access file(s) in a submit handler:
     alert(
       `Selected file to upload - ${
         this.fileInput.current.files[0].name
       }`
     );
-  }
+    // Access the form element...
+    let form = document.getElementById("myForm");
+    // Bind the FormData object and the form element
+    let FD = new FormData(form);
+
+    let txtErr 
+    //let objThis = this
+    const xhr = new XMLHttpRequest();
+
+    //xhr.open('GET', 'http://10.8.194.3:42001/?testDebian', true); // true is open async.
+    //xhr.open('POST', 'http://10.8.194.3:42001/?testDebian', true);
+    xhr.open('POST', 'http://unl.test:8081/fileupload', true);
+    // If specified, responseType must be empty string, "text" or "document"
+    //xhr.responseType = 'document';
+    xhr.responseType = 'text';
+    // Force the response to be parsed as XML
+    //xhr.overrideMimeType('text/xml');
+    //xhr.overrideMimeType('text/html');
+    xhr.overrideMimeType('text/plain');
+
+    // GET or PUT state case using onload event.
+    xhr.onload = () => {
+      console.log('========> FormFile event xhr.onload xhr.AllResponseHeaders<==========')
+      console.log(xhr.getAllResponseHeaders());
+      let docXml
+      if (xhr.readyState === xhr.DONE && xhr.status === 200) {
+        //console.log(xhr.response);
+        /*
+        docXml = xhr.responseXML
+        //console.log(docXml);
+        let xmlS = new XMLSerializer();
+        let xmlString = xmlS.serializeToString(docXml);
+        console.log('========> FormData event xhr.onload subevent xmlSting <==========')
+        console.log(xmlString)
+        let nodeValue = docXml.getElementsByTagName("result")[0].childNodes[0].nodeValue; // get <result> tag text value.
+        let nodeValue2 = docXml.getElementsByTagName("comment")[0].childNodes[0].nodeValue; // get <comment> tag text value.
+        */
+        docXml = xhr.responseText;
+        this.setState({
+          //data: xmlString,
+          essay: `Server reply: ${docXml}, file ${this.fileInput.current.files[0].name} uploaded.`
+        })
+        console.log('========> FormFile event xhr.onload xhr.responseText<==========')
+        console.log(docXml);
+      }
+      else {
+        txtErr = `Request onload error - status ${xhr.status}, readyState ${xhr.readyState}`
+        console.log(txtErr)
+        this.setState({ data: txtErr,})
+        }
+    }
+    //
+
+    xhr.onerror = () => {
+      txtErr = `Request failed -> onerror event occured.`
+      console.log(txtErr)
+      this.setState({ data: txtErr,})
+    }
+    
+    xhr.ontimeout = () => {
+      txtErr = `Request failed -> ontimeout event occured`
+      console.log(txtErr)
+      this.setState({ data: txtErr,})
+    }
+
+    console.log('========> FormDataFile submit event to send <==========')
+    console.log(FD);
+    // Send our FormData object; HTTP headers are set automatically!!!
+    //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); <---- do not use with FD.
+    xhr.send(FD);
+
+  } // end of handleSubmit(event)
 
   // onSubmit={this.handleSubmit} action="http://unl.test:8081/fileupload" method="post" enctype="multipart/form-data"
   // formMethod="post" formAction="http://unl.test:8081/fileupload" enctype="multipart/form-data"
   render() {
     return (
-      <form onSubmit={this.handleSubmit}  action="http://unl.test:8081/fileupload" method="post" enctype="multipart/form-data">
+      <form id="myForm" onSubmit={this.handleSubmit}  action="http://unl.test:8081/fileupload" method="post" enctype="multipart/form-data">
 
         {/*
         <label>
@@ -96,6 +167,11 @@ class NameForm extends Component {
         <div>
           <label htmlFor="file_name">Upload file:: <abbr title="required">*</abbr> </label>
           <input type="file" id="file_name" name="filetoupload" ref={this.fileInput} />
+        </div>
+        {/* event target type will be textarea */}
+        <div>
+          <label htmlFor="msg">Received from server:</label>
+          <textarea id="msg" name="user_essay" value={this.state.essay} ></textarea> {/* for uncontrolled state use  defaultValue="Default textarea" */}
         </div>
         
         <br/>
