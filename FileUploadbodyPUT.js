@@ -70,7 +70,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
         console.error(err);
       });
       res.write('form GET not POST read');
-      console.log(`<========= End 0f request event occured - method: ${method} , url: ${url}  ===================>`);
+      console.log(`<========= End of request event occured - method: ${method} , url: ${url}  ===================>`);
       return res.end();
     }
   }
@@ -89,7 +89,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
     res.write('<input type="file" name="filetoupload"><br>');
     res.write('<input type="submit">');
     res.write('</form>');
-    console.log(`<========= End 0f request event occured - method: ${method} , url: ${url}  ===================>`);
+    console.log(`<========= End of request event occured - method: ${method} , url: ${url}  ===================>`);
     return res.end();
   } // end of 
 }) // end of server.on('request' .... case
