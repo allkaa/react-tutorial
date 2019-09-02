@@ -151,8 +151,8 @@ class NameForm extends Component {
             Upload file
           </button>
         </div>
-
       </form>
+      <br/>
       <div>
         <label htmlFor="msg">Received from server:</label>
         <textarea id="msg" name="user_essay" value={this.state.essay} ></textarea> {/* for uncontrolled state use  defaultValue="Default textarea" */}
