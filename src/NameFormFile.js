@@ -138,42 +138,12 @@ class NameForm extends Component {
   // formMethod="post" formAction="http://unl.test:8081/fileupload" enctype="multipart/form-data"
   render() {
     return (
+    <div>
       <form id="myForm" onSubmit={this.handleSubmit}  action="http://unl.test:8081/fileupload" method="post" enctype="multipart/form-data">
-
-        {/*
-        <label>
-          Name:
-          <input type="text" id="name" name="user_name"  value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <label>
-          Essay:
-          <textarea value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <label>
-          Pick your favorite flavor:
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
-        <label>
-          Upload file:
-          <input type="file" ref={this.fileInput} />
-        </label>
-        */}
         <div>
           <label htmlFor="file_name">Upload file:: <abbr title="required">*</abbr> </label>
           <input type="file" id="file_name" name="filetoupload" ref={this.fileInput} />
         </div>
-        {/* event target type will be textarea */}
-        <div>
-          <label htmlFor="msg">Received from server:</label>
-          <textarea id="msg" name="user_essay" value={this.state.essay} ></textarea> {/* for uncontrolled state use  defaultValue="Default textarea" */}
-        </div>
-        
         <br/>
         <div className="button">
           {/* event target type will be submit */}
@@ -183,6 +153,11 @@ class NameForm extends Component {
         </div>
 
       </form>
+      <div>
+        <label htmlFor="msg">Received from server:</label>
+        <textarea id="msg" name="user_essay" value={this.state.essay} ></textarea> {/* for uncontrolled state use  defaultValue="Default textarea" */}
+      </div>
+    </div> 
     );
   }
 }
