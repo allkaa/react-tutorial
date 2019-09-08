@@ -5,7 +5,8 @@ import React, { Component } from 'react'
 //import NameForm from './NameForm.js'
 //import NameFormVal from './NameFormVal.js'
 //import NameFormData from './NameFormData.js'
-import NameFormFile from './NameFormFile.js'
+//import NameFormFile from './NameFormFile.js'
+import NameFormRespImg from './NameFormRespImg.js'
 
 function noStyles() {
   //console.log(`noStyles started`)
@@ -263,7 +264,8 @@ class App extends Component {
 {/*<NameForm />*/}
 {/*<NameFormVal />*/}
 {/*<NameFormData />*/}
-<NameFormFile />
+{/*<NameFormFile />*/}
+<NameFormRespImg />
 
 {/* very last information div must be after clearfix */}
 <footer>

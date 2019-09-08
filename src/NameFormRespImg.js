@@ -163,7 +163,8 @@ class NameForm extends Component {
         width="600" height="450" frameBorder="0" style={{border:0}} allowFullScreen="" title="google map">
       </iframe>
       <iframe title="mdn" src="https://developer.mozilla.org/en-US/docs/Glossary"
-        width="100%" height="500" frameBorder="0" allowFullScreen="" sandbox>
+        width="100%" height="500" frameBorder="0" 
+        >
         <p> <a href="https://developer.mozilla.org/en-US/docs/Glossary">
           Fallback link for browsers that don't support iframes
           </a> 
