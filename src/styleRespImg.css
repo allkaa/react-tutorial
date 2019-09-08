@@ -28,6 +28,7 @@ body {
 header {
   background: url(header.jpg) no-repeat center;
   height: 200px;
+  color: white;
 }
 
 section {
