@@ -140,36 +140,6 @@ class NameForm extends Component {
     return (
     <div>
 
-      <form id="myForm" onSubmit={this.handleSubmit}  action="http://unl.test:8081/fileupload" method="post" encType="multipart/form-data">
-        <div>
-          <label htmlFor="file_name">Upload file:: <abbr title="required">*</abbr> </label>
-          <input type="file" id="file_name" name="filetoupload" ref={this.fileInput} />
-        </div>
-        <br/>
-        <div className="button">
-          {/* event target type will be submit */}
-          <button type="submit">
-            Upload file
-          </button>
-        </div>
-      </form>
-      <br/>
-      <div>
-        <label htmlFor="msg">Received from server:</label>
-        <textarea id="msg" name="user_essay" defaultValue={this.state.essay} ></textarea> {/* for uncontrolled state use  defaultValue="Default textarea" */}
-      </div>
-      <br/>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20333.535337350597!2d30.61040335!3d50.42821145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sua!4v1567495244815!5m2!1sen!2sua"
-        width="600" height="450" frameBorder="0" style={{border:0}} allowFullScreen="" title="google map">
-      </iframe>
-      <iframe title="mdn" src="https://developer.mozilla.org/en-US/docs/Glossary"
-        width="100%" height="500" frameBorder="0" 
-        >
-        <p> <a href="https://developer.mozilla.org/en-US/docs/Glossary">
-          Fallback link for browsers that don't support iframes
-          </a> 
-        </p>
-      </iframe>      
 
     </div> 
     );
