@@ -42,8 +42,8 @@ import './StyleSheetsDemo4.css'
 //import './styleMyWeb-flexbox_website2a.css'
 //import './w3.css' // use external link in <head>
 //import './paceThemeMinimal.css'
-//import './styleHWT.css' // <--------
-import './styleRespImg.css' // <--------
+import './styleHWT.css' // <--------
+//import './styleRespImg.css' // <--------
 
 //import App from './AppInitial'
 //import App from './App'
