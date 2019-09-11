@@ -257,6 +257,7 @@ class App extends Component {
 */}
 
 <header>
+  <p>header</p>
   <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
   <h3 id="wdt">viewport info</h3>
   <br/>
@@ -271,6 +272,7 @@ class App extends Component {
 
 {/* very last information div must be after clearfix */}
 <footer>
+<p>footer</p>
 <div style={padding6px}>
   <p>For screens larger than 700px wide, it will show four images side by side (24.99999%).</p>
   <p>For screens 700px and up to 501px, it will show two images side by side (49.99999%).</p>
