@@ -256,12 +256,14 @@ class App extends Component {
 </div>
 */}
 
+{/*
 <header>
   <p>header</p>
   <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
   <h3 id="wdt">viewport info</h3>
   <br/>
 </header>
+*/}
 
 {/*<NameForm />*/}
 {/*<NameFormVal />*/}
@@ -271,6 +273,7 @@ class App extends Component {
 <NameFormWebStruct />
 
 {/* very last information div must be after clearfix */}
+{/*
 <footer>
 <p>footer</p>
 <div style={padding6px}>
@@ -280,7 +283,7 @@ class App extends Component {
   <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
 </div>
 </footer>
-
+*/}
 
     </div>
     )
