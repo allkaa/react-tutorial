@@ -1,3 +1,44 @@
+Web structure:
+
+----------------------------------
+Semantic wrappers
+----------------------------------
+<header/>
+<nav/>
+<main>
+  <article>
+    <section/>
+    <section/>
+  </article>
+  <article>
+    <section/>
+    <section/>
+  </article>
+  <aside/>
+</main>
+<footer>
+
+<header/>
+<nav/>
+<main>
+  <section>
+    <article/>
+    <article/>
+  </section>
+  <section>
+    <article/>
+    <article/>
+  </section>
+  <aside/>
+</main>
+<footer>
+use headings <h1>...<h6> inside parts
+----------------------------------
+Non sematict wrappers
+----------------------------------
+block level <div/> and inline <span/>
+----------------------------------
+
 akaarna@unl:~$ npx create-react-app react-tutorial
 npx: installed 91 in 22.25s
 
