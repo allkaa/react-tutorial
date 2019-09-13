@@ -33,62 +33,36 @@ class NameForm extends Component {
     return (
     <div>
 
-      <nav>
-        <h1>nav</h1>
-        <ul>
-          <li><a href="#1">Home</a></li>
-          <li><a href="#2">Our team</a></li>
-          <li><a href="#3">Projects</a></li>
-          <li><a href="#4">Contact</a></li>
-        </ul>
+<h1>Birdwatching</h1>
+      <img src="dove.png" alt="a simple dove logo"/>
 
-        {/*<!-- A Search form is another commmon non-linear way to navigate through a website. -->*/}
-        <p>Search form in nav</p>
-        <form>
-          <input type="search" name="q" placeholder="Search query"/>
-          <input type="submit" value="Go!"/>
-        </form>
-      </nav>
 
-      {/*<!-- Here is our page's main content -->*/}
-      <main>
+      <ul>
+        <li><span>Home</span></li>
+        <li><a href="#1">Get started</a></li>
+        <li><a href="#2">Photos</a></li>
+        <li><a href="#3">Gear</a></li>
+        <li><a href="#4">Forum</a></li>
+      </ul>
 
-      <h1>Main</h1>
 
-      {/*<!-- It contains an article -->*/}
-      <article>
-        
-        <h2>Article heading h2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
-        
-        <section>
-          <h3>Section 1</h3>
-          <p>Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.</p>
-          <p>Pelientesque auctor nisi id magna consequat sagittis. Curabitur dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.</p>
-        </section>
+      <h2>Welcome</h2>
 
-        <section>
-        <h3>Subsection 2</h3>
-        <p>Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum soclis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
-        <p>Vivamus fermentum semper porta. Nunc diam velit, adipscing ut tristique vitae sagittis vel odio. Maecenas convallis ullamcorper ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, is fringille sem nunc vet mi.</p>
-        </section>
+      <p>Welcome to our fake birdwatching site. If this were a real site, it would be the ideal place to come to learn more about birdwatching, whether you are a beginner looking to learn how to get into birding, or an expert wanting to share ideas, tips, and photos with other like-minded people.</p>
 
-      </article>
+      <p>So don't waste time! Get what you need, then turn off that computer and get out into the great outdoors!</p>
 
-      {/*<!-- the aside content can also be nested within the main content -->*/}
-      <aside>
-        <h2>Related aside in main</h2>
+      <h2>Favourite photos</h2>
 
-        <ul>
-          <li><a href="#11">Oh I do like to be beside the seaside</a></li>
-          <li><a href="#12">Oh I do like to be beside the sea</a></li>
-          <li><a href="#13">Although in the North of England</a></li>
-          <li><a href="#14">It never stops raining</a></li>
-          <li><a href="#15">Oh well...</a></li>
-        </ul>
-      </aside>
+      <a href="favorite-1.jpg"><img src="favorite-1_th.jpg" alt="Small black bird, black claws, long black slender beak, links to larger version of the image"/></a>
+      <a href="favorite-2.jpg"><img src="favorite-2_th.jpg" alt="Top half of a pretty bird with bright blue plumage on neck, light colored beak, blue headdress, links to larger version of the image"/></a>
+      <a href="favorite-3.jpg"><img src="favorite-3_th.jpg" alt="Top half of a large bird with white plumage, very long curved narrow light colored break, links to larger version of the image"/></a>
+      <a href="favorite-4.jpg"><img src="favorite-4_th.jpg" alt="Large bird, mostly white plumage with black plumage on back and rear, long straight white beak, links to larger version of the image"/></a>
 
-      </main>
+
+      <p>This fake website example is CC0 — any part of this code may be reused in any way you wish. Original example written by Chris Mills, 2016.</p>
+
+      <p><a href="http://game-icons.net/lorc/originals/dove.html">Dove icon</a> by Lorc.</p>
   
     </div> 
     );
