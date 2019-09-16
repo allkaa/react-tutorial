@@ -35,6 +35,8 @@ class NameForm extends Component {
 
       <header>
         <h1>Birdwatching</h1>
+        <input type="search" id="site-search" name="q" aria-label="Search through site content"/>
+        <button>Search</button>
         <img src="dove.png" alt="a simple dove logo"/>
       </header>
 
