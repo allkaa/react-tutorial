@@ -12,9 +12,10 @@ html {
 
 body {
   width: 70%;
-  margin: 0 auto;
-  background-color: #a9a9a9;
+  margin: 3% 3% 3% 3%; /* top+right+bottom+left 0 auto; */
+  background-color: #dfdbdb; /* #a9a9a9  will be background-color for all doc if no set in html*/
   border: thick solid black;
+  outline: dashed red;
 }
 
 /* || typography */
@@ -55,22 +56,23 @@ header {
   margin-bottom: 10px;
 }
 
-nav, article, aside, footer {
+article, aside, footer {
   background-color: white;
   padding: 1%;
 }
 
 nav {
+  padding: 1%;
   height: 50px;
-  background-color: ff80ff;
-  display: flex;
+  background-color: #ff80ff;
+  display: flex; /* for childd ul and form */
 }
 
 nav ul {
   padding: 0;
   list-style-type: none;
-  flex: 2;
-  display: flex;
+  flex: 2; /* to upper level nav display: flex; */
+  display: flex; /* to childs li */
 }
 
 nav li {
@@ -88,8 +90,8 @@ nav a {
 }
 
 nav form {
-  flex: 1;
-  display: flex;
+  flex: 1; /* to upper level nav display: flex; */
+  display: flex; /* to childs input search and submit */
   align-items: center;
   height: 100%;
   padding: 0 2em;
@@ -115,7 +117,7 @@ input[type="submit"] {
 /* || main layout */
 
 main {
-  display: flex;
+  display: flex; /* to childs article and aside */
 }
 
 article {
