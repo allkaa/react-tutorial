@@ -65,7 +65,7 @@ nav {
   padding: 1%;
   height: 50px;
   background-color: #ff80ff;
-  display: flex; /* for childd ul and form */
+  display: flex; /* for childs ul and form */
 }
 
 nav ul {
