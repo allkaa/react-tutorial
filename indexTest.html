@@ -19,10 +19,10 @@
     <!-- Even is it's not mandatory, it's common practice to put the main navigation menu within the main header -->
     <nav role="navigation">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Our team</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#f1">Home very long fucking text</a></li>
+        <li><a href="#f2">Our team</a></li>
+        <li><a href="#f3">Projects</a></li>
+        <li><a href="#f4">Contact</a></li>
       </ul>
       <!-- A Search form is another commmong non-linear way to navigate through a website. -->
       <!-- creates GET requst e.g. for search "nemo" as file:///home/akaarna/react-tutorial/indexTest.html?q=nemo -->
@@ -35,6 +35,18 @@
 
   <!-- Here is our page's main content -->
   <main>
+
+    <!-- the aside content can also be nested within the main content -->
+    <aside role="auxiliary" id="leftaside">
+      <h2>Related2</h2>
+      <ul>
+        <li><a href="#21">Oh I do like to be beside the seaside</a></li>
+        <li><a href="#22">Oh I do like to be beside the sea</a></li>
+        <li><a href="#23">Although in the North of England</a></li>
+        <li><a href="#24">It never stops raining</a></li>
+        <li><a href="#25">Oh well...</a></li>
+      </ul>
+    </aside>
 
     <!-- It contains an article -->
     <article role="article">
@@ -51,14 +63,14 @@
     </article>
 
     <!-- the aside content can also be nested within the main content -->
-    <aside role="complementary">
+    <aside role="complementary" id="rightaside">
       <h2>Related</h2>
       <ul>
-        <li><a href="#">Oh I do like to be beside the seaside</a></li>
-        <li><a href="#">Oh I do like to be beside the sea</a></li>
-        <li><a href="#">Although in the North of England</a></li>
-        <li><a href="#">It never stops raining</a></li>
-        <li><a href="#">Oh well...</a></li>
+        <li><a href="#11">Oh I do like to be beside the seaside</a></li>
+        <li><a href="#12">Oh I do like to be beside the sea</a></li>
+        <li><a href="#13">Although in the North of England</a></li>
+        <li><a href="#14">It never stops raining</a></li>
+        <li><a href="#15">Oh well...</a></li>
       </ul>
     </aside>
 

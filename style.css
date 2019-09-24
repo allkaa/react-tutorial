@@ -65,20 +65,20 @@ nav {
   padding: 1%;
   height: 50px;
   background-color: #ff80ff;
-  display: flex; /* for childs ul and form */
+  display: flex; /* for childs - ul and form */
 }
 
 nav ul {
   padding: 0;
   list-style-type: none;
-  flex: 2; /* to upper level nav display: flex; */
-  display: flex; /* to childs li */
+  flex: 2; /* proportion 2 to upper level nav display: flex; */
+  display: flex; /* to childs - li elements */
 }
 
 nav li {
   display: inline;
   text-align: center;
-  flex: 1;
+  flex: 1; /* proportion 1 (all equals) */
 }
 
 nav a {
@@ -90,8 +90,8 @@ nav a {
 }
 
 nav form {
-  flex: 1; /* to upper level nav display: flex; */
-  display: flex; /* to childs input search and submit */
+  flex: 1; /* proportion 1 to upper level nav display: flex; */
+  display: flex; /* to childs - input search and submit */
   align-items: center;
   height: 100%;
   padding: 0 2em;
@@ -103,11 +103,11 @@ input {
 }
 
 input[type="search"] {
-  flex: 3;
+  flex: 3; /* proportion 3 to upper level form */
 }
 
 input[type="submit"] {
-  flex: 1;
+  flex: 1; /* proportion 1 to upper level form */
   margin-left: 1rem;
   background: #333;
   border: 0;
@@ -117,15 +117,21 @@ input[type="submit"] {
 /* || main layout */
 
 main {
-  display: flex; /* to childs article and aside */
+  display: flex; /* to childs - article and aside */
 }
 
 article {
-  flex: 4;
+  flex: 3; /* 4 proportion 4 to upper level main */
 }
 
-aside {
-  flex: 1;
+#leftaside {
+  flex: 1; /* aside proportion 1 to upper level main */
+  margin-left: 10px;
+  background-color: #ff80ff;
+}
+
+#rightaside {
+  flex: 1; /* aside proportion 1 to upper level main */
   margin-left: 10px;
   background-color: #ff80ff;
 }
