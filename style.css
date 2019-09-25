@@ -65,7 +65,7 @@ nav {
   padding: 1%;
   height: 50px;
   background-color: #ff80ff;
-  display: flex; /* for childs - ul and form */
+  display: flex; /* for childs - ul and search form */
 }
 
 nav ul {
@@ -117,7 +117,7 @@ input[type="submit"] {
 /* || main layout */
 
 main {
-  display: flex; /* to childs - article and aside */
+  display: flex; /* to childs - article and asides */
 }
 
 article {
@@ -126,8 +126,21 @@ article {
 
 #leftaside {
   flex: 1; /* aside proportion 1 to upper level main */
-  margin-left: 10px;
+  margin-right: 10px;
   background-color: #ff80ff;
+}
+
+#logoimg {
+  float: left;
+  /* float: right; */
+  /* margin-right: 2px; */
+  margin: 0px 5px 0px 0px; /* top-right-bottom-left */
+  /* margin-left: 2px; */
+  width: 75px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #dfdbdb;
+  padding: 1em;
 }
 
 #rightaside {
