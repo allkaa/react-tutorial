@@ -7,30 +7,32 @@ html, body {
 
 html {
   font-size: 10px;
-  /* background-color: #a9a9a9; */
+  background-color: white;
 }
 
 body {
   width: 70%;
-  min-width: 800px;
-  margin: 0 auto;
+  margin: 3% 3% 3% 3%; /* top+right+bottom+left 0 auto; */
+  background-color: #dfdbdb; /* #a9a9a9  will be background-color for all doc if no set in html*/
+  border: thick solid black;
+  outline: dashed red;
 }
 
 /* || typography */
-
 h1, h2, h3 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Sonsie One', cursive;
   color: #2a2a2a;
 }
 
 p, input, li {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   color: #2a2a2a;
 }
 
 h1 {
   font-size: 4rem;
   text-align: center;
+  color: white;
   text-shadow: 2px 2px 10px black;
 }
 
@@ -52,122 +54,103 @@ p, li {
 
 header {
   margin-bottom: 10px;
-  display: flex;
-  flex-flow: row wrap;
 }
 
-body > * { /* rule for all direcet childs of body element */
-  background-color: #a9a9a9;
-  padding: 1%;
-}
-
-/*
-main, header, nav, article, aside, footer, section {
-  background-color: rgba(0,255,0,0.5);
-  padding: 1%;
-}
-*/
-
-header {
-  background-color: rgba(0,255,0,0.5);
+article, aside, footer {
+  background-color: white;
   padding: 1%;
 }
 
 nav {
-  background-color: rgba(0,255,0,0.9);
   padding: 1%;
-}
-
-main {
-  background-color: rgba(0,255,0,0.4);
-  padding: 1%;
-}
-
-section {
-  background-color: rgba(0,255,0,0.5);
-  padding: 1%;
-}
-
-article {
-  background-color: rgba(0,255,0,0.7);
-  padding: 1%;
-}
-
-aside {
-  background-color: rgba(0,255,0,0.6);
-  padding: 1%;
-}
-
-footer {
-  background-color: rgba(0,255,0,0.5);
-  padding: 1%;
-}
-
-h1 {
-  flex: 5;
-  text-transform: uppercase;
-}
-
-header img {
-  display: block;
-  height: 60px;
-  padding-top: 20.15px;
-}
-
-nav {
   height: 50px;
-  flex: 100%;
-  display: flex;
+  background-color: #ff80ff;
+  display: flex; /* for childs - ul and search form */
 }
 
 nav ul {
   padding: 0;
   list-style-type: none;
-  flex: 2;
-  display: flex;
+  flex: 2; /* proportion 2 to upper level nav display: flex; */
+  display: flex; /* to childs - li elements */
 }
 
 nav li {
   display: inline;
   text-align: center;
-  flex: 1;
+  flex: 1; /* proportion 1 (all equals) */
 }
 
-nav a, nav span {
+nav a {
   display: inline-block;
   font-size: 2rem;
-  height: 3rem;
-  line-height: 1.7;
   text-transform: uppercase;
   text-decoration: none;
   color: black;
+}
 
+nav form {
+  flex: 1; /* proportion 1 to upper level nav display: flex; */
+  display: flex; /* to childs - input search and submit */
+  align-items: center;
+  height: 100%;
+  padding: 0 2em;
+}
+
+input {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+input[type="search"] {
+  flex: 3; /* proportion 3 to upper level form */
+}
+
+input[type="submit"] {
+  flex: 1; /* proportion 1 to upper level form */
+  margin-left: 1rem;
+  background: #333;
+  border: 0;
+  color: white;
 }
 
 /* || main layout */
 
 main {
-  display: flex;
+  display: flex; /* to childs - article and asides */
 }
 
-article, section {
-  flex: 4;
+article {
+  flex: 3; /* 4 proportion 4 to upper level main */
 }
 
-aside {
-  flex: 1;
-  margin-left: 10px;
-  padding: 1%;
+#leftaside {
+  flex: 1; /* aside proportion 1 to upper level main */
+  margin-right: 10px;
+  background-color: #ff80ff;
 }
 
-aside a {
-  display: block;
+#logoimg {
   float: left;
-  width: 50%;
+  /* float: right; */
+  /* margin-right: 2px; */
+  margin: 0px 5px 0px 0px; /* top-right-bottom-left */
+  /* margin-left: 2px; */
+  width: 75px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #dfdbdb;
+  padding: 1em;
 }
 
-aside img {
-  max-width: 100%;
+#rightaside {
+  flex: 1; /* aside proportion 1 to upper level main */
+  margin-left: 10px;
+  background-color: #ff80ff;
+}
+
+aside li {
+  padding-bottom: 10px;
 }
 
 footer {
