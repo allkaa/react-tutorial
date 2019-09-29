@@ -63,7 +63,7 @@ class NameForm extends Component {
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. </p>
     </aside>
     
-    <section>
+    <section> {/* no special role */}
 
     {/*<!-- It contains an article -->*/}
     <article>{/*  role="article" is default for article */}
