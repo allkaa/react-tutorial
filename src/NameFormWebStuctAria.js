@@ -57,7 +57,7 @@ class NameForm extends Component {
   <main>
 
     {/*<!-- the aside content can also be nested within the main content -->*/}
-    <aside role="note" id="leftaside">
+    <aside role="note" id="aside1">
       <h2>Float img in aside</h2>
       <img id="logoimg" src="logo.png" alt="logo"/>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. </p>
@@ -80,7 +80,7 @@ class NameForm extends Component {
     </article>
 
     {/*<!-- the aside content can also be nested within the main content -->*/}
-    <aside id="rightaside"> {/* role="complementary" is default for aside */}
+    <aside id="aside2"> {/* role="complementary" is default for aside */}
       <h2>Related links</h2>
       <ul>
         <li><a href="#11">Oh I do like to be beside the seaside</a></li>

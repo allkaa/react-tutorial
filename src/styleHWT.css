@@ -124,7 +124,7 @@ article {
   flex: 3; /* 4 proportion 4 to upper level main */
 }
 
-#leftaside {
+#aside1 {
   flex: 1; /* aside proportion 1 to upper level main */
   margin-right: 10px;
   background-color: #ff80ff;
@@ -143,7 +143,7 @@ article {
   padding: 1em;
 }
 
-#rightaside {
+#aside2 {
   flex: 1; /* aside proportion 1 to upper level main */
   margin-left: 10px;
   background-color: #ff80ff;
