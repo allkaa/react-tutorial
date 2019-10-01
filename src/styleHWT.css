@@ -56,10 +56,6 @@ header {
   margin-bottom: 10px;
 }
 
-article, aside, footer {
-  background-color: white;
-  padding: 1%;
-}
 
 nav {
   padding: 1%;
@@ -114,22 +110,6 @@ input[type="submit"] {
   color: white;
 }
 
-/* || main layout */
-
-main {
-  display: flex; /* to childs - article and asides */
-}
-
-article {
-  flex: 3; /* 4 proportion 4 to upper level main */
-}
-
-#aside1 {
-  flex: 1; /* aside proportion 1 to upper level main */
-  margin-right: 10px;
-  background-color: #ff80ff;
-}
-
 #logoimg {
   float: left;
   /* float: right; */
@@ -143,9 +123,40 @@ article {
   padding: 1em;
 }
 
-#aside2 {
-  flex: 1; /* aside proportion 1 to upper level main */
+article, footer {
+  background-color: white;
+  padding: 1%;
+}
+
+/* || main layout */
+
+main {
+  /* display: flex; /* to childs - article and asides */
+}
+
+/* flex or natural flow can be used */
+article {
+  /* flex: 1; /* 4 proportion 4 to upper level main */
+}
+
+.asides {
+  margin-top: 10px;
+  /* flex: 1; */
+  display: flex; /* to childs aside1 and aside2 */
+}
+
+#aside1 {
+  flex: 1; /* aside proportion 1 to upper level div .asides */
   margin-left: 10px;
+  margin-right: 10px;
+  background-color: #ff80ff;
+  padding: 5px;
+}
+
+
+#aside2 {
+  flex: 1; /* aside proportion 1 to upper level  div .asides */
+  margin-right: 10px;
   background-color: #ff80ff;
 }
 

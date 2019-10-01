@@ -56,15 +56,6 @@ class NameForm extends Component {
   {/*<!-- Here is our page's main content -->*/}
   <main>
 
-    {/*<!-- the aside content can also be nested within the main content -->*/}
-    <aside role="note" id="aside1">
-      <h2>Float img in aside</h2>
-      <img id="logoimg" src="logo.png" alt="logo"/>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. </p>
-    </aside>
-    
-    <section> {/* no special role */}
-
     {/*<!-- It contains an article -->*/}
     <article>{/*  role="article" is default for article */}
       <h2>Article heading</h2>
@@ -78,7 +69,15 @@ class NameForm extends Component {
       <p>Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum soclis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
       <p>Vivamus fermentum semper porta. Nunc diam velit, adipscing ut tristique vitae sagittis vel odio. Maecenas convallis ullamcorper ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, is fringille sem nunc vet mi.</p>
     </article>
-
+    
+    <div className="asides">
+    {/*<!-- the aside content can also be nested within the main content -->*/}
+    <aside role="note" id="aside1">
+      <h2>Float img in aside</h2>
+      <img id="logoimg" src="logo.png" alt="logo"/>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. </p>
+    </aside>
+    
     {/*<!-- the aside content can also be nested within the main content -->*/}
     <aside id="aside2"> {/* role="complementary" is default for aside */}
       <h2>Related links</h2>
@@ -90,8 +89,8 @@ class NameForm extends Component {
         <li><a href="#15">Oh well...</a></li>
       </ul>
     </aside>
+    </div>
 
-    </section>
 
   </main>
 
