@@ -74,7 +74,7 @@ class NameForm extends Component {
     {/*<!-- the aside content can also be nested within the main content -->*/}
     <aside role="note" id="aside1">
       <h2>Float img in aside</h2>
-      <img id="logoimg" src="logo.png" alt="logo"/>
+      <img id="logoimg" src="img_5terre.jpg" alt="logo"/> {/*  logo.png img_5terre.jpg */}
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. </p>
     </aside>
     

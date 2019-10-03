@@ -119,8 +119,10 @@ input[type="submit"] {
   width: 75px;
   height: 50px;
   border-radius: 5px;
-  background-color: #dfdbdb;
-  padding: 1em;
+  /* background-color: #dfdbdb; */
+  /* padding: 1em; */
+  border: thin solid black;
+  /* outline: dashed blue; */
 }
 
 article, footer {
@@ -151,6 +153,7 @@ article {
   margin-right: 10px;
   background-color: #ff80ff;
   padding: 5px;
+
 }
 
 
