@@ -35,6 +35,7 @@ class NameForm extends Component {
 
   {/*<!-- Here is our main header that is used accross all the pages of our website -->*/}
    <header>
+    <img id="logoimg" src="logo.png" alt="logo"/> {/*  logo.png img_5terre.jpg */}
     <h1>Header text and logo</h1>
     {/*<!-- Even is it's not mandatory, it's common practice to put the main navigation menu within the main header -->*/}
     <nav role="navigation">
@@ -74,7 +75,7 @@ class NameForm extends Component {
     {/*<!-- the aside content can also be nested within the main content -->*/}
     <aside role="note" id="aside1">
       <h2>Float img in aside</h2>
-      <img id="logoimg" src="img_5terre.jpg" alt="logo"/> {/*  logo.png img_5terre.jpg */}
+      <img id="asideimg" src="img_5terre.jpg" alt="logo"/> {/*  logo.png img_5terre.jpg */}
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. </p>
     </aside>
     
