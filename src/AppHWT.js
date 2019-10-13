@@ -257,14 +257,11 @@ class App extends Component {
 </div>
 */}
 
-{/*
-<header>
-  <p>header</p>
+<div>
   <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
-  <h3 id="wdt">viewport info</h3>
+  <div id="wdt">viewport info</div>
   <br/>
-</header>
-*/}
+</div>
 
 {/*<NameForm />*/}
 {/*<NameFormVal />*/}

@@ -18,6 +18,12 @@ body {
   outline: dashed red;
 }
 
+#wdt {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.6rem;
+  border-bottom: 1px solid;
+}
+
 /* || typography */
 h1, h2, h3 {
   font-family: 'Sonsie One', cursive;
