@@ -10,6 +10,7 @@ import React, { Component } from 'react'
 //import NameFormWebStruct from './NameFormWebStuct'
 import NameFormWebStructAria from './NameFormWebStuctAria'
 
+/*
 function noStyles() {
   //console.log(`noStyles started`)
   document.styleSheets[0].disabled = true;
@@ -25,8 +26,9 @@ function reStyle(n) {
   document.styleSheets[n].disabled = false;
   console.log(`reStyle ${n} finished`)
 }
+*/
 
-///*
+/*
 // NB! On separate linked css files does not work.
 function closeBlackdiv() { // called from showStyle(n) created background dimmed div onclick.
   console.log(`closeBlackdiv started`)
@@ -38,7 +40,6 @@ function closeBlackdiv() { // called from showStyle(n) created background dimmed
   console.log(`closeBlackdiv finished`)
 }
 
-/*
 // NB! On separate linked css files does not work.
 function showStyle(n) {
   console.log(`showStyles ${n} started`)
@@ -226,10 +227,12 @@ class App extends Component {
     }
     */
 
+    /*
     // style={padding6px}
     const padding6px = {
       padding: '6px',
     };
+    */
 
     function wxh() {
       let w = window,
@@ -246,6 +249,11 @@ class App extends Component {
       document.getElementById('wdt').innerText = txt;
     }
 
+    // style={fontsize}
+    const fontsize = {
+      fontSize: '1.6rem', // using 'font-size' also works but generates warning.
+    };
+
     // A class component must include render(), and the return statement can only return ONE parent element:
     return (
   <div className="container">
@@ -259,7 +267,7 @@ class App extends Component {
 
 <div>
   <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
-  <div id="wdt">viewport info</div>
+  <div id="wdt" style={fontsize}>viewport info</div>
   <br/>
 </div>
 
