@@ -1,5 +1,6 @@
 // NB! Capitalize custom components name to differentiate them from regular HTML elements).
 import React, { Component } from 'react'
+import logo from './logoFancyLetter.png'; // Tell Webpack this JS file will use this image placed in src dir.
 
 // Custom Controlled Component:
 class NameForm extends Component {
@@ -35,7 +36,7 @@ class NameForm extends Component {
 
   {/*<!-- Here is our main header that is used accross all the pages of our website -->*/}
    <header>
-    <img id="logoimg" src="logo.png" alt="logo"/> {/*  logo.png img_5terre.jpg */}
+    <img id="logoimg" src={logo} alt="logo"/> {/* src="logo.png"  logo.png img_5terre.jpg are in public dir */}
     <h1>Header text and logo</h1>
     {/*<!-- Even is it's not mandatory, it's common practice to put the main navigation menu within the main header -->*/}
     <nav role="navigation">
