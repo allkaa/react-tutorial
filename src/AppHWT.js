@@ -266,6 +266,7 @@ class App extends Component {
 */}
 
 <div>
+  <h4>It is {new Date().toLocaleTimeString()}.</h4>
   <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
   <div id="wdt" style={fontsize}>viewport info</div>
   <br/>

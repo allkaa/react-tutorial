@@ -99,4 +99,18 @@ class App extends Component {
 }
 */
 console.log(document.domain);
-ReactDOM.render(<App />, document.getElementById('root'))
+
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+console.log(element);
+
+function tick() {
+  ReactDOM.render(<App />, document.getElementById('root'))
+
+}
+//ReactDOM.render(<App />, document.getElementById('root'))
+
+setInterval(tick, 1000);
