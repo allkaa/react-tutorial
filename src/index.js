@@ -107,10 +107,13 @@ const element = (
 );
 console.log(element);
 
+/*
 function tick() {
   ReactDOM.render(<App />, document.getElementById('root'))
 
 }
-//ReactDOM.render(<App />, document.getElementById('root'))
+*/
+//setInterval(tick, 1000);
 
-setInterval(tick, 1000);
+ReactDOM.render(<App />, document.getElementById('root'))
+

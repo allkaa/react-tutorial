@@ -93,15 +93,34 @@ class App extends Component {
     this.state = {
         name: 'Dee',
         job: 'Aspring actress',
+        datetime: new Date(),
       }
     //*/
     console.log('App constructor this.state after settings test data')
     console.log(this.state)
   }
 
+  // lifecycle methods:
   // Code is invoked after the component is mounted/inserted into the DOM tree.
   componentDidMount() {
     console.log('========> App componentDidMount <==========')
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+    console.log(this.state);
+  }
+
+  componentWillUnmount() {
+    console.log('========> App componentWillUnmount <==========')
+    clearInterval(this.timerID);
+    console.log(this.state);
+  }
+
+  tick() {
+    this.setState({
+        datetime: new Date()
+    });
   }
 
   handleOnClick = event => {
@@ -131,6 +150,7 @@ class App extends Component {
     //const { characters } = this.state
     // Render of re-render with Table and Form childs.
     console.log('========> App render <==========')
+    console.log(this.state);
     // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
     // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
     // {/* <h1>Positioning</h1> */}
@@ -266,7 +286,7 @@ class App extends Component {
 */}
 
 <div>
-  <h4>It is {new Date().toLocaleTimeString()}.</h4>
+  <h4>It is {this.state.datetime.toLocaleTimeString()}.</h4>
   <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
   <div id="wdt" style={fontsize}>viewport info</div>
   <br/>
