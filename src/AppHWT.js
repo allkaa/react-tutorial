@@ -106,7 +106,7 @@ class App extends Component {
     console.log('========> App componentDidMount <==========')
     this.timerID = setInterval(
       () => this.tick(),
-      1000
+      5000
     );
     console.log(this.state);
   }
@@ -117,6 +117,7 @@ class App extends Component {
     console.log(this.state);
   }
 
+  // Every modification of state object fields initiates new render.
   tick() {
     this.setState({
         datetime: new Date()
