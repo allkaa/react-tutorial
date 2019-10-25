@@ -98,6 +98,8 @@ class App extends Component {
     //*/
     console.log('App constructor this.state after settings test data')
     console.log(this.state)
+    // This binding is necessary to make `this` work in the callback
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
 
   // lifecycle methods:
@@ -288,6 +290,7 @@ class App extends Component {
 
 <div>
   <h4>It is {this.state.datetime.toLocaleTimeString()}.</h4>
+  <button type='button' onClick={this.handleOnClick}>name: {this.state.name}</button>
   <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
   <div id="wdt" style={fontsize}>viewport info</div>
   <br/>
