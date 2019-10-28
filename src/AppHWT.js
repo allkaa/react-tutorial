@@ -98,7 +98,7 @@ class App extends Component {
     //*/
     console.log('App constructor this.state after settings test data')
     console.log(this.state)
-    // This binding is necessary to make `this` work in the callback
+    // NB! This binding is necessary to make `this` work in the callback!!!!!!!!!!!!!!
     this.handleOnClick = this.handleOnClick.bind(this);
   }
 
@@ -154,11 +154,6 @@ class App extends Component {
     // Render of re-render with Table and Form childs.
     console.log('========> App render <==========')
     console.log(this.state);
-    // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
-    // {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
-    // {/* <h1>Positioning</h1> */}
-    // Below used <img src="img_car.jpg"/> element must be in public dir
-    /*<img src="img_car.jpg" alt="Car" style={wdth100}/>*/
 
     // Declare inline styles used below in elements:
     /*
@@ -282,6 +277,12 @@ class App extends Component {
   <div className="container">
 
 
+{/* import logo from './logoFancyLetter.png'; // Tell Webpack this JS file will use this image placed in src dir. */}
+{/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
+
+{/* Below used <img src="img_car.jpg"/> element must be in public dir */}
+{/*<img src="img_car.jpg" alt="Car" style={wdth100}/>*/}
+
 {/*<!-- Note -->}
 <div style={bWSp2px}>
   <h4 style={taCenter}>Resize the browser window to see the responsive effect.</h4>
@@ -318,8 +319,8 @@ class App extends Component {
 */}
 
     </div>
-    )
-  }
-}
+    ) // end of return.
+  } // end of render.
+} // end of class App extends Component.
 
 export default App
