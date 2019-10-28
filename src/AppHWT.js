@@ -98,8 +98,8 @@ class App extends Component {
     //*/
     console.log('App constructor this.state after settings test data')
     console.log(this.state)
-    // NB! This binding is necessary to make `this` work in the callback!!!!!!!!!!!!!!
-    this.handleOnClick = this.handleOnClick.bind(this);
+    // NB! This binding is necessary to make `this` work in the callback, but not needed if arrow function callback.
+    //this.handleOnClick = this.handleOnClick.bind(this);
   }
 
   // lifecycle methods:
@@ -108,7 +108,7 @@ class App extends Component {
     console.log('========> App componentDidMount <==========')
     this.timerID = setInterval(
       () => this.tick(),
-      5000
+      120000
     );
     console.log(this.state);
   }
@@ -126,8 +126,9 @@ class App extends Component {
     });
   }
 
-  handleOnClick = event => {
+  handleOnClick = (id, event) => { // or (event) if parameter is NOT used.
     console.log('App handeChange event event.target')
+    console.log('id is ' + id)
     console.log(event.target)
     
     let nameToggle
@@ -154,6 +155,80 @@ class App extends Component {
     // Render of re-render with Table and Form childs.
     console.log('========> App render <==========')
     console.log(this.state);
+
+    function wxh() {
+      let w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0];
+      //x = w.innerWidth || e.clientWidth || g.clientWidth;
+      //y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+      //alert(x + ' × ' + y);
+      //alert('window ' + w.innerWidth + ', document ' + e.clientWidth + ', body ' + g.clientWidth);
+      let txt = 'window.innerWidth ' + w.innerWidth + 'px, document.clientWidth ' + e.clientWidth + 'px, body.clientWidth ' + g.clientWidth + "px, ";
+      txt = txt + 'window.outerWidth' + w.outerWidth + "px, window.outerHeight " + w.outerHeight + 'px, window.innerHeight ' ;
+      txt = txt + w.innerHeight + 'px.';
+      document.getElementById('wdt').innerText = txt;
+    }
+
+    // style={fontsize}
+    const fontsize = {
+      fontSize: '1.6rem', // using 'font-size' also works but generates warning.
+    };
+
+    // A class component must include render(), and the return statement can only return ONE parent element:
+    return (
+  <div className="container">
+
+
+{/* import logo from './logoFancyLetter.png'; // Tell Webpack this JS file will use this image placed in src dir. */}
+{/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
+
+{/* Below used <img src="img_car.jpg"/> element must be in public dir */}
+{/*<img src="img_car.jpg" alt="Car" style={wdth100}/>*/}
+
+{/*<!-- Note -->}
+<div style={bWSp2px}>
+  <h4 style={taCenter}>Resize the browser window to see the responsive effect.</h4>
+</div>
+*/}
+
+<div>
+  <h4>It is {this.state.datetime.toLocaleTimeString()}.</h4>
+  {/* <button type='button' onClick={this.handleOnClick}>name: {this.state.name}</button>*/}
+  <button type='button' onClick={this.handleOnClick.bind(this, '001')}>name: {this.state.name}</button>
+  <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
+  <div id="wdt" style={fontsize}>viewport info</div>
+  <br/>
+</div>
+
+{/*<NameForm />*/}
+{/*<NameFormVal />*/}
+{/*<NameFormData />*/}
+{/*<NameFormFile />*/}
+{/*<NameFormRespImg />*/}
+{/*<NameFormWebStruct />*/}
+<NameFormWebStructAria />
+
+{/* very last information div must be after clearfix */}
+{/*
+<footer>
+<p>footer</p>
+<div style={padding6px}>
+  <p>For screens larger than 700px wide, it will show four images side by side (24.99999%).</p>
+  <p>For screens 700px and up to 501px, it will show two images side by side (49.99999%).</p>
+  <p>For screens 500px and smaller, the images will stack vertically (100%).</p>
+  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+</div>
+</footer>
+*/}
+
+    </div>
+    ) // end of return.
+  } // end of render.
+} // end of class App extends Component.
+
+export default App
 
     // Declare inline styles used below in elements:
     /*
@@ -252,75 +327,3 @@ class App extends Component {
     };
     */
 
-    function wxh() {
-      let w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName('body')[0];
-      //x = w.innerWidth || e.clientWidth || g.clientWidth;
-      //y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-      //alert(x + ' × ' + y);
-      //alert('window ' + w.innerWidth + ', document ' + e.clientWidth + ', body ' + g.clientWidth);
-      let txt = 'window.innerWidth ' + w.innerWidth + 'px, document.clientWidth ' + e.clientWidth + 'px, body.clientWidth ' + g.clientWidth + "px, ";
-      txt = txt + 'window.outerWidth' + w.outerWidth + "px, window.outerHeight " + w.outerHeight + 'px, window.innerHeight ' ;
-      txt = txt + w.innerHeight + 'px.';
-      document.getElementById('wdt').innerText = txt;
-    }
-
-    // style={fontsize}
-    const fontsize = {
-      fontSize: '1.6rem', // using 'font-size' also works but generates warning.
-    };
-
-    // A class component must include render(), and the return statement can only return ONE parent element:
-    return (
-  <div className="container">
-
-
-{/* import logo from './logoFancyLetter.png'; // Tell Webpack this JS file will use this image placed in src dir. */}
-{/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
-
-{/* Below used <img src="img_car.jpg"/> element must be in public dir */}
-{/*<img src="img_car.jpg" alt="Car" style={wdth100}/>*/}
-
-{/*<!-- Note -->}
-<div style={bWSp2px}>
-  <h4 style={taCenter}>Resize the browser window to see the responsive effect.</h4>
-</div>
-*/}
-
-<div>
-  <h4>It is {this.state.datetime.toLocaleTimeString()}.</h4>
-  <button type='button' onClick={this.handleOnClick}>name: {this.state.name}</button>
-  <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
-  <div id="wdt" style={fontsize}>viewport info</div>
-  <br/>
-</div>
-
-{/*<NameForm />*/}
-{/*<NameFormVal />*/}
-{/*<NameFormData />*/}
-{/*<NameFormFile />*/}
-{/*<NameFormRespImg />*/}
-{/*<NameFormWebStruct />*/}
-<NameFormWebStructAria />
-
-{/* very last information div must be after clearfix */}
-{/*
-<footer>
-<p>footer</p>
-<div style={padding6px}>
-  <p>For screens larger than 700px wide, it will show four images side by side (24.99999%).</p>
-  <p>For screens 700px and up to 501px, it will show two images side by side (49.99999%).</p>
-  <p>For screens 500px and smaller, the images will stack vertically (100%).</p>
-  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
-</div>
-</footer>
-*/}
-
-    </div>
-    ) // end of return.
-  } // end of render.
-} // end of class App extends Component.
-
-export default App
