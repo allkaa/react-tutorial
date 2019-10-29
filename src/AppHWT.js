@@ -98,7 +98,8 @@ class App extends Component {
     //*/
     console.log('App constructor this.state after settings test data')
     console.log(this.state)
-    // NB! This binding is necessary to make `this` work in the callback, but not needed if arrow function callback.
+    // NB! This binding is necessary to make `this` work in the callback, but not needed if arrow function callback,
+    // and not needed when callback is called with parameters thru e.g. onClick={this.handleOnClick.bind(this, '001')}
     //this.handleOnClick = this.handleOnClick.bind(this);
   }
 
@@ -126,7 +127,8 @@ class App extends Component {
     });
   }
 
-  handleOnClick = (id, event) => { // or (event) if parameter is NOT used.
+  //handleOnClick(event) if without parameter.
+  handleOnClick(id, event) { // or handleOnClick = (id, event) =>  or handleOnClick = (event) => if parameter is NOT used.
     console.log('App handeChange event event.target')
     console.log('id is ' + id)
     console.log(event.target)
@@ -195,7 +197,8 @@ class App extends Component {
 
 <div>
   <h4>It is {this.state.datetime.toLocaleTimeString()}.</h4>
-  {/* <button type='button' onClick={this.handleOnClick}>name: {this.state.name}</button>*/}
+  {/*<button type='button' onClick={this.handleOnClick}>name: {this.state.name}</button>*/}
+  {/* event argument representing the React event will be passed as a second argument after the ID. */}
   <button type='button' onClick={this.handleOnClick.bind(this, '001')}>name: {this.state.name}</button>
   <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
   <div id="wdt" style={fontsize}>viewport info</div>
