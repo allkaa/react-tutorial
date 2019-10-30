@@ -178,10 +178,15 @@ class App extends Component {
       fontSize: '1.6rem', // using 'font-size' also works but generates warning.
     };
 
+    const numbers = [1, 2, 3, 4, 5];
+    const listItems = numbers.map((number) =>
+      <li key={number.toString()}>{number}</li>
+    );
+    console.log(listItems);
+
     // A class component must include render(), and the return statement can only return ONE parent element:
     return (
   <div className="container">
-
 
 {/* import logo from './logoFancyLetter.png'; // Tell Webpack this JS file will use this image placed in src dir. */}
 {/*<img src={logo} alt="React Logo" className = 'logo' ></img>*/}
@@ -203,6 +208,7 @@ class App extends Component {
   <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
   <div id="wdt" style={fontsize}>viewport info</div>
   <br/>
+  <ul>{listItems}</ul>
 </div>
 
 {/*<NameForm />*/}
