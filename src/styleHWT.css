@@ -24,6 +24,16 @@ body {
   border-bottom: 1px solid;
 }
 
+#listItems {
+  font-family: 'Open Sans Condensed', sans-serif;
+  /* font-size: 1.6rem; */
+  border-bottom: 1px solid;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding-inline-start: 0px;
+  padding: 0 0 0 40px;
+}
+
 /* || typography */
 h1, h2, h3, h4 {
   font-family: 'Sonsie One', cursive;

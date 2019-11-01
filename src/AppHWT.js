@@ -178,7 +178,7 @@ class App extends Component {
       fontSize: '1.6rem', // using 'font-size' also works but generates warning.
     };
 
-    const numbers = [1, 2, 3, 4, 5];
+    const numbers = [1, 2, 3];
     const listItems = numbers.map((number) =>
       <li key={number.toString()}>{number}</li>
     );
@@ -208,7 +208,7 @@ class App extends Component {
   <button type='button' onClick={()=>wxh()}>Press the button to see actual viewport info.</button>
   <div id="wdt" style={fontsize}>viewport info</div>
   <br/>
-  <ul>{listItems}</ul>
+  <ul id="listItems">{listItems}</ul>
 </div>
 
 <NameForm />
