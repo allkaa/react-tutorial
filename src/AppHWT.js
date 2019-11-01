@@ -2,13 +2,13 @@
 // (capitalize custom components to differentiate them from regular HTML elements).
 import React, { Component } from 'react'
 //import logo from './logo.svg'; // logo.svg in srs dir
-//import NameForm from './NameForm.js'
+import NameForm from './NameForm.js'
 //import NameFormVal from './NameFormVal.js'
 //import NameFormData from './NameFormData.js'
 //import NameFormFile from './NameFormFile.js'
 //import NameFormRespImg from './NameFormRespImg.js'
 //import NameFormWebStruct from './NameFormWebStuct'
-import NameFormWebStructAria from './NameFormWebStuctAria'
+//import NameFormWebStructAria from './NameFormWebStuctAria'
 
 /*
 function noStyles() {
@@ -211,13 +211,13 @@ class App extends Component {
   <ul>{listItems}</ul>
 </div>
 
-{/*<NameForm />*/}
+<NameForm />
 {/*<NameFormVal />*/}
 {/*<NameFormData />*/}
 {/*<NameFormFile />*/}
 {/*<NameFormRespImg />*/}
 {/*<NameFormWebStruct />*/}
-<NameFormWebStructAria />
+{/*<NameFormWebStructAria />*/}
 
 {/* very last information div must be after clearfix */}
 {/*
