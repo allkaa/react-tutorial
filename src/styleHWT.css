@@ -25,7 +25,7 @@ body {
 }
 
 #listItems {
-  font-family: 'Open Sans Condensed', sans-serif;
+  /* font-family: 'Open Sans Condensed', sans-serif; */
   /* font-size: 1.6rem; */
   border-bottom: 1px solid;
   margin-block-start: 0px;
