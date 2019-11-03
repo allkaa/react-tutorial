@@ -158,13 +158,15 @@ class NameForm extends Component {
     console.log(event.target.value);
     console.log(this.state);
     //alert('Name: "' + this.state.name + '" and an essay: "' + this.state.essay + '" and fruit: "' + this.state.fruit + '" were submitted.');
-    //event.preventDefault();
+    event.preventDefault();
     // Use created ref to the DOM node to access file(s) in a submit handler:
+    /*
     alert(
       `Selected file to upload - ${
         this.fileInput.current.files[0].name
       }`
     );
+    */
   }
 
   render() {
@@ -254,17 +256,17 @@ class NameForm extends Component {
           <legend>Radio button:</legend> {/* The <legend> tag defines a caption for the <fieldset> element. */}
           <ul>
           <li>
-          <label htmlFor="soup">Soup</label>
+          <label htmlFor="soup">Soup1</label>
           <input type="radio" id="soup" name="meal" value="option1" checked={this.state.radioOption === 'option1'}
           onChange={this.handleChangeRadioOption}/>
           </li>
           <li>
-          <label htmlFor="soup2">Soup</label>
+          <label htmlFor="soup2">Soup2</label>
           <input type="radio" id="soup2" name="meal" value="option2" checked={this.state.radioOption === 'option2'}
           onChange={this.handleChangeRadioOption}/>
           </li>
           <li>
-          <label htmlFor="soup3">Soup</label>
+          <label htmlFor="soup3">Soup3</label>
           <input type="radio" id="soup3" name="meal" value="option3"checked={this.state.radioOption === 'option3'}
           onChange={this.handleChangeRadioOption}/>
           </li>
