@@ -18,6 +18,13 @@ body {
   outline: dashed red;
 }
 
+#FPT {
+  width: 75%;
+  margin: 20px;
+  padding: 10px;
+  border: thick solid black;
+}
+
 #wdt {
   font-family: 'Open Sans Condensed', sans-serif;
   /* font-size: 1.6rem; */
