@@ -8,7 +8,8 @@ import React, { Component } from 'react'
 //import NameFormFile from './NameFormFile.js'
 //import NameFormRespImg from './NameFormRespImg.js'
 //import NameFormWebStruct from './NameFormWebStuct'
-import NameFormWebStructAria from './NameFormWebStuctAria'
+//import NameFormWebStructAria from './NameFormWebStuctAria'
+import FilterableProductTable from './FilterableProductTable'
 
 /*
 function noStyles() {
@@ -217,7 +218,8 @@ class App extends Component {
 {/*<NameFormFile />*/}
 {/*<NameFormRespImg />*/}
 {/*<NameFormWebStruct />*/}
-<NameFormWebStructAria />
+{/*<NameFormWebStructAria />*/}
+<FilterableProductTable products={PRODUCTS} />
 
 {/* very last information div must be after clearfix */}
 {/*
@@ -237,7 +239,26 @@ class App extends Component {
   } // end of render.
 } // end of class App extends Component.
 
+
+const PRODUCTS = [
+  {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
+  {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
+  {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
+  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
+  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
+  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
+];
+
 export default App
+
+
+/*
+
+ReactDOM.render(
+  <FilterableProductTable products={PRODUCTS} />,
+  document.getElementById('container')
+);
+*/
 
     // Declare inline styles used below in elements:
     /*
