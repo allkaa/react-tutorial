@@ -11,7 +11,7 @@ class ProductCategoryRow extends Component {
       </tr>
     );
   }
-}
+} // end of class ProductCategoryRow.
 
 class ProductRow extends React.Component {
   render() {
@@ -29,7 +29,7 @@ class ProductRow extends React.Component {
       </tr>
     );
   }
-}
+} // end of class ProductRow.
 
 class ProductTable extends React.Component {
   render() {
@@ -74,7 +74,7 @@ class ProductTable extends React.Component {
       </table>
     );
   }
-}
+} // end of class ProductTable.
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -112,7 +112,7 @@ class SearchBar extends React.Component {
       </form>
     );
   }
-}
+} // end of class SearchBar.
 
 class FilterableProductTable extends React.Component {
   constructor(props) {
@@ -156,7 +156,7 @@ class FilterableProductTable extends React.Component {
       </div>
     );
   }
-}
+} // FilterableProductTable.
 
 export default FilterableProductTable
 
