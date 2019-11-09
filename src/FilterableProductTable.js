@@ -116,7 +116,11 @@ class SearchBar extends React.Component {
 
 class FilterableProductTable extends React.Component {
   constructor(props) {
-    super(props);
+    console.log('FilterableProductTable constructor initial props before super(props)')
+    console.log(props)
+    super(props) // call the super class constructor and pass to it the props parameter
+    console.log('FilterableProductTable constructor initial props after super(props)')
+    console.log(props)
     this.state = {
       filterText: '',
       inStockOnly: false
@@ -130,12 +134,14 @@ class FilterableProductTable extends React.Component {
     this.setState({
       filterText: filterText
     });
+    console.log(filterText);
   }
   
   handleInStockChange(inStockOnly) {
     this.setState({
       inStockOnly: inStockOnly
     })
+    console.log(inStockOnly);
   }
 
   render() {
