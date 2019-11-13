@@ -7,7 +7,7 @@ catch(e) {
   console.log(e);
   let ttt1 = e;
   let ttt2 = e.toString();
-  let ttt3 = ttt1 && ttt2; // e1 && e2 If e1 can be converted to true, returns e2; else, returns e1.
+  let ttt3 = false && ttt2; // e1 && e2 If e1 can be converted to true, returns e2; else, returns e1.
   console.log(ttt3);
 }
 console.log('end of program');
