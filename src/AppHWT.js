@@ -9,7 +9,8 @@ import React, { Component } from 'react'
 //import NameFormRespImg from './NameFormRespImg.js'
 //import NameFormWebStruct from './NameFormWebStuct'
 //import NameFormWebStructAria from './NameFormWebStuctAria'
-import FilterableProductTable from './FilterableProductTable'
+//import FilterableProductTable from './FilterableProductTable'
+import MyHOC from './MyHOC'
 
 /*
 function noStyles() {
@@ -219,7 +220,8 @@ class App extends Component {
 {/*<NameFormRespImg />*/}
 {/*<NameFormWebStruct />*/}
 {/*<NameFormWebStructAria />*/}
-<FilterableProductTable products={PRODUCTS} />
+{/*<FilterableProductTable products={PRODUCTS} />*/}
+<MyHOC />
 
 {/* very last information div must be after clearfix */}
 {/*
