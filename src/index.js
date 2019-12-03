@@ -82,10 +82,12 @@ import './styleHWT.css' // <--------
 //import App from './AppMyWeb-make-a-website' // float+flex
 //import App from './AppMyWeb-flexbox_website2a'
 //import App from './AppW3css'
-import App from './AppHWT' // <---
+//import App from './AppHWT' // <-------------------------
 //import App from './AppFetchXML'
 //import App from './AppXhrXml'
 //import App from './AppXhrFormDataOld'
+import App from './App'
+
 /*
 // A class component must include render(), and the return statement can only return ONE parent element:
 class App extends Component {
