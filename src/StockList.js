@@ -16,6 +16,10 @@ class StockList extends Component {
         }
       }
       render() {
+        console.log('StockList this.pops:');
+        console.log(this.props);
+        console.log('StockList this.pops.children:');
+        console.log(this.props.children);
         return (
           <div className="container">
             <h3>Stock List</h3>

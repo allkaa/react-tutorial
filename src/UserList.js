@@ -16,6 +16,10 @@ class UserList extends Component {
         }
       }
       render() {
+        console.log('UserList this.pops:');
+        console.log(this.props);
+        console.log('UserList this.pops.children:');
+        console.log(this.props.children);
         return (
           <div className="container">
             <h3>User List</h3>

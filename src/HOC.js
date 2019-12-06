@@ -27,12 +27,17 @@ export default function Hoc(HocComponent, data){
         }
         
         render(){
+            console.log('HOC this.state.data:');
             console.log(this.state.data);
             let ttt = {...this.props};
+            console.log('HOC ...this.props:');
             console.log(ttt);
+            console.log('HOC this.props:');
+            console.log(this.props);
         return (
               <div>
-                <HocComponent data={this.state.data} {...this.props} /> {/* ...this.props used to get children if any */}
+                {/* spread iterable object ...this.props syntax for fuction call {...this.props}  used to get children if any */}
+                <HocComponent data={this.state.data} {...this.props} />
               </div>
             );
         }
