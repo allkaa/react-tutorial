@@ -1,82 +1,47 @@
-// App.js
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h3>Array: {this.props.propArray}</h3>
+        <h3>Bool: {this.props.propBool ? "True..." : "False..."}</h3>
+        <h3>Func: {this.props.propFunc(3)}</h3>
+        <h3>Number: {this.props.propNumber}</h3>
+        <h3>String: {this.props.propString}</h3>
+        <h3>Object: {this.props.propObject.objectName1}</h3>
+        <h3>Object: {this.props.propObject.objectName2}</h3>
+        <h3>Object: {this.props.propObject.objectName3}</h3>
+      </div>
+    );
+  }
+}
+
+App.propTypes = {
+  propArray: PropTypes.array.isRequired,
+  propBool: PropTypes.bool.isRequired,
+  propFunc: PropTypes.func,
+  propNumber: PropTypes.number,
+  propString: PropTypes.string,
+  propObject: PropTypes.object
+};
+
+//[1, 2, 3, 4, 5]
 /*
-import React, { Component } from 'react';
-import Hoc from './HOC';
-
-class App extends Component {
-  
-  render() {
-    return (
-      <div>
-        Higher-Order Component Tutorial from App as HOC component.
-      </div>
-    )
+  propObject: {
+    objectName1: "objectValue1",
+    objectName2: "objectValue2",
+    objectName3: "objectValue3"
   }
-}
-//App = Hoc(App);
 */
-
-import React, { Component } from 'react';
-import StockList from './StockList';
-import UserList from './UserList';
-import Hoc from './HOC';
-
-const StocksData = [
-  {
-      id: 1,
-      name: 'TCS'
-        
-  },
-  {
-      id: 2,
-      name: 'Infosys'
-  },
-  {
-      id: 3,
-      name: 'Reliance'
-  }
-];
-const UsersData = [
-  {
-      id: 1,
-      name: 'Krunal'
-        
-  },
-  {
-      id: 2,
-      name: 'Ankit'
-  },
-  {
-      id: 3,
-      name: 'Rushabh'
-  }
-];
-
-const Stocks = Hoc(
-  StockList,
-  StocksData
-);
-
-const Users = Hoc(
-  UserList,
-  UsersData
-);
-
-
-class App extends Component {
-  
-  render() {
-    return (
-      <div>
-        <Stocks>
-           <p>Paragraph text1 as child 1</p>
-           <p>Paragraph text2 as child 2</p>
-        </Stocks>
-        <Users></Users>
-      </div>
-    )
-  }
-}
+App.defaultProps = {
+  //propArray: 3,
+  propBool: true,
+  propFunc: function (e) { return e },
+  propNumber: 1,
+  propString: "String value...",
+  propObject: 'sting as object'
+};
 
 export default App;
