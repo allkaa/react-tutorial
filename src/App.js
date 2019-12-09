@@ -3,57 +3,46 @@ import React, { Component } from 'react';
 //import PropTypes from 'prop-types';
 
 class App extends Component {
-  constructor(props) {
-     super(props);
-     
-     this.state = {
-        data: 0
-     }
-     this.setNewNumber = this.setNewNumber.bind(this)
-  };
-  setNewNumber() {
-     this.setState({data: this.state.data + 1})
-  }
-  render() {
-     return (
-        <div>
-           <button onClick = {this.setNewNumber}>INCREMENT</button>
-           <Content myNumber = {this.state.data}></Content>
-        </div>
-     );
-  }
+   constructor(props) {
+      super(props);
+      this.temp = ''
+      this.state = {
+         data: 'Change the Initial data...'
+      }
+      this.updateTemp = this.updateTemp.bind(this);
+      this.updateState = this.updateState.bind(this);
+   };
+   updateTemp(e) {
+      this.temp = e.target.value;
+      //console.log(this.temp);
+   }
+   updateState(e) {
+      //console.log('updateState')
+      //this.setState({data: e.target.value});
+      //console.log(this.temp);
+      this.setState({data: this.temp});
+      //e.preventDefault();
+   }
+   render() {
+      return (
+         <div>
+            <Content myDataProp = {this.state.data} updateTempVar = {this.updateTemp} updateStateProp = {this.updateState} ></Content>
+         </div>
+      );
+   }
 }
 
-class Content extends React.Component {
-  componentWillMount() {
-     console.log('Component Content WILL MOUNT!')
-  }
-  componentDidMount() {
-     console.log('Component Content DID MOUNT!')
-  }
-  componentWillReceiveProps(newProps) {    
-     console.log('Component Content WILL RECIEVE PROPS!')
-  }
-  shouldComponentUpdate(newProps, newState) {
-    let blnUpdate = true; // or false to reject updates,
-    console.log('Component Content CAN UPDADTE: ' + blnUpdate);
-     return blnUpdate;
-  }
-  componentWillUpdate(nextProps, nextState) {
-     console.log('Component Content WILL UPDATE!');
-  }
-  componentDidUpdate(prevProps, prevState) {
-     console.log('Component Content DID UPDATE!')
-  }
-  componentWillUnmount() {
-     console.log('Component Content WILL UNMOUNT!')
-  }
-  render() {
-    return (
-       <div>
-          <h3>{this.props.myNumber}</h3>
-       </div>
-    );
- }
+class Content extends Component {
+   render() {
+      return (
+         <div>
+            <input type = "text" defaultValue = '' onChange = {this.props.updateTempVar}
+               /> {/* value = {this.props.myDataProp} onChange = {this.props.updateStateProp}  */}
+            <input type = "button" value = 'Press to update!' onClick = {this.props.updateStateProp} />
+            <h3>{this.props.myDataProp}</h3>
+         </div>
+      );
+   }
 }
+
 export default App;  
