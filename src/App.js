@@ -1,45 +1,31 @@
 import React, { Component } from 'react';
-//import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 //import PropTypes from 'prop-types';
 
 class App extends Component {
    constructor(props) {
       super(props);
-      this.temp = ''
+		
       this.state = {
-         data: 'Change the Initial data...'
+         data: ''
       }
-      this.updateTemp = this.updateTemp.bind(this);
       this.updateState = this.updateState.bind(this);
+      this.clearInput = this.clearInput.bind(this);
    };
-   updateTemp(e) {
-      this.temp = e.target.value;
-      //console.log(this.temp);
-   }
    updateState(e) {
-      //console.log('updateState')
-      //this.setState({data: e.target.value});
-      //console.log(this.temp);
-      this.setState({data: this.temp});
-      //e.preventDefault();
+      this.setState({data: e.target.value});
+   }
+   clearInput() {
+      this.setState({data: ''});
+      ReactDOM.findDOMNode(this.refs.myInput).focus(); // ref to <input .../> is used to set focus, ref set in <input .../>
    }
    render() {
       return (
          <div>
-            <Content myDataProp = {this.state.data} updateTempVar = {this.updateTemp} updateStateProp = {this.updateState} ></Content>
-         </div>
-      );
-   }
-}
-
-class Content extends Component {
-   render() {
-      return (
-         <div>
-            <input type = "text" defaultValue = '' onChange = {this.props.updateTempVar}
-               /> {/* value = {this.props.myDataProp} onChange = {this.props.updateStateProp}  */}
-            <input type = "button" value = 'Press to update!' onClick = {this.props.updateStateProp} />
-            <h3>{this.props.myDataProp}</h3>
+            <input value = {this.state.data} onChange = {this.updateState} 
+               ref = "myInput"></input>
+            <button type="button" onClick = {this.clearInput}>CLEAR</button>
+            <h4>{this.state.data}</h4>
          </div>
       );
    }
