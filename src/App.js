@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 //import PropTypes from 'prop-types';
 
+//const myRef = React.createRef(); // create empty ref construction.
 class App extends Component {
    constructor(props) {
       super(props);
-		
+	
       this.state = {
          data: ''
       }
@@ -17,13 +18,14 @@ class App extends Component {
    }
    clearInput() {
       this.setState({data: ''});
+      //ReactDOM.findDOMNode(this.refs.myRef).focus(); // does NOT work ref to <input .../> is used to set focus, ref set in <input .../>
       ReactDOM.findDOMNode(this.refs.myInput).focus(); // ref to <input .../> is used to set focus, ref set in <input .../>
    }
    render() {
       return (
          <div>
-            <input value = {this.state.data} onChange = {this.updateState} 
-               ref = "myInput"></input>
+            {/*<input value = {this.state.data} onChange = {this.updateState} ref = {myRef}></input>*/}
+            <input value = {this.state.data} onChange = {this.updateState} ref = "myInput"></input>
             <button type="button" onClick = {this.clearInput}>CLEAR</button>
             <h4>{this.state.data}</h4>
          </div>
