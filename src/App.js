@@ -25,6 +25,7 @@ class App extends Component {
          <div>
             {/* using ref set this.myRef.current to <input ... /> */}
             <input value = {this.state.data} onChange = {this.updateState} ref = {this.myRef}></input>
+            {/* or using ref set this.refs.myInput to <input ... /> */}
             {/*<input value = {this.state.data} onChange = {this.updateState} ref = "myInput"></input>*/}
             <button type="button" onClick = {this.clearInput}>CLEAR</button>
             <h4>{this.state.data}</h4>
