@@ -27,7 +27,7 @@ class App extends Component {
    render() {
       return (
          <div>
-            {/* using ref (special React attribute) set this.myRef.current to <input ... /> */}
+            {/* using ref (special React attribute) to set this.myRef.current to <input ... /> */}
             <input value = {this.state.data} onChange = {this.updateState} ref = {this.myRef}></input>
             {/* or using ref set this.refs.myInput to <input ... /> */}
             {/*<input value = {this.state.data} onChange = {this.updateState} ref = "myInput"></input>*/}
