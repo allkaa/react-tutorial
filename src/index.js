@@ -43,7 +43,7 @@ import './StyleSheetsDemo4.css'
 //import './w3.css' // use external link in <head>
 //import './paceThemeMinimal.css'
 //import './styleRespImg.css' // <--------
-//import './styleHWT.css' // <--------
+import './styleHWT.css' // <--------
 
 //import App from './AppInitial'
 //import App from './App'
