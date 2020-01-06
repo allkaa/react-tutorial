@@ -1,41 +1,41 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-//import PropTypes from 'prop-types';
+//import ReactDOM from 'react-dom';
+import {
+   BrowserRouter as Router,
+   Switch,
+   Route,
+   Link
+ } from "react-router-dom";
+import Home from './Home.js';
+import About from './About.js';
+import Contact from './Contact.js';
 
-class App extends Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-         data: ''
-      }
-      this.myRef = React.createRef(); // create empty ref construction.
-      this.updateState = this.updateState.bind(this);
-      this.clearInput = this.clearInput.bind(this);
-   };
-   updateState(e) {
-      this.setState({data: e.target.value});
-   }
-   clearInput() {
-      console.log('this.refs:')
-      console.log(this.refs);
-      this.setState({data: ''});
-      console.log('this.myRef:')
-      console.log(this.myRef);
-      this.myRef.current.focus(); // ref to <input .../> is used to set focus, ref set in <input .../>
-      //ReactDOM.findDOMNode(this.refs.myInput).focus(); // ref to <input .../> is used to set focus, ref set in <input .../>
-   }
-   render() {
-      return (
-         <div>
-            {/* using ref (special React attribute) to set this.myRef.current to <input ... /> */}
-            <input value = {this.state.data} onChange = {this.updateState} ref = {this.myRef}></input>
-            {/* or using ref set this.refs.myInput to <input ... /> */}
-            {/*<input value = {this.state.data} onChange = {this.updateState} ref = "myInput"></input>*/}
-            <button type="button" onClick = {this.clearInput}>CLEAR</button>
-            <h4>{this.state.data}</h4>
-         </div>
-      );
-   }
-}
+ const routing = (
+   <Router>
+     <div>
+       <nav>
+         <ul>
+           <li>
+             <Link to="/">Home</Link>
+           </li>
+           <li>
+             <Link to="/about">About</Link>
+           </li>
+           <li>
+             <Link to="/contact">Contact</Link>
+           </li>
+         </ul>
+       </nav>
+
+       {/* A <Switch> looks through its children <Route>s and
+           renders the first one that matches the current URL. */}
+       <Switch>
+         <Route path="/" component={Home} />
+         <Route path="/about" component={About} />
+         <Route path="/contact" component={Contact} />
+       </Switch>
+     </div>
+   </Router>
+ );
 
 export default App;
