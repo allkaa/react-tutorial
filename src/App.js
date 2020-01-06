@@ -38,7 +38,7 @@ class App extends Component {
                {/* A <Switch> looks through its children <Route>s and
                   renders the first one that matches the current URL. */}
                <Switch>
-                  <Route exact path="/" component={Home} />
+                  <Route exact path="/"><Home /></Route> {/*component={Home} />*/}
                   <Route path="/about" component={About} />
                   <Route path="/contact" component={Contact} />
                </Switch>
